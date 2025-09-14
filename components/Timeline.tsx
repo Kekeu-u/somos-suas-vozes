@@ -21,7 +21,7 @@ const timelineEvents = [
     {
         year: '2025',
         title: 'Centenário e Futuro',
-        description: 'Celebramos 100 anos de história e lançamos "Nós Somos Suas Vozes" para honrar este legado e construir o futuro.',
+        description: 'Celebramos 100 anos de história e lançamos "Somos Suas Vozes" para honrar este legado e construir o futuro.',
     },
 ];
 

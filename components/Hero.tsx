@@ -23,7 +23,7 @@ export const Hero: React.FC = () => {
             <div className="absolute inset-0" style={{backgroundImage: "radial-gradient(circle, rgba(7,9,13,0.3) 0%, rgba(7,9,13,0.9) 90%)"}}></div>
             <div className="relative z-10 p-6 max-w-4xl mx-auto">
                 <h1 className={`${baseTransition} ${isLoaded ? loadedState : initialSate} text-6xl md:text-8xl font-bold font-serif leading-tight mb-4 drop-shadow-lg`}>
-                    Nós Somos Suas Vozes
+                    Somos Suas Vozes
                 </h1>
                 <p className={`${baseTransition} delay-200 ${isLoaded ? loadedState : initialSate} text-3xl md:text-4xl font-light mb-2 text-brand-primary font-serif italic`}>
                     We Are Their Voices
