@@ -19,7 +19,7 @@ export const content = {
     },
     slide2: {
         title: "A Força Comprovada da Música",
-        paragraph1: 'A história nos mostra que quando artistas se unem por uma causa, o mundo muda. "We Are The World" vendeu 7 milhões de cópias apenas nos Estados Unidos e arrecadou cerca de US$ 147 milhões para ajuda humanitária.',
+        paragraph1: 'A história nos mostra que quando artistas se unem por uma causa, o mundo muda. "We Are The World" atingiu milhões de pessoas e gerou um impacto humanitário sem precedentes, mostrando o poder da união através da música.',
         examples: [
             { icon: 'IconGlobe', title: '"We Are The World" (1985)', description: "Mobilizou o mundo para a fome na África" },
             { icon: 'IconFeather', title: '"Imagine" (1971)', description: "Continua sendo símbolo de paz mundial" },
