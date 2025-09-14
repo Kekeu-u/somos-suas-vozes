@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23FFC72C'%3E%3Cpath d='M20.24 12.24a6 6 0 0 0-8.49-8.49L5 10.5V19h8.5z'/%3E%3Cline x1='16' y1='8' x2='2' y2='22'/%3E%3Cline x1='17.5' y1='15' x2='9' y2='15'/%3E%3C/svg%3E" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Nós Somos Suas Vozes</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+      /* Custom Design Enhancements */
+      :root {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        /* Subtle dotted background pattern for texture */
+        background-image: radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+        background-size: 15px 15px;
+      }
+      
+      /* Custom Scrollbar for a cohesive look */
+      ::-webkit-scrollbar {
+        width: 10px;
+      }
+      ::-webkit-scrollbar-track {
+        background: #07090D; /* New background color */
+      }
+      ::-webkit-scrollbar-thumb {
+        background-color: #1A1D24; /* New surface color */
+        border-radius: 5px;
+        border: 2px solid #07090D; /* New background color */
+      }
+      ::-webkit-scrollbar-thumb:hover {
+        background-color: #2a2e37;
+      }
+
+      /* Ken Burns effect for Hero background */
+      @keyframes kenburns {
+          0% {
+              transform: scale(1.05) translate(1%, -2%);
+          }
+          100% {
+              transform: scale(1.2) translate(-1%, 2%);
+          }
+      }
+      .kenburns-bg {
+          animation: kenburns 40s ease-in-out infinite alternate;
+      }
+      
+      /* Gentle floating animation for scroll indicator */
+      @keyframes float {
+          0%, 100% {
+              transform: translateY(0);
+          }
+          50% {
+              transform: translateY(-8px);
+          }
+      }
+      .animate-float {
+          animation: float 3s ease-in-out infinite;
+      }
+    </style>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              'serif': ['Poppins', 'sans-serif'],
+              'sans': ['Poppins', 'sans-serif'],
+            },
+            colors: {
+              'brand-background': '#07090D', // Deep Night Sky
+              'brand-surface': '#1A1D24',    // Dark Slate
+              'brand-primary': '#FFC72C',    // Vibrant Gold
+              'brand-secondary': '#10B981',  // Lush Emerald
+              'brand-text': '#F0F2EF',
+              'brand-text-secondary': '#A0AEC0', // Subtle Gray for secondary text
+            },
+            boxShadow: {
+              'glow-primary': '0 0 25px 0 rgba(255, 199, 44, 0.45)', // Updated glow to match new primary color
+            },
+            transitionTimingFunction: {
+              'out-quint': 'cubic-bezier(0.23, 1, 0.32, 1)',
+            },
+            transitionDuration: {
+               '400': '400ms',
+            }
+          }
+        }
+      }
+    </script>
+<script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.1.1/",
+    "react": "https://aistudiocdn.com/react@^19.1.1",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/"
+  }
+}
+</script>
+</head>
+<body class="bg-brand-background text-brand-text font-sans">
+    <div id="root"></div>
+    <script type="module" src="/index.tsx"></script>
+</body>
+</html>

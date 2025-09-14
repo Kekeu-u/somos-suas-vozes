@@ -1,0 +1,78 @@
+import React from 'react';
+import { IconPaw, IconFeather } from './Icons';
+import { Animated } from './Animated';
+
+const timelineEvents = [
+    {
+        year: '1925',
+        title: 'Primeiro Dia Mundial dos Animais',
+        description: 'Heinrich Zimmermann organiza o primeiro evento mundial pelos direitos dos animais em Berlim, reunindo mais de 5.000 pessoas.',
+    },
+    {
+        year: '1929',
+        title: 'Nova Data Oficial',
+        description: 'A data do Dia Mundial dos Animais é oficialmente transferida para 4 de outubro.',
+    },
+    {
+        year: '1931',
+        title: 'Reconhecimento Mundial',
+        description: 'O movimento ganha reconhecimento mundial em Assis, Itália, cidade de São Francisco.',
+    },
+    {
+        year: '2025',
+        title: 'Centenário e Futuro',
+        description: 'Celebramos 100 anos de história e lançamos "Nós Somos Suas Vozes" para honrar este legado e construir o futuro.',
+    },
+];
+
+const TimelineItem: React.FC<{ year: string; title: string; description: string; isLast: boolean }> = ({ year, title, description, isLast }) => (
+    <div className="flex items-start group">
+        <div className="flex flex-col items-center mr-6">
+            <div className="w-8 h-8 bg-brand-primary rounded-full flex items-center justify-center text-brand-background font-bold flex-shrink-0 transition-all duration-300 group-hover:scale-110 group-hover:shadow-glow-primary">
+                <IconPaw className="w-5 h-5"/>
+            </div>
+            {!isLast && <div className="w-px h-full bg-gradient-to-b from-brand-primary to-brand-secondary/50 my-2"></div>}
+        </div>
+        <div className="pb-16">
+            <p className="text-2xl font-bold text-brand-text mb-1 transition-colors duration-300 group-hover:text-brand-primary">{year}</p>
+            <h4 className="text-3xl font-serif font-semibold text-brand-text mb-2 transition-colors duration-300 group-hover:text-brand-primary">{title}</h4>
+            <p className="text-brand-text-secondary text-2xl leading-relaxed">{description}</p>
+        </div>
+    </div>
+);
+
+export const Timeline: React.FC = () => {
+    return (
+        <section id="cronologia" className="py-24 md:py-32 bg-brand-surface overflow-hidden">
+            <div className="container mx-auto px-6 max-w-4xl">
+                 <Animated>
+                    <div className="text-center mb-16">
+                        <div className="flex justify-center mb-4"><IconFeather className="w-10 h-10 text-brand-primary"/></div>
+                        <h2 className="text-5xl md:text-6xl font-bold font-serif text-brand-text">Um Século de Evolução</h2>
+                        <p className="mt-2 text-xl text-brand-text-secondary">Honrando a história, de 1925 a 2025</p>
+                        <div className="w-20 h-1.5 bg-brand-primary mx-auto mt-6 rounded-full"></div>
+                    </div>
+                 </Animated>
+
+                <div className="max-w-2xl mx-auto">
+                    {timelineEvents.map((event, index) => (
+                        <Animated key={index} delay={index * 200}>
+                            <TimelineItem 
+                                year={event.year} 
+                                title={event.title} 
+                                description={event.description} 
+                                isLast={index === timelineEvents.length - 1}
+                            />
+                        </Animated>
+                    ))}
+                </div>
+                 <Animated delay={timelineEvents.length * 200}>
+                    <div className="mt-8 text-center p-8 border-2 border-transparent rounded-xl bg-brand-background transition-all duration-500 hover:shadow-glow-primary hover:-translate-y-2 transform" style={{borderImage: 'linear-gradient(to bottom right, #FFC72C, #10B981) 1'}}>
+                        <h3 className="text-4xl font-serif text-brand-text mb-3">São Francisco de Assis - O Padroeiro</h3>
+                        <p className="text-2xl leading-relaxed">A escolha de 4 de outubro conecta nosso projeto a uma tradição de 800 anos de proteção animal, o dia de São Francisco, que pregou: "Todas as criaturas são nossos irmãos e irmãs".</p>
+                    </div>
+                 </Animated>
+            </div>
+        </section>
+    );
+};
