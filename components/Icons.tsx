@@ -145,13 +145,13 @@ export const IconCheckCircle: React.FC<React.SVGProps<SVGSVGElement>> = (props) 
 
 export const IconQuoteOpen: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" {...props}>
-        <path d="M6.5 10c-1.25 0-2.41.38-3.41 1.09a.5.5 0 0 0-.18.68l.92 1.46c.21.34.66.42.97.18 1.15-.9 2.58-1.41 3.2-1.41.69 0 1.25.56 1.25 1.25 0 .61-.39 1.13-.91 1.39L6 16.5V18h3.5c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/>
+        <path d="M8 7H5l-2 4v6h6V7h-3l2-4zm8 0h-3l-2 4v6h6V7h-3l2-4z"/>
     </svg>
 );
 
 export const IconQuoteClose: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" {...props}>
-        <path d="M17.5 10c-1.25 0-2.41.38-3.41 1.09a.5.5 0 0 0-.18.68l.92 1.46c.21.34.66.42.97.18 1.15-.9 2.58-1.41 3.2-1.41.69 0 1.25.56 1.25 1.25 0 .61-.39 1.13-.91 1.39L17 16.5V18h3.5c2.76 0 5-2.24 5-5s-2.24-5-5-5z"/>
+        <path d="M6 13h3l2-4V3H5v6h3l-2 4zm8 0h3l2-4V3h-6v6h3l-2 4z"/>
     </svg>
 );
 
