@@ -64,8 +64,8 @@ export const Header: React.FC = () => {
     };
 
     return (
-        <nav className={`fixed bottom-6 left-1/2 -translate-x-1/2 z-50 transition-all duration-500 ease-out-quint ${showNav ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10 pointer-events-none'}`}>
-            <div className="flex items-center space-x-2 bg-brand-surface/50 backdrop-blur-2xl border border-brand-text/10 rounded-full p-2 shadow-2xl shadow-brand-background/50">
+        <nav className={`fixed bottom-4 md:bottom-6 left-1/2 -translate-x-1/2 z-50 transition-all duration-500 ease-out-quint ${showNav ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10 pointer-events-none'}`}>
+            <div className="flex items-center space-x-1 md:space-x-2 bg-brand-surface/50 backdrop-blur-2xl border border-brand-text/10 rounded-full p-1 md:p-2 shadow-2xl shadow-brand-background/50">
                 {navItems.map(item => {
                     const NavIcon = item.icon;
                     const isActive = activeSection === item.href;
@@ -74,7 +74,7 @@ export const Header: React.FC = () => {
                              <a 
                                 href={item.href} 
                                 onClick={(e) => handleNavClick(e, item.href)}
-                                className={`w-12 h-12 flex items-center justify-center rounded-full transition-all duration-400 transform focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary active:scale-90 ${
+                                className={`w-10 h-10 md:w-12 md:h-12 flex items-center justify-center rounded-full transition-all duration-400 transform focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary active:scale-90 ${
                                     isActive 
                                         ? 'bg-brand-primary text-brand-background shadow-glow-primary scale-110' 
                                         : 'text-brand-text/70 hover:bg-brand-surface hover:text-brand-primary hover:scale-110'
