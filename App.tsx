@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
@@ -152,6 +151,21 @@ const App: React.FC = () => {
                      <Animated delay={500}>
                         <p className="mt-10 text-center italic text-2xl font-serif">{content.slide2.conclusion}</p>
                      </Animated>
+                     <Animated delay={600}>
+                        <div className="text-center mt-12">
+                            <p className="text-2xl leading-relaxed mb-6 text-brand-text-secondary">Quer ter uma ideia da nossa direção musical? Preparamos uma guia para você.</p>
+                            <a 
+                                href="https://drive.google.com/file/d/1VGlKNGkAw4WFVHap800Vg1bFUyks8K-4/view?usp=sharing"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="inline-flex items-center justify-center bg-brand-secondary text-white font-bold text-xl py-4 px-10 rounded-full hover:bg-opacity-90 transition-all duration-300 transform hover:scale-105 active:scale-95 shadow-lg hover:shadow-glow-primary"
+                                style={{boxShadow: '0 0 25px 0 rgba(16, 185, 129, 0.45)'}}
+                            >
+                                <IconMusic className="w-7 h-7 mr-3" />
+                                Ouça a Guia Musical
+                            </a>
+                        </div>
+                    </Animated>
                 </Section>
 
                 <Section id="modelo" title={content.slide6.title} icon={<IconUsers className="w-10 h-10 text-brand-primary" />}>
