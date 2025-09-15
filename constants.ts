@@ -54,15 +54,12 @@ export const content = {
     slide14: {
         title: "Um Chamado Respeitoso",
         paragraph1: "Não pedimos apenas sua participação - pedimos que considere fazer parte de algo maior que todos nós. Esta é uma oportunidade de usar seu talento para uma causa que precisa urgentemente de vozes poderosas.",
-        offerTitle: "O Que Oferecemos:",
-        offers: [
-            "Projeto sério, bem estruturado e com propósito genuíno",
-            "Equipe comprometida com excelência artística e impacto social",
-            "Transparência total sobre objetivos e destinação dos recursos",
-            "Respeito total pela sua agenda e processo criativo",
-        ],
         expectTitle: "O Que Esperamos:",
-        expectation: "Apenas que considere emprestar sua voz aos que não podem falar por si mesmos. A decisão é sua, mas a oportunidade histórica é nossa - de todos nós.",
+        expectation: [
+            { icon: 'IconMegaphone', text: "Que considere emprestar sua voz aos que não podem falar por si mesmos." },
+            { icon: 'IconHeart', text: "A decisão é sua, com total liberdade e respeito ao seu processo criativo." },
+            { icon: 'IconUsers', text: "Que se junte a nós para criar uma oportunidade histórica para todos." },
+        ]
     },
     slide15: {
         title: "O Convite",

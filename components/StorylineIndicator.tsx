@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { 
     IconPaw, 
@@ -6,20 +5,18 @@ import {
     IconHeart, 
     IconMegaphone, 
     IconFeather, 
-    IconWhatsApp,
     IconHome,
     IconGlobe
 } from './Icons';
 
 const storylineItems = [
     { href: '#home', icon: IconHome },
-    { href: '#reflexao', icon: IconPaw },
     { href: '#musica', icon: IconMusic },
+    { href: '#reflexao', icon: IconPaw },
     { href: '#o-convite', icon: IconMegaphone },
-    { href: '#inspiracao', icon: IconHeart },
     { href: '#forca-da-musica', icon: IconGlobe },
+    { href: '#inspiracao', icon: IconHeart },
     { href: '#cronologia', icon: IconFeather },
-    { href: '#contato', icon: IconWhatsApp },
 ];
 
 export const StorylineIndicator: React.FC = () => {

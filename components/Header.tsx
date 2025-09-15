@@ -1,4 +1,3 @@
-
 import React, { useState, useEffect } from 'react';
 import { 
     IconPaw, 
@@ -6,20 +5,18 @@ import {
     IconHeart, 
     IconMegaphone, 
     IconFeather, 
-    IconWhatsApp,
     IconHome,
     IconGlobe
 } from './Icons';
 
 const navItems = [
     { href: '#home', label: 'Início', icon: IconHome },
-    { href: '#reflexao', label: 'A Causa', icon: IconPaw },
     { href: '#musica', label: 'A Música', icon: IconMusic },
+    { href: '#reflexao', label: 'A Causa', icon: IconPaw },
     { href: '#o-convite', label: 'Junte-se a Nós', icon: IconMegaphone },
-    { href: '#inspiracao', label: 'Inspiração', icon: IconHeart },
     { href: '#forca-da-musica', label: 'Estratégia', icon: IconGlobe },
+    { href: '#inspiracao', label: 'Inspiração', icon: IconHeart },
     { href: '#cronologia', label: 'História', icon: IconFeather },
-    { href: '#contato', label: 'Contato', icon: IconWhatsApp },
 ];
 
 export const Header: React.FC = () => {

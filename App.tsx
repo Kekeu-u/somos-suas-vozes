@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
@@ -10,7 +9,7 @@ import { content } from './constants';
 import { StorylineIndicator } from './components/StorylineIndicator';
 import { 
     IconPaw, IconMusic, IconUsers, IconHeart, IconMegaphone, IconFeather, 
-    IconWhatsApp, IconShield, IconGlobe, IconGift, IconEye, IconTrendingUp, 
+    IconShield, IconGlobe, IconGift, IconEye, IconTrendingUp, 
     IconShieldCheck, IconCheckCircle, IconQuoteOpen, IconQuoteClose
 } from './components/Icons';
 
@@ -104,24 +103,21 @@ const App: React.FC = () => {
                     <Animated>
                         <p className="text-2xl leading-relaxed mb-6 text-center">{content.slide14.paragraph1}</p>
                     </Animated>
-                    <div className="grid md:grid-cols-2 gap-8 mt-10">
+                    <div className="mt-10 max-w-2xl mx-auto">
                         <Animated delay={200}>
                             <div className="bg-brand-surface border border-brand-secondary/20 p-8 rounded-xl h-full transition-all duration-500 hover:shadow-glow-primary hover:-translate-y-1 transform hover:border-brand-primary/50">
-                                 <h3 className="text-3xl font-semibold font-serif text-brand-text mb-6">{content.slide14.offerTitle}</h3>
-                                 <ul className="space-y-4 text-xl">
-                                    {content.slide14.offers.map((offer, i) => (
-                                        <li key={i} className="flex items-start">
-                                            <IconCheckCircle className="w-7 h-7 text-brand-secondary mr-3 mt-1 flex-shrink-0" />
-                                            <span>{offer}</span>
-                                        </li>
-                                    ))}
+                                <h3 className="text-3xl font-semibold font-serif text-brand-text mb-6 text-center">{content.slide14.expectTitle}</h3>
+                                <ul className="space-y-6">
+                                    {content.slide14.expectation.map((item, i) => {
+                                        const ExpectIcon = iconMap[item.icon];
+                                        return (
+                                            <li key={i} className="flex items-start text-xl">
+                                                <ExpectIcon className="w-8 h-8 text-brand-secondary mr-4 mt-1 flex-shrink-0" />
+                                                <span>{item.text}</span>
+                                            </li>
+                                        )
+                                    })}
                                 </ul>
-                            </div>
-                        </Animated>
-                        <Animated delay={350}>
-                            <div className="bg-brand-surface border border-brand-secondary/20 p-8 rounded-xl h-full transition-all duration-500 hover:shadow-glow-primary hover:-translate-y-1 transform hover:border-brand-primary/50">
-                                 <h3 className="text-3xl font-semibold font-serif text-brand-text mb-6">{content.slide14.expectTitle}</h3>
-                                 <p className="text-xl leading-relaxed">{content.slide14.expectation}</p>
                             </div>
                         </Animated>
                     </div>
@@ -241,26 +237,6 @@ const App: React.FC = () => {
                 </Section>
                 
                 <Timeline />
-
-                {/* ENCERRAMENTO */}
-                <Section id="contato" title="Entre em Contato" icon={<IconWhatsApp className="w-10 h-10 text-brand-primary" />}>
-                    <Animated>
-                        <div className="text-center max-w-2xl mx-auto">
-                            <p className="text-2xl leading-relaxed mb-8">
-                                Tem alguma dúvida, sugestão ou quer saber mais sobre como se envolver no projeto? Fale conosco diretamente. Estamos ansiosos para ouvir você!
-                            </p>
-                            <a 
-                                href="https://wa.link/9vbbf7"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="inline-flex items-center justify-center bg-brand-primary text-brand-background font-bold text-xl py-4 px-10 rounded-full hover:bg-opacity-90 transition-all duration-300 transform hover:scale-105 active:scale-95 shadow-lg hover:shadow-glow-primary"
-                            >
-                                <IconWhatsApp className="w-7 h-7 mr-3" />
-                                Fale Conosco no WhatsApp
-                            </a>
-                        </div>
-                    </Animated>
-                </Section>
             </main>
             <Footer />
         </div>
