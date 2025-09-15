@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { 
     IconPaw, 
@@ -13,10 +14,10 @@ import {
 const storylineItems = [
     { href: '#home', icon: IconHome },
     { href: '#reflexao', icon: IconPaw },
+    { href: '#o-convite', icon: IconMegaphone },
     { href: '#forca-da-musica', icon: IconMusic },
-    { href: '#cronologia', icon: IconFeather },
     { href: '#inspiracao', icon: IconHeart },
-    { href: '#o-convite-final', icon: IconMegaphone },
+    { href: '#cronologia', icon: IconFeather },
     { href: '#contato', icon: IconWhatsApp },
 ];
 

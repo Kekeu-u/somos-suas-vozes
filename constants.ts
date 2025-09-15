@@ -65,7 +65,7 @@ export const content = {
         expectation: "Apenas que considere emprestar sua voz aos que não podem falar por si mesmos. A decisão é sua, mas a oportunidade histórica é nossa - de todos nós.",
     },
     slide15: {
-        title: "O Convite Final",
+        title: "O Convite",
         quote: 'Todas as criaturas são nossos irmãos e irmãs',
         quoteAuthor: 'São Francisco de Assis',
         paragraph1: "Heinrich Zimmermann plantou uma semente em 1925. Cem anos depois, podemos colher os frutos dessa semente através da música. São Francisco de Assis pregou há 800 anos sobre compaixão pelos animais. Sua mensagem chegou até nós para ser transformada em melodia.",

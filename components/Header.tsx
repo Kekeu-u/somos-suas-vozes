@@ -1,3 +1,4 @@
+
 import React, { useState, useEffect } from 'react';
 import { 
     IconPaw, 
@@ -12,10 +13,10 @@ import {
 const navItems = [
     { href: '#home', label: 'Início', icon: IconHome },
     { href: '#reflexao', label: 'A Causa', icon: IconPaw },
+    { href: '#o-convite', label: 'Junte-se a Nós', icon: IconMegaphone },
     { href: '#forca-da-musica', label: 'A Força da Música', icon: IconMusic },
-    { href: '#cronologia', label: 'História', icon: IconFeather },
     { href: '#inspiracao', label: 'Inspiração', icon: IconHeart },
-    { href: '#o-convite-final', label: 'Junte-se a Nós', icon: IconMegaphone },
+    { href: '#cronologia', label: 'História', icon: IconFeather },
     { href: '#contato', label: 'Contato', icon: IconWhatsApp },
 ];
 
