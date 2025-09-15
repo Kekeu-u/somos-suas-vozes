@@ -37,6 +37,33 @@ const App: React.FC = () => {
             <StorylineIndicator />
             <main>
                 <Hero />
+
+                <Section 
+                    id="musica" 
+                    title="Ouça o Chamado" 
+                    icon={<IconMusic className="w-10 h-10 text-brand-primary" />}
+                >
+                    <Animated>
+                        <p className="text-2xl leading-relaxed mb-12 text-center max-w-3xl mx-auto">
+                            Esta é a essência sonora do nosso movimento. Uma guia musical que representa a alma do projeto. Dê o play e sinta a força da nossa mensagem.
+                        </p>
+                    </Animated>
+                    <Animated delay={200}>
+                         <div className="max-w-2xl mx-auto bg-brand-surface/80 p-4 rounded-xl border border-brand-secondary/20 shadow-lg backdrop-blur-lg transition-all duration-500 hover:shadow-glow-primary hover:-translate-y-2 transform hover:border-brand-primary/50">
+                            <iframe 
+                                width="100%" 
+                                height="166" 
+                                scrolling="no" 
+                                frameBorder="no" 
+                                allow="autoplay" 
+                                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/2170987776%3Fsecret_token%3Ds-r9ZYzXCIu78&color=%23858856&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true">
+                            </iframe>
+                            <div style={{fontSize: '10px', color: '#cccccc', lineHeight: 'normal', wordBreak: 'normal', overflow: 'hidden', whiteSpace: 'nowrap', textOverflow: 'ellipsis', fontFamily: 'Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif', fontWeight: 100}}>
+                                <a href="https://soundcloud.com/somos-suas-vozes" title="Somos suas vozes" target="_blank" rel="noopener noreferrer" style={{color: '#cccccc', textDecoration: 'none'}}>Somos suas vozes</a> · <a href="https://soundcloud.com/somos-suas-vozes/somos-suas-vozes-guia-v7/s-r9ZYzXCIu78" title="Somos suas vozes-Guia-V7" target="_blank" rel="noopener noreferrer" style={{color: '#cccccc', textDecoration: 'none'}}>Somos suas vozes-Guia-V7</a>
+                            </div>
+                        </div>
+                    </Animated>
+                </Section>
                 
                 {/* PARTE 1: A Realidade Urgente */}
                 <Section 
@@ -102,7 +129,7 @@ const App: React.FC = () => {
                  <Section id="o-convite" title={content.slide15.title} icon={<IconFeather className="w-10 h-10 text-brand-primary" />}>
                     <Animated>
                         <div className="relative bg-brand-surface p-8 md:p-12 rounded-xl border border-brand-primary/20 mb-10 overflow-hidden transition-all duration-500 hover:shadow-glow-primary hover:border-brand-primary/50">
-                            <IconQuoteOpen className="w-12 h-12 text-brand-primary/20 absolute top-4 left-4" />
+                            <IconQuoteOpen className="w-6 h-6 md:w-10 md:h-10 text-brand-primary/20 absolute top-2 left-2" />
                             <blockquote className="text-center relative z-10">
                                 <p className="text-3xl md:text-4xl italic font-serif text-brand-text/90 leading-snug">
                                     {content.slide15.quote}
@@ -111,7 +138,7 @@ const App: React.FC = () => {
                                     - {content.slide15.quoteAuthor}
                                 </footer>
                             </blockquote>
-                            <IconQuoteClose className="w-12 h-12 text-brand-primary/20 absolute bottom-4 right-4" />
+                            <IconQuoteClose className="w-6 h-6 md:w-10 md:h-10 text-brand-primary/20 absolute bottom-2 right-2" />
                         </div>
                     </Animated>
                     <Animated delay={200}>
@@ -129,7 +156,7 @@ const App: React.FC = () => {
                 <Section 
                     id="forca-da-musica" 
                     title={content.slide2.title} 
-                    icon={<IconMusic className="w-10 h-10 text-brand-primary" />}
+                    icon={<IconGlobe className="w-10 h-10 text-brand-primary" />}
                     bgImageUrl="https://images.unsplash.com/photo-1507838153414-b4b713384a76?q=80&w=1920&auto=format&fit=crop"
                 >
                      <Animated>
@@ -152,24 +179,6 @@ const App: React.FC = () => {
                      <Animated delay={500}>
                         <p className="mt-10 text-center italic text-2xl font-serif">{content.slide2.conclusion}</p>
                      </Animated>
-                     <Animated delay={600}>
-                        <div className="text-center mt-12">
-                            <p className="text-2xl leading-relaxed mb-8 text-brand-text-secondary">Quer ter uma ideia da nossa direção musical? Preparamos uma guia para você.</p>
-                            <div className="max-w-xl mx-auto bg-brand-surface/50 p-4 rounded-xl border border-brand-secondary/20 shadow-lg backdrop-blur-lg">
-                                <iframe 
-                                    width="100%" 
-                                    height="166" 
-                                    scrolling="no" 
-                                    frameBorder="no" 
-                                    allow="autoplay" 
-                                    src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/2170987776%3Fsecret_token%3Ds-r9ZYzXCIu78&color=%23858856&auto_play=false&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true">
-                                </iframe>
-                                <div style={{fontSize: '10px', color: '#cccccc', lineHeight: 'normal', wordBreak: 'normal', overflow: 'hidden', whiteSpace: 'nowrap', textOverflow: 'ellipsis', fontFamily: 'Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif', fontWeight: 100}}>
-                                    <a href="https://soundcloud.com/somos-suas-vozes" title="Somos suas vozes" target="_blank" rel="noopener noreferrer" style={{color: '#cccccc', textDecoration: 'none'}}>Somos suas vozes</a> · <a href="https://soundcloud.com/somos-suas-vozes/somos-suas-vozes-guia-v7/s-r9ZYzXCIu78" title="Somos suas vozes-Guia-V7" target="_blank" rel="noopener noreferrer" style={{color: '#cccccc', textDecoration: 'none'}}>Somos suas vozes-Guia-V7</a>
-                                </div>
-                            </div>
-                        </div>
-                    </Animated>
                 </Section>
 
                 <Section id="modelo" title={content.slide6.title} icon={<IconUsers className="w-10 h-10 text-brand-primary" />}>

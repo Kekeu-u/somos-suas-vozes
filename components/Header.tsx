@@ -7,15 +7,17 @@ import {
     IconMegaphone, 
     IconFeather, 
     IconWhatsApp,
-    IconHome
+    IconHome,
+    IconGlobe
 } from './Icons';
 
 const navItems = [
     { href: '#home', label: 'Início', icon: IconHome },
     { href: '#reflexao', label: 'A Causa', icon: IconPaw },
+    { href: '#musica', label: 'A Música', icon: IconMusic },
     { href: '#o-convite', label: 'Junte-se a Nós', icon: IconMegaphone },
-    { href: '#forca-da-musica', label: 'A Força da Música', icon: IconMusic },
     { href: '#inspiracao', label: 'Inspiração', icon: IconHeart },
+    { href: '#forca-da-musica', label: 'Estratégia', icon: IconGlobe },
     { href: '#cronologia', label: 'História', icon: IconFeather },
     { href: '#contato', label: 'Contato', icon: IconWhatsApp },
 ];

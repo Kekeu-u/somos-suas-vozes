@@ -7,16 +7,17 @@ import {
     IconMegaphone, 
     IconFeather, 
     IconWhatsApp,
-    IconHome
+    IconHome,
+    IconGlobe
 } from './Icons';
 
-// This list should ideally be shared with Header, but for simplicity it's duplicated here.
 const storylineItems = [
     { href: '#home', icon: IconHome },
     { href: '#reflexao', icon: IconPaw },
+    { href: '#musica', icon: IconMusic },
     { href: '#o-convite', icon: IconMegaphone },
-    { href: '#forca-da-musica', icon: IconMusic },
     { href: '#inspiracao', icon: IconHeart },
+    { href: '#forca-da-musica', icon: IconGlobe },
     { href: '#cronologia', icon: IconFeather },
     { href: '#contato', icon: IconWhatsApp },
 ];
