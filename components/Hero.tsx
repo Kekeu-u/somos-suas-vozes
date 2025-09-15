@@ -26,7 +26,7 @@ export const Hero: React.FC = () => {
                     Somos Suas Vozes
                 </h1>
                 <p className={`${baseTransition} delay-200 ${isLoaded ? loadedState : initialSate} text-3xl md:text-4xl font-light mb-2 text-brand-primary font-serif italic`}>
-                    We Are Their Voices
+                    We are your voices
                 </p>
                 <p className={`${baseTransition} delay-300 ${isLoaded ? loadedState : initialSate} text-2xl md:text-3xl max-w-2xl mx-auto drop-shadow-md mb-8`}>
                     Um Projeto Musical em Defesa dos Animais
