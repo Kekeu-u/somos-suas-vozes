@@ -20,7 +20,7 @@ export const Section: React.FC<SectionProps> = ({ id, title, icon, children, bgI
                         aria-hidden="true"
                     ></div>
                     <div 
-                        className="absolute inset-0 bg-gradient-to-t from-brand-background via-brand-background/80 to-brand-background/70 backdrop-blur-sm z-0" 
+                        className="absolute inset-0 bg-gradient-to-t from-brand-background via-brand-background/80 to-brand-background/70 z-0" 
                         aria-hidden="true"
                     ></div>
                 </>

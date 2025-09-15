@@ -56,7 +56,7 @@ const App: React.FC = () => {
                                     const StatIcon = iconMap[stat.icon];
                                     return (
                                         <Animated key={index} delay={index * 150}>
-                                             <div className="bg-brand-surface/80 backdrop-blur-sm border border-brand-secondary/20 p-8 rounded-xl shadow-lg text-center h-full transition-all duration-500 hover:shadow-glow-primary hover:-translate-y-2 transform hover:border-brand-primary/50">
+                                             <div className="bg-brand-surface/80 backdrop-blur-lg border border-brand-secondary/20 p-8 rounded-xl shadow-lg text-center h-full transition-all duration-500 hover:shadow-glow-primary hover:-translate-y-2 transform hover:border-brand-primary/50">
                                                 <StatIcon className="w-12 h-12 mx-auto text-brand-primary mb-4" />
                                                 <p className="text-5xl font-bold text-brand-text leading-none">{stat.value}</p>
                                                 <p className="text-xl text-brand-text-secondary mt-2">{stat.description}</p>
@@ -140,7 +140,7 @@ const App: React.FC = () => {
                             const ExampleIcon = iconMap[ex.icon];
                             return (
                                 <Animated key={index} delay={index * 150}>
-                                    <div className="bg-brand-surface/80 backdrop-blur-sm border border-brand-secondary/20 p-6 rounded-xl text-center h-full transition-all duration-500 hover:shadow-glow-primary hover:-translate-y-2 transform hover:border-brand-primary/50">
+                                    <div className="bg-brand-surface/80 backdrop-blur-lg border border-brand-secondary/20 p-6 rounded-xl text-center h-full transition-all duration-500 hover:shadow-glow-primary hover:-translate-y-2 transform hover:border-brand-primary/50">
                                         <ExampleIcon className="w-10 h-10 mx-auto text-brand-primary mb-4"/>
                                         <h4 className="font-bold text-brand-text text-2xl mb-1">{ex.title}</h4>
                                         <p className="text-xl text-brand-text-secondary">{ex.description}</p>
@@ -155,7 +155,7 @@ const App: React.FC = () => {
                      <Animated delay={600}>
                         <div className="text-center mt-12">
                             <p className="text-2xl leading-relaxed mb-8 text-brand-text-secondary">Quer ter uma ideia da nossa direção musical? Preparamos uma guia para você.</p>
-                            <div className="max-w-xl mx-auto bg-brand-surface/50 p-4 rounded-xl border border-brand-secondary/20 shadow-lg backdrop-blur-sm">
+                            <div className="max-w-xl mx-auto bg-brand-surface/50 p-4 rounded-xl border border-brand-secondary/20 shadow-lg backdrop-blur-lg">
                                 <iframe 
                                     width="100%" 
                                     height="166" 
@@ -209,7 +209,7 @@ const App: React.FC = () => {
                         <p className="text-2xl leading-relaxed mb-8 text-center">{content.slide5.paragraph1}</p>
                     </Animated>
                     <Animated delay={200}>
-                        <div className="bg-brand-surface/80 backdrop-blur-sm border border-brand-secondary/20 p-8 rounded-xl shadow-lg transition-all duration-500 hover:shadow-glow-primary hover:-translate-y-1 transform hover:border-brand-primary/50">
+                        <div className="bg-brand-surface/80 backdrop-blur-lg border border-brand-secondary/20 p-8 rounded-xl shadow-lg transition-all duration-500 hover:shadow-glow-primary hover:-translate-y-1 transform hover:border-brand-primary/50">
                             <h3 className="text-3xl font-semibold font-serif text-brand-text mb-6 text-center">{content.slide5.subheading}</h3>
                             <div className="grid md:grid-cols-2 gap-x-8 gap-y-4 mt-6">
                                 {content.slide5.motivationPoints.map((point, i) => {
