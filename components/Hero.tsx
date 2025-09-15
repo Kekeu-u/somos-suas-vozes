@@ -7,11 +7,6 @@ export const Hero: React.FC = () => {
         // Trigger animations after component mounts
         setIsLoaded(true);
     }, []);
-
-    const handleCTAClick = (e: React.MouseEvent<HTMLAnchorElement>) => {
-        e.preventDefault();
-        document.querySelector('#convite')?.scrollIntoView({ behavior: 'smooth' });
-    };
     
     const baseTransition = "transition-all duration-700 ease-out-quint";
     const loadedState = "opacity-100 translate-y-0";
@@ -31,15 +26,8 @@ export const Hero: React.FC = () => {
                 <p className={`${baseTransition} delay-300 ${isLoaded ? loadedState : initialSate} text-2xl md:text-3xl max-w-2xl mx-auto drop-shadow-md mb-8`}>
                     Um Projeto Musical em Defesa dos Animais
                 </p>
-                <a 
-                    href="#convite"
-                    onClick={handleCTAClick}
-                    className={`${baseTransition} delay-500 ${isLoaded ? loadedState : initialSate} inline-block bg-brand-primary text-brand-background font-bold text-xl py-4 px-10 rounded-full hover:bg-opacity-90 transition-all duration-300 transform hover:scale-105 active:scale-95 shadow-lg hover:shadow-glow-primary`}
-                >
-                    Faça Parte
-                </a>
             </div>
-            <div className={`absolute bottom-10 left-0 right-0 flex justify-center animate-float ${baseTransition} delay-700 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>
+            <div className={`absolute bottom-10 left-0 right-0 flex justify-center animate-float ${baseTransition} delay-500 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}>
                 <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
             </div>
         </section>
