@@ -155,7 +155,7 @@ const App: React.FC = () => {
                         <div className="text-center mt-12">
                             <p className="text-2xl leading-relaxed mb-6 text-brand-text-secondary">Quer ter uma ideia da nossa direção musical? Preparamos uma guia para você.</p>
                             <a 
-                                href="https://drive.google.com/file/d/1VGlKNGkAw4WFVHap800Vg1bFUyks8K-4/view?usp=sharing"
+                                href="https://drive.google.com/file/d/1lQw6hKPIx-qaf9XAREnc27Qe9rhPoYI0/view?usp=sharing"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="inline-flex items-center justify-center bg-brand-secondary text-white font-bold text-xl py-4 px-10 rounded-full hover:bg-opacity-90 transition-all duration-300 transform hover:scale-105 active:scale-95 shadow-lg hover:shadow-glow-primary"
