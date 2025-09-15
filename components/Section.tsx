@@ -11,7 +11,7 @@ interface SectionProps {
 
 export const Section: React.FC<SectionProps> = ({ id, title, icon, children, bgImageUrl }) => {
     return (
-        <section id={id} className="relative py-24 md:py-32 overflow-hidden">
+        <section id={id} className="relative py-20 md:py-24 overflow-hidden">
              {bgImageUrl && (
                 <>
                     <div 
@@ -25,7 +25,7 @@ export const Section: React.FC<SectionProps> = ({ id, title, icon, children, bgI
                     ></div>
                 </>
             )}
-            <div className="relative z-10 container mx-auto px-6 max-w-4xl">
+            <div className="relative z-10 container mx-auto px-6 max-w-6xl">
                 <div className="text-center mb-16">
                     {icon && <div className="flex justify-center mb-4">{icon}</div>}
                     <h2 className="text-5xl md:text-6xl font-bold font-serif text-brand-text drop-shadow-md">{title}</h2>

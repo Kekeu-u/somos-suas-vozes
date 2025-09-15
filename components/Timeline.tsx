@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { IconPaw, IconFeather } from './Icons';
 import { Animated } from './Animated';
@@ -43,8 +44,8 @@ const TimelineItem: React.FC<{ year: string; title: string; description: string;
 
 export const Timeline: React.FC = () => {
     return (
-        <section id="cronologia" className="py-24 md:py-32 bg-brand-surface overflow-hidden">
-            <div className="container mx-auto px-6 max-w-4xl">
+        <section id="cronologia" className="py-20 md:py-24 bg-brand-surface overflow-hidden">
+            <div className="container mx-auto px-6 max-w-6xl">
                  <Animated>
                     <div className="text-center mb-16">
                         <div className="flex justify-center mb-4"><IconFeather className="w-10 h-10 text-brand-primary"/></div>
@@ -54,7 +55,7 @@ export const Timeline: React.FC = () => {
                     </div>
                  </Animated>
 
-                <div className="max-w-2xl mx-auto">
+                <div className="max-w-4xl mx-auto">
                     {timelineEvents.map((event, index) => (
                         <Animated key={index} delay={index * 200}>
                             <TimelineItem 
@@ -67,9 +68,11 @@ export const Timeline: React.FC = () => {
                     ))}
                 </div>
                  <Animated delay={timelineEvents.length * 200}>
-                    <div className="mt-8 text-center p-8 border-2 border-transparent rounded-xl bg-brand-background transition-all duration-500 hover:shadow-glow-primary hover:-translate-y-2 transform" style={{borderImage: 'linear-gradient(to bottom right, #FFC72C, #10B981) 1'}}>
-                        <h3 className="text-4xl font-serif text-brand-text mb-3">São Francisco de Assis - O Padroeiro</h3>
-                        <p className="text-2xl leading-relaxed">A escolha de 4 de outubro conecta nosso projeto a uma tradição de 800 anos de proteção animal, o dia de São Francisco, que pregou: "Todas as criaturas são nossos irmãos e irmãs".</p>
+                    <div className="mt-16 max-w-4xl mx-auto rounded-2xl p-0.5 bg-gradient-to-br from-brand-primary to-brand-secondary transition-all duration-500 hover:shadow-glow-primary hover:-translate-y-2 transform">
+                        <div className="bg-brand-background rounded-[14px] p-10 text-center h-full w-full">
+                            <h3 className="text-4xl font-serif text-brand-text mb-3">São Francisco de Assis - O Padroeiro</h3>
+                            <p className="text-2xl leading-relaxed">A escolha de 4 de outubro conecta nosso projeto a uma tradição de proteção animal que, no próximo ano, completará 800 anos: o dia de São Francisco, que pregou: "Todas as criaturas são nossos irmãos e irmãs".</p>
+                        </div>
                     </div>
                  </Animated>
             </div>

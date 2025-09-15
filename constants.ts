@@ -29,7 +29,7 @@ export const content = {
     },
     slide5: {
         title: "A Inspiração Por Trás do Projeto",
-        paragraph1: "André Amorim, Idealizador do projeto, vendo sua mãe e irmã dedicarem suas vidas ao resgate de animais abandonados o inspirou a criar algo maior - uma homenagem musical que elas ainda não conhecem.",
+        paragraph1: "Origem pessoal: tudo começou como uma homenagem à minha irmã e à minha mãe, pela luta diária na causa animal. Vendo-as dedicarem suas vidas ao resgate, André Amorim, idealizador do projeto, sentiu-se inspirado a criar algo maior – uma homenagem musical que elas ainda não conhecem.",
         subheading: "A Motivação Pessoal",
         motivationPoints: [
             { icon: 'IconEye', text: "Testemunha diária do trabalho de proteção animal" },

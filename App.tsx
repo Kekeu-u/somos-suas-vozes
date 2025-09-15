@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
@@ -43,12 +44,12 @@ const App: React.FC = () => {
                     icon={<IconMusic className="w-10 h-10 text-brand-primary" />}
                 >
                     <Animated>
-                        <p className="text-2xl leading-relaxed mb-12 text-center max-w-3xl mx-auto">
+                        <p className="text-2xl leading-relaxed mb-12 text-center max-w-6xl mx-auto">
                             Esta é a essência sonora do nosso movimento. Uma guia musical que representa a alma do projeto. Dê o play e sinta a força da nossa mensagem.
                         </p>
                     </Animated>
                     <Animated delay={200}>
-                         <div className="max-w-2xl mx-auto bg-brand-surface/80 p-4 rounded-xl border border-brand-secondary/20 shadow-lg backdrop-blur-lg transition-all duration-500 hover:shadow-glow-primary hover:-translate-y-2 transform hover:border-brand-primary/50">
+                         <div className="max-w-4xl mx-auto bg-brand-surface/80 p-4 rounded-xl border border-brand-secondary/20 shadow-lg backdrop-blur-lg transition-all duration-500 hover:shadow-glow-primary hover:-translate-y-2 transform hover:border-brand-primary/50">
                             <iframe 
                                 width="100%" 
                                 height="166" 
@@ -72,12 +73,12 @@ const App: React.FC = () => {
                     bgImageUrl="https://images.unsplash.com/photo-1583511655826-0ab469152a48?q=80&w=1920&auto=format&fit=crop"
                 >
                     <Animated>
-                        <p className="text-2xl leading-relaxed mb-12 text-center max-w-3xl mx-auto">{content.slide1.paragraph1}</p>
+                        <p className="text-2xl leading-relaxed mb-12 text-center max-w-6xl mx-auto">{content.slide1.paragraph1}</p>
                     </Animated>
                     <Animated delay={200}>
                         <div className="text-center mb-12">
                              <h3 className="text-4xl font-semibold font-serif text-brand-text mb-8">{content.slide1.subheading}</h3>
-                             <div className="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto">
+                             <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
                                 {content.slide1.stats.map((stat, index) => {
                                     const StatIcon = iconMap[stat.icon];
                                     return (
@@ -101,11 +102,11 @@ const App: React.FC = () => {
                 {/* PARTE 2: O Chamado à Ação */}
                 <Section id="convite" title={content.slide14.title} icon={<IconMegaphone className="w-10 h-10 text-brand-primary" />}>
                     <Animated>
-                        <p className="text-2xl leading-relaxed mb-6 text-center">{content.slide14.paragraph1}</p>
+                        <p className="text-2xl leading-relaxed mb-6 text-center max-w-6xl mx-auto">{content.slide14.paragraph1}</p>
                     </Animated>
-                    <div className="mt-10 max-w-2xl mx-auto">
+                    <div className="mt-10 max-w-4xl mx-auto">
                         <Animated delay={200}>
-                            <div className="bg-brand-surface border border-brand-secondary/20 p-8 rounded-xl h-full transition-all duration-500 hover:shadow-glow-primary hover:-translate-y-1 transform hover:border-brand-primary/50">
+                            <div className="bg-brand-surface border border-brand-secondary/20 p-8 rounded-xl transition-all duration-500 hover:shadow-glow-primary hover:-translate-y-1 transform hover:border-brand-primary/50">
                                 <h3 className="text-3xl font-semibold font-serif text-brand-text mb-6 text-center">{content.slide14.expectTitle}</h3>
                                 <ul className="space-y-6">
                                     {content.slide14.expectation.map((item, i) => {
@@ -124,7 +125,7 @@ const App: React.FC = () => {
                 </Section>
                  <Section id="o-convite" title={content.slide15.title} icon={<IconFeather className="w-10 h-10 text-brand-primary" />}>
                     <Animated>
-                        <div className="relative bg-brand-surface p-8 md:p-12 rounded-xl border border-brand-primary/20 mb-10 overflow-hidden transition-all duration-500 hover:shadow-glow-primary hover:border-brand-primary/50">
+                        <div className="relative bg-brand-surface p-8 md:p-12 rounded-xl border border-brand-primary/20 mb-10 overflow-hidden transition-all duration-500 hover:shadow-glow-primary hover:border-brand-primary/50 max-w-6xl mx-auto">
                             <IconQuoteOpen className="w-6 h-6 md:w-10 md:h-10 text-brand-primary/20 absolute top-2 left-2" />
                             <blockquote className="text-center relative z-10">
                                 <p className="text-3xl md:text-4xl italic font-serif text-brand-text/90 leading-snug">
@@ -138,13 +139,13 @@ const App: React.FC = () => {
                         </div>
                     </Animated>
                     <Animated delay={200}>
-                        <p className="text-2xl leading-relaxed mb-6">{content.slide15.paragraph1}</p>
+                        <p className="text-2xl leading-relaxed mb-6 max-w-6xl mx-auto">{content.slide15.paragraph1}</p>
                     </Animated>
                     <Animated delay={300}>
-                        <p className="text-2xl font-semibold text-brand-primary mb-6">{content.slide15.invitation}</p>
+                        <p className="text-2xl font-semibold text-brand-primary mb-6 max-w-6xl mx-auto">{content.slide15.invitation}</p>
                     </Animated>
                     <Animated delay={400}>
-                        <p className="text-2xl leading-relaxed">{content.slide15.promise}</p>
+                        <p className="text-2xl leading-relaxed max-w-6xl mx-auto">{content.slide15.promise}</p>
                     </Animated>
                 </Section>
 
@@ -156,9 +157,9 @@ const App: React.FC = () => {
                     bgImageUrl="https://images.unsplash.com/photo-1507838153414-b4b713384a76?q=80&w=1920&auto=format&fit=crop"
                 >
                      <Animated>
-                        <p className="text-2xl leading-relaxed mb-10 text-center">{content.slide2.paragraph1}</p>
+                        <p className="text-2xl leading-relaxed mb-10 text-center max-w-6xl mx-auto">{content.slide2.paragraph1}</p>
                      </Animated>
-                     <div className="grid md:grid-cols-3 gap-6">
+                     <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
                         {content.slide2.examples.map((ex, index) => {
                             const ExampleIcon = iconMap[ex.icon];
                             return (
@@ -173,16 +174,16 @@ const App: React.FC = () => {
                         })}
                      </div>
                      <Animated delay={500}>
-                        <p className="mt-10 text-center italic text-2xl font-serif">{content.slide2.conclusion}</p>
+                        <p className="mt-10 text-center italic text-2xl font-serif max-w-6xl mx-auto">{content.slide2.conclusion}</p>
                      </Animated>
                 </Section>
 
                 <Section id="modelo" title={content.slide6.title} icon={<IconUsers className="w-10 h-10 text-brand-primary" />}>
                     <Animated>
-                        <p className="text-2xl leading-relaxed mb-8 text-center">{content.slide6.paragraph1}</p>
+                        <p className="text-2xl leading-relaxed mb-8 text-center max-w-6xl mx-auto">{content.slide6.paragraph1}</p>
                     </Animated>
                     <Animated delay={200}>
-                        <div className="bg-brand-surface border border-brand-secondary/20 p-8 rounded-xl shadow-lg transition-all duration-500 hover:shadow-glow-primary hover:-translate-y-1 transform hover:border-brand-primary/50">
+                        <div className="bg-brand-surface border border-brand-secondary/20 p-8 rounded-xl shadow-lg transition-all duration-500 hover:shadow-glow-primary hover:-translate-y-1 transform hover:border-brand-primary/50 max-w-6xl mx-auto">
                             <h3 className="text-3xl font-semibold font-serif text-brand-text mb-6 text-center">{content.slide6.subheading}</h3>
                              <div className="grid md:grid-cols-2 gap-x-8 gap-y-4 mt-6">
                                 {content.slide6.points.map((point, i) => {
@@ -200,7 +201,7 @@ const App: React.FC = () => {
                         </div>
                     </Animated>
                     <Animated delay={500}>
-                        <p className="italic text-brand-text/90 font-semibold text-2xl mt-8 text-center">{content.slide6.conclusion}</p>
+                        <p className="italic text-brand-text/90 font-semibold text-2xl mt-8 text-center max-w-6xl mx-auto">{content.slide6.conclusion}</p>
                     </Animated>
                 </Section>
 
@@ -211,10 +212,10 @@ const App: React.FC = () => {
                     bgImageUrl="https://images.unsplash.com/photo-1597561542938-1e47b3113523?q=80&w=1920&auto=format&fit=crop"
                 >
                     <Animated>
-                        <p className="text-2xl leading-relaxed mb-8 text-center">{content.slide5.paragraph1}</p>
+                        <p className="text-2xl leading-relaxed mb-8 text-center max-w-6xl mx-auto">{content.slide5.paragraph1}</p>
                     </Animated>
                     <Animated delay={200}>
-                        <div className="bg-brand-surface/80 backdrop-blur-lg border border-brand-secondary/20 p-8 rounded-xl shadow-lg transition-all duration-500 hover:shadow-glow-primary hover:-translate-y-1 transform hover:border-brand-primary/50">
+                        <div className="bg-brand-surface/80 backdrop-blur-lg border border-brand-secondary/20 p-8 rounded-xl shadow-lg transition-all duration-500 hover:shadow-glow-primary hover:-translate-y-1 transform hover:border-brand-primary/50 max-w-6xl mx-auto">
                             <h3 className="text-3xl font-semibold font-serif text-brand-text mb-6 text-center">{content.slide5.subheading}</h3>
                             <div className="grid md:grid-cols-2 gap-x-8 gap-y-4 mt-6">
                                 {content.slide5.motivationPoints.map((point, i) => {
@@ -232,7 +233,7 @@ const App: React.FC = () => {
                         </div>
                     </Animated>
                     <Animated delay={500}>
-                        <p className="italic text-brand-text/90 font-semibold text-2xl mt-8 text-center">{content.slide5.conclusion}</p>
+                        <p className="italic text-brand-text/90 font-semibold text-2xl mt-8 text-center max-w-6xl mx-auto">{content.slide5.conclusion}</p>
                     </Animated>
                 </Section>
                 
