@@ -144,14 +144,14 @@ export const IconCheckCircle: React.FC<React.SVGProps<SVGSVGElement>> = (props) 
 );
 
 export const IconQuoteOpen: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" {...props}>
-        <path d="M8 7H5l-2 4v6h6V7h-3l2-4zm8 0h-3l-2 4v6h6V7h-3l2-4z"/>
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" transform="rotate(180)" {...props}>
+        <path d="M14 17h3l2-4V7h-6v6h3l-2 4zm-8 0h3l2-4V7H5v6h3l-2 4z"/>
     </svg>
 );
 
 export const IconQuoteClose: React.FC<React.SVGProps<SVGSVGElement>> = (props) => (
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="currentColor" {...props}>
-        <path d="M6 13h3l2-4V3H5v6h3l-2 4zm8 0h3l2-4V3h-6v6h3l-2 4z"/>
+        <path d="M14 17h3l2-4V7h-6v6h3l-2 4zm-8 0h3l2-4V7H5v6h3l-2 4z"/>
     </svg>
 );
 

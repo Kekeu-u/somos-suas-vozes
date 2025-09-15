@@ -16,9 +16,24 @@
       }
 
       body {
-        /* Subtle dotted background pattern for texture */
-        background-image: radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-        background-size: 15px 15px;
+        background-color: #07090D; /* brand-background */
+
+        /* Layered background for a deep, thematic feel */
+        background-image: 
+          /* 1. Subtle Aurora/Soundwave Glows (Top Layer) */
+          radial-gradient(at 20% 10%, hsla(45, 100%, 59%, 0.07) 0px, transparent 40%), /* Gold glow */
+          radial-gradient(at 80% 90%, hsla(158, 79%, 40%, 0.08) 0px, transparent 50%), /* Emerald glow */
+          
+          /* 2. Starfield (Bottom Layer) */
+          radial-gradient(rgba(240, 242, 239, 0.04) 1px, transparent 1px);
+
+        background-size: 
+          100% 100%, /* Glows cover the viewport */
+          100% 100%,
+          15px 15px; /* Star pattern size */
+
+        background-attachment: fixed; /* Crucial for parallax effect on scroll */
+        background-repeat: no-repeat, no-repeat, repeat;
       }
       
       /* Custom Scrollbar for a cohesive look */
