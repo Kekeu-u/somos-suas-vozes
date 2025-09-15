@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
@@ -217,7 +218,7 @@ const App: React.FC = () => {
                                 Tem alguma dúvida, sugestão ou quer saber mais sobre como se envolver no projeto? Fale conosco diretamente. Estamos ansiosos para ouvir você!
                             </p>
                             <a 
-                                href="https://wa.link/ivhgav"
+                                href="https://wa.link/9vbbf7"
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="inline-flex items-center justify-center bg-brand-primary text-brand-background font-bold text-xl py-4 px-10 rounded-full hover:bg-opacity-90 transition-all duration-300 transform hover:scale-105 active:scale-95 shadow-lg hover:shadow-glow-primary"
