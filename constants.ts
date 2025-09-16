@@ -29,7 +29,23 @@ export const content = {
     },
     slide5: {
         title: "A Inspiração Por Trás do Projeto",
-        paragraph1: "Origem pessoal: tudo começou como uma homenagem à minha irmã e à minha mãe, pela luta diária na causa animal. Vendo-as dedicarem suas vidas ao resgate, André Amorim, idealizador do projeto, sentiu-se inspirado a criar algo maior – uma homenagem musical que elas ainda não conhecem.",
+        inspiration_story: [
+            {
+                icon: 'IconHeart',
+                title: 'Homenagem Pessoal',
+                description: 'Tudo começou como uma homenagem à minha irmã e à minha mãe, pela luta diária na causa animal.'
+            },
+            {
+                icon: 'IconEye',
+                title: 'Testemunho Inspirador',
+                description: 'Vendo-as dedicarem suas vidas ao resgate, André Amorim, idealizador do projeto, sentiu-se inspirado a criar algo maior.'
+            },
+            {
+                icon: 'IconGift',
+                title: 'Uma Surpresa Musical',
+                description: 'Uma homenagem musical que elas ainda não conhecem, transformando um gesto familiar em um movimento.'
+            }
+        ],
         subheading: "A Motivação Pessoal",
         motivationPoints: [
             { icon: 'IconEye', text: "Testemunha diária do trabalho de proteção animal" },
@@ -49,6 +65,10 @@ export const content = {
             { icon: 'IconGlobe', text: "Mensagem universal que transcende barreiras culturais" },
             { icon: 'IconShieldCheck', text: "Legitimidade artística que empresta credibilidade à causa" },
         ],
+        quote: {
+            original: 'Na porta do estúdio, um cartaz de Quincy Jones dizia: "Deixe seu ego na porta".',
+            adaptation: 'Aqui, diremos: "Deixe seu ego na porta e empreste sua voz a quem não pode se defender".'
+        },
         conclusion: 'Queremos criar o primeiro hino global especificamente dedicado aos direitos dos animais.',
     },
     slide14: {

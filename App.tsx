@@ -203,7 +203,23 @@ const App: React.FC = () => {
                             </div>
                         </div>
                     </Animated>
-                    <Animated delay={500}>
+                    <Animated delay={400}>
+                        <div className="mt-12 max-w-4xl mx-auto text-center relative px-8 md:px-16 py-8">
+                            <IconQuoteOpen className="w-16 h-16 text-brand-secondary/20 absolute top-0 left-0 -translate-y-2 opacity-70" />
+                            <AnimatedTypewriter
+                                text={content.slide6.quote.original}
+                                className="text-xl md:text-2xl leading-relaxed text-brand-text-secondary mb-4"
+                                staggerMs={20}
+                            />
+                            <AnimatedTypewriter
+                                text={content.slide6.quote.adaptation}
+                                className="text-2xl md:text-3xl font-semibold font-serif text-brand-primary"
+                                staggerMs={30}
+                            />
+                            <IconQuoteClose className="w-16 h-16 text-brand-secondary/20 absolute bottom-0 right-0 translate-y-2 opacity-70" />
+                        </div>
+                    </Animated>
+                    <Animated delay={600}>
                         <p className="italic text-brand-text/90 font-semibold text-2xl mt-8 text-center max-w-6xl mx-auto">{content.slide6.conclusion}</p>
                     </Animated>
                 </Section>
@@ -214,9 +230,20 @@ const App: React.FC = () => {
                     icon={<IconHeart className="w-10 h-10 text-brand-primary" />}
                     bgImageUrl="https://images.unsplash.com/photo-1597561542938-1e47b3113523?q=80&w=1920&auto=format&fit=crop"
                 >
-                    <Animated>
-                        <p className="text-2xl leading-relaxed mb-8 text-center max-w-6xl mx-auto">{content.slide5.paragraph1}</p>
-                    </Animated>
+                    <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-16">
+                        {content.slide5.inspiration_story.map((item, index) => {
+                            const CardIcon = iconMap[item.icon];
+                            return (
+                                <Animated key={index} delay={index * 150}>
+                                    <div className="bg-brand-surface/80 backdrop-blur-lg border border-brand-secondary/20 p-8 rounded-xl shadow-lg h-full transition-all duration-500 hover:shadow-glow-primary hover:-translate-y-2 transform flex flex-col items-center text-center">
+                                        <CardIcon className="w-12 h-12 text-brand-primary mb-6" />
+                                        <h4 className="text-2xl font-bold text-brand-text mb-3">{item.title}</h4>
+                                        <p className="text-xl leading-relaxed text-brand-text/90">{item.description}</p>
+                                    </div>
+                                </Animated>
+                            );
+                        })}
+                    </div>
                     <Animated delay={200}>
                         <div className="bg-brand-surface/80 backdrop-blur-lg border border-brand-secondary/20 p-8 rounded-xl shadow-lg transition-all duration-500 hover:shadow-glow-primary hover:-translate-y-1 transform hover:border-brand-primary/50 max-w-6xl mx-auto">
                             <h3 className="text-3xl font-semibold font-serif text-brand-text mb-6 text-center">{content.slide5.subheading}</h3>
