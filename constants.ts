@@ -1,7 +1,7 @@
 export const content = {
     slide1: {
         title: "Um Momento Histórico de Reflexão",
-        paragraph1: "Vivemos um momento único na história da proteção animal. Cem anos depois do primeiro movimento mundial organizado pela causa, podemos transformar uma mensagem histórica de compaixão em melodia. Em 4 de outubro de 2025, nos unimos para honrar a mensagem de São Francisco de Assis, \"Todas as criaturas são nossos irmãos e irmãs\", iniciando a jornada para a celebração de 800 anos de sua tradição em 2026.",
+        paragraph1: "Vivemos um momento único na história da proteção animal. Cem anos depois do primeiro movimento mundial organizado pela causa, podemos transformar uma mensagem histórica de compaixão em melodia.",
         subheading: "A Realidade Brasileira em Números",
         stats: [
             {

@@ -1,5 +1,4 @@
 
-
 import React from 'react';
 import { IconPaw, IconFeather } from './Icons';
 import { Animated } from './Animated';
@@ -72,7 +71,7 @@ export const Timeline: React.FC = () => {
                     <div className="mt-16 max-w-4xl mx-auto rounded-2xl p-0.5 bg-gradient-to-br from-brand-primary to-brand-secondary transition-all duration-500 hover:shadow-glow-primary hover:-translate-y-2 transform">
                         <div className="bg-brand-background rounded-[14px] p-10 text-center h-full w-full">
                             <h3 className="text-4xl font-serif text-brand-text mb-3">São Francisco de Assis – O Padroeiro</h3>
-                            <p className="text-2xl leading-relaxed">A escolha de 4 de outubro conecta nosso projeto a uma tradição de proteção animal que se aproxima de um marco histórico: em 2026, a celebração do dia de São Francisco de Assis completará 800 anos, honrando sua mensagem atemporal: "Todas as criaturas são nossos irmãos e irmãs".</p>
+                            <p className="text-2xl leading-relaxed">A escolha de 4 de outubro conecta nosso projeto a uma tradição de proteção animal que se aproxima de um marco histórico. Em 4 de outubro de 2025, nos unimos para honrar a mensagem de São Francisco de Assis, "Todas as criaturas são nossos irmãos e irmãs", iniciando a jornada para a celebração de 800 anos de sua tradição em 2026.</p>
                         </div>
                     </div>
                  </Animated>
