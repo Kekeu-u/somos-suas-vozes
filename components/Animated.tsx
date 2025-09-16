@@ -149,39 +149,56 @@ export const AnimatedTypewriter: React.FC<AnimatedTypewriterProps> = ({ text, cl
                     observer.unobserve(element);
                 }
             },
-            {
-                threshold: 0.1, // Trigger when 10% is visible
-            }
+            { threshold: 0.1 }
         );
 
         observer.observe(element);
 
         return () => {
-            if (element) {
-                observer.unobserve(element);
-            }
+            if (element) observer.unobserve(element);
         };
     }, []);
 
+    // Pre-calculate animation delays for each word and character
+    const words = text.split(' ');
+    const wordData: { word: string; startIndex: number }[] = [];
+    let currentIndex = 0;
+    words.forEach(word => {
+        wordData.push({ word, startIndex: currentIndex });
+        currentIndex += word.length + 1; // Add 1 for the space after the word
+    });
+
     return (
-        <p ref={ref} className={className}>
-            {isVisible ? text.split('').map((char, index) => (
-                <span
-                    key={index}
-                    className="animate-fade-in-up opacity-0"
-                    style={{
-                        animationDelay: `${index * staggerMs}ms`,
-                        display: 'inline-block',
-                        // Use 'pre' for spaces to prevent them from collapsing
-                        whiteSpace: char === ' ' ? 'pre' : 'normal',
-                    }}
-                >
-                    {char}
+        <p ref={ref} className={className} aria-label={text}>
+            {isVisible ? (
+                wordData.map(({ word, startIndex }, wordIdx) => (
+                    <React.Fragment key={wordIdx}>
+                        {/* Each word is wrapped in an inline-block span.
+                            This makes the word an atomic unit, preventing the browser
+                            from breaking it across multiple lines. */}
+                        <span className="inline-block">
+                            {word.split('').map((char, charIdx) => (
+                                <span
+                                    key={charIdx}
+                                    className="animate-fade-in-up opacity-0 inline-block"
+                                    style={{
+                                        animationDelay: `${(startIndex + charIdx) * staggerMs}ms`,
+                                    }}
+                                >
+                                    {char}
+                                </span>
+                            ))}
+                        </span>
+                        {/* A normal space is added after each word (except the last).
+                            This is where the browser is allowed to create a line break. */}
+                        {wordIdx < words.length - 1 ? ' ' : ''}
+                    </React.Fragment>
+                ))
+            ) : (
+                // Render text invisibly to reserve space and prevent layout shifts
+                <span className="opacity-0" aria-hidden="true">
+                    {text}
                 </span>
-            )) : (
-                // Render the full text with opacity-0 to reserve the correct
-                // layout space and prevent content shifting.
-                <span className="opacity-0">{text}</span>
             )}
         </p>
     );

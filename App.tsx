@@ -105,18 +105,18 @@ const App: React.FC = () => {
                 <Section id="convite" title={content.slide14.title} icon={<IconMegaphone className="w-10 h-10 text-brand-primary" />}>
                     <AnimatedTypewriter 
                         text={content.slide14.paragraph1} 
-                        className="text-2xl leading-relaxed mb-6 text-center max-w-6xl mx-auto"
+                        className="text-xl md:text-2xl leading-relaxed mb-12 text-center max-w-4xl mx-auto"
                     />
-                    <div className="mt-10 max-w-4xl mx-auto">
+                    <div className="mt-12 max-w-4xl mx-auto">
                         <Animated delay={200}>
-                            <div className="bg-brand-surface border border-brand-secondary/20 p-8 rounded-xl transition-all duration-500 hover:shadow-glow-primary hover:-translate-y-1 transform hover:border-brand-primary/50">
-                                <h3 className="text-3xl font-semibold font-serif text-brand-text mb-6 text-center">{content.slide14.expectTitle}</h3>
-                                <ul className="space-y-6">
+                            <div className="bg-brand-surface border border-brand-secondary/20 p-6 md:p-8 rounded-xl transition-all duration-500 hover:shadow-glow-primary hover:-translate-y-1 transform hover:border-brand-primary/50">
+                                <h3 className="text-2xl md:text-3xl font-semibold font-serif text-brand-text mb-6 text-center">{content.slide14.expectTitle}</h3>
+                                <ul className="space-y-4 md:space-y-6">
                                     {content.slide14.expectation.map((item, i) => {
                                         const ExpectIcon = iconMap[item.icon];
                                         return (
-                                            <li key={i} className="flex items-start text-xl">
-                                                <ExpectIcon className="w-8 h-8 text-brand-secondary mr-4 mt-1 flex-shrink-0" />
+                                            <li key={i} className="flex items-start text-lg md:text-xl">
+                                                <ExpectIcon className="w-7 h-7 md:w-8 md:h-8 text-brand-secondary mr-4 mt-1 flex-shrink-0" />
                                                 <span>{item.text}</span>
                                             </li>
                                         )

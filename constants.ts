@@ -1,4 +1,3 @@
-
 export const content = {
     slide1: {
         title: "Um Momento Histórico de Reflexão",
@@ -54,7 +53,7 @@ export const content = {
     },
     slide14: {
         title: "Um Chamado Respeitoso",
-        paragraph1: "Não pedimos apenas sua participação - pedimos que considere fazer parte de algo maior que todos nós. Esta é uma oportunidade de usar seu talento para uma causa que precisa urgentemente de vozes poderosas.",
+        paragraph1: "Esta é uma oportunidade de usar seu talento para uma causa que precisa urgentemente de vozes poderosas.",
         expectTitle: "O Que Esperamos:",
         expectation: [
             { icon: 'IconMegaphone', text: "Que considere emprestar sua voz aos que não podem falar por si mesmos." },
