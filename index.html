@@ -17,23 +17,46 @@
 
       body {
         background-color: #07090D; /* brand-background */
-
-        /* Layered background for a deep, thematic feel */
-        background-image: 
-          /* 1. Subtle Aurora/Soundwave Glows (Top Layer) */
-          radial-gradient(at 20% 10%, hsla(45, 100%, 59%, 0.07) 0px, transparent 40%), /* Gold glow */
-          radial-gradient(at 80% 90%, hsla(158, 79%, 40%, 0.08) 0px, transparent 50%), /* Emerald glow */
-          
-          /* 2. Starfield (Bottom Layer) */
-          radial-gradient(rgba(240, 242, 239, 0.04) 1px, transparent 1px);
-
-        background-size: 
-          100% 100%, /* Glows cover the viewport */
-          100% 100%,
-          15px 15px; /* Star pattern size */
-
-        background-attachment: fixed; /* Crucial for parallax effect on scroll */
-        background-repeat: no-repeat, no-repeat, repeat;
+        /* Starfield background layer */
+        background-image: radial-gradient(rgba(240, 242, 239, 0.04) 1px, transparent 1px);
+        background-size: 15px 15px; /* Star pattern size */
+        background-attachment: fixed;
+        position: relative;
+        overflow-x: hidden; /* Prevent horizontal scroll from the orb */
+      }
+      
+      /* The new light orb */
+      body::before {
+        content: '';
+        position: fixed;
+        z-index: -1;
+        top: 0;
+        left: 0;
+        width: clamp(500px, 70vw, 900px);
+        height: clamp(500px, 70vw, 900px);
+        border-radius: 50%;
+        background: radial-gradient(circle, hsla(45, 100%, 59%, 0.18) 0%, hsla(158, 79%, 40%, 0.08) 40%, transparent 65%);
+        filter: blur(120px);
+        will-change: transform;
+        animation: moveLightOrb 80s infinite alternate ease-in-out;
+      }
+      
+      @keyframes moveLightOrb {
+        0% {
+          transform: translate(-20%, -20%) scale(1);
+        }
+        25% {
+          transform: translate(40%, 30%) scale(1.2);
+        }
+        50% {
+          transform: translate(10%, -40%) scale(0.9);
+        }
+        75% {
+          transform: translate(-40%, 50%) scale(1.1);
+        }
+        100% {
+          transform: translate(-20%, -20%) scale(1);
+        }
       }
       
       /* Custom Scrollbar for a cohesive look */
