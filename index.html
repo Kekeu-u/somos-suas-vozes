@@ -15,8 +15,11 @@
         scroll-behavior: smooth;
       }
 
+      html {
+        background-color: #07090D; /* brand-background - Moved here to fix stacking context */
+      }
+
       body {
-        background-color: #07090D; /* brand-background */
         /* Starfield background layer */
         background-image: radial-gradient(rgba(240, 242, 239, 0.04) 1px, transparent 1px);
         background-size: 15px 15px; /* Star pattern size */
@@ -25,7 +28,7 @@
         overflow-x: hidden; /* Prevent horizontal scroll from the orb */
       }
       
-      /* The new light orb */
+      /* The new light orb - now more subtle */
       body::before {
         content: '';
         position: fixed;
@@ -35,7 +38,7 @@
         width: clamp(500px, 70vw, 900px);
         height: clamp(500px, 70vw, 900px);
         border-radius: 50%;
-        background: radial-gradient(circle, hsla(45, 100%, 59%, 0.18) 0%, hsla(158, 79%, 40%, 0.08) 40%, transparent 65%);
+        background: radial-gradient(circle, hsla(45, 100%, 59%, 0.15) 0%, hsla(158, 79%, 40%, 0.08) 40%, transparent 65%);
         filter: blur(120px);
         will-change: transform;
         animation: moveLightOrb 80s infinite alternate ease-in-out;
@@ -149,7 +152,7 @@
 }
 </script>
 </head>
-<body class="bg-brand-background text-brand-text font-sans">
+<body class="text-brand-text font-sans">
     <div id="root"></div>
     <script type="module" src="/index.tsx"></script>
 </body>

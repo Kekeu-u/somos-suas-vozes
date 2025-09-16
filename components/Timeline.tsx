@@ -1,4 +1,5 @@
 
+
 import React from 'react';
 import { IconPaw, IconFeather } from './Icons';
 import { Animated } from './Animated';
@@ -45,7 +46,7 @@ const TimelineItem: React.FC<{ year: string; title: string; description: string;
 export const Timeline: React.FC = () => {
     return (
         <section id="cronologia" className="py-20 md:py-24 bg-brand-surface overflow-hidden">
-            <div className="container mx-auto px-6 max-w-6xl">
+            <div className="container mx-auto px-6">
                  <Animated>
                     <div className="text-center mb-16">
                         <div className="flex justify-center mb-4"><IconFeather className="w-10 h-10 text-brand-primary"/></div>

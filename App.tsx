@@ -10,7 +10,8 @@ import { StorylineIndicator } from './components/StorylineIndicator';
 import { 
     IconPaw, IconMusic, IconUsers, IconHeart, IconMegaphone, IconFeather, 
     IconShield, IconGlobe, IconGift, IconEye, IconTrendingUp, 
-    IconShieldCheck, IconCheckCircle, IconQuoteOpen, IconQuoteClose
+    IconShieldCheck, IconCheckCircle, IconQuoteOpen, IconQuoteClose,
+    IconArrowUp
 } from './components/Icons';
 
 const iconMap: { [key: string]: React.FC<React.SVGProps<SVGSVGElement>> } = {
@@ -31,7 +32,7 @@ const iconMap: { [key: string]: React.FC<React.SVGProps<SVGSVGElement>> } = {
 
 const App: React.FC = () => {
     return (
-        <div className="bg-brand-background overflow-hidden">
+        <div className="overflow-hidden">
             <Header />
             <StorylineIndicator />
             <main>
@@ -50,6 +51,7 @@ const App: React.FC = () => {
                     <Animated delay={200}>
                          <div className="max-w-4xl mx-auto bg-brand-surface/80 p-4 rounded-xl border border-brand-secondary/20 shadow-lg backdrop-blur-lg transition-all duration-500 hover:shadow-glow-primary hover:-translate-y-2 transform hover:border-brand-primary/50">
                             <iframe 
+                                title="Somos Suas Vozes - Música Guia"
                                 width="100%" 
                                 height="166" 
                                 scrolling="no" 
@@ -60,6 +62,12 @@ const App: React.FC = () => {
                             <div style={{fontSize: '10px', color: '#cccccc', lineHeight: 'normal', wordBreak: 'normal', overflow: 'hidden', whiteSpace: 'nowrap', textOverflow: 'ellipsis', fontFamily: 'Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif', fontWeight: 100}}>
                                 <a href="https://soundcloud.com/somos-suas-vozes" title="Somos suas vozes" target="_blank" rel="noopener noreferrer" style={{color: '#cccccc', textDecoration: 'none'}}>Somos suas vozes</a> · <a href="https://soundcloud.com/somos-suas-vozes/somos-suas-vozes-guia-v7/s-r9ZYzXCIu78" title="Somos suas vozes-Guia-V7" target="_blank" rel="noopener noreferrer" style={{color: '#cccccc', textDecoration: 'none'}}>Somos suas vozes-Guia-V7</a>
                             </div>
+                        </div>
+                    </Animated>
+                    <Animated delay={300}>
+                        <div className="mt-6 max-w-2xl mx-auto flex items-center justify-center space-x-4 bg-brand-surface/50 border border-brand-text/10 rounded-full py-3 px-6 shadow-lg">
+                            <IconArrowUp className="w-6 h-6 text-brand-primary flex-shrink-0" />
+                            <p className="text-brand-text-secondary text-lg">Para tocar a música, clique em <strong className="text-brand-text">"Ouvir no navegador"</strong> no player acima.</p>
                         </div>
                     </Animated>
                 </Section>

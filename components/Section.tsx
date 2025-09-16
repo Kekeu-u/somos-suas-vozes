@@ -25,7 +25,7 @@ export const Section: React.FC<SectionProps> = ({ id, title, icon, children, bgI
                     ></div>
                 </>
             )}
-            <div className="relative z-10 container mx-auto px-6 max-w-6xl">
+            <div className="relative z-10 container mx-auto px-6">
                 <div className="text-center mb-16">
                     {icon && <div className="flex justify-center mb-4">{icon}</div>}
                     <h2 className="text-5xl md:text-6xl font-bold font-serif text-brand-text drop-shadow-md">{title}</h2>
