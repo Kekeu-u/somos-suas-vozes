@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 
 export const Hero: React.FC = () => {
     const [isLoaded, setIsLoaded] = useState(false);
+    const subtitleText = "We are your voices";
 
     useEffect(() => {
         // Trigger animations after component mounts
@@ -20,8 +21,20 @@ export const Hero: React.FC = () => {
                 <h1 className={`${baseTransition} ${isLoaded ? loadedState : initialSate} text-6xl md:text-8xl font-bold font-serif leading-tight mb-4 drop-shadow-lg`}>
                     Somos Suas Vozes
                 </h1>
-                <p className={`${baseTransition} delay-200 ${isLoaded ? loadedState : initialSate} text-3xl md:text-4xl font-light mb-2 text-brand-primary font-serif italic`}>
-                    We are your voices
+                <p className={`${baseTransition} delay-200 ${isLoaded ? 'opacity-100' : 'opacity-0'} text-3xl md:text-4xl font-light mb-2 font-serif italic text-brand-primary`}>
+                    {isLoaded && subtitleText.split('').map((char, index) => (
+                        <span
+                            key={index}
+                            className="animate-fade-in-up opacity-0"
+                            style={{ 
+                                animationDelay: `${200 + index * 50}ms`,
+                                display: 'inline-block',
+                                whiteSpace: char === ' ' ? 'pre' : 'normal',
+                            }}
+                        >
+                            {char}
+                        </span>
+                    ))}
                 </p>
                 <p className={`${baseTransition} delay-300 ${isLoaded ? loadedState : initialSate} text-2xl md:text-3xl max-w-2xl mx-auto drop-shadow-md mb-8`}>
                     Um Projeto Musical em Defesa dos Animais
