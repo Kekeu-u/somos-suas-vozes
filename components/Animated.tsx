@@ -1,4 +1,3 @@
-
 import React, { useEffect, useRef, useState } from 'react';
 
 interface AnimatedProps {
@@ -125,6 +124,65 @@ export const Counter: React.FC<CounterProps> = ({
     return (
         <p ref={ref} className={className || defaultClassName}>
             {prefix}{count.toLocaleString('pt-BR')}{suffix}
+        </p>
+    );
+};
+
+interface AnimatedTypewriterProps {
+    text: string;
+    className?: string;
+    staggerMs?: number;
+}
+
+export const AnimatedTypewriter: React.FC<AnimatedTypewriterProps> = ({ text, className, staggerMs = 20 }) => {
+    const [isVisible, setIsVisible] = useState(false);
+    const ref = useRef<HTMLParagraphElement>(null);
+
+    useEffect(() => {
+        const element = ref.current;
+        if (!element) return;
+
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    setIsVisible(true);
+                    observer.unobserve(element);
+                }
+            },
+            {
+                threshold: 0.1, // Trigger when 10% is visible
+            }
+        );
+
+        observer.observe(element);
+
+        return () => {
+            if (element) {
+                observer.unobserve(element);
+            }
+        };
+    }, []);
+
+    return (
+        <p ref={ref} className={className}>
+            {isVisible ? text.split('').map((char, index) => (
+                <span
+                    key={index}
+                    className="animate-fade-in-up opacity-0"
+                    style={{
+                        animationDelay: `${index * staggerMs}ms`,
+                        display: 'inline-block',
+                        // Use 'pre' for spaces to prevent them from collapsing
+                        whiteSpace: char === ' ' ? 'pre' : 'normal',
+                    }}
+                >
+                    {char}
+                </span>
+            )) : (
+                // Render the full text with opacity-0 to reserve the correct
+                // layout space and prevent content shifting.
+                <span className="opacity-0">{text}</span>
+            )}
         </p>
     );
 };

@@ -1,11 +1,10 @@
-
 import React from 'react';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
 import { Section } from './components/Section';
 import { Timeline } from './components/Timeline';
 import { Footer } from './components/Footer';
-import { Animated, Counter } from './components/Animated';
+import { Animated, Counter, AnimatedTypewriter } from './components/Animated';
 import { content } from './constants';
 import { StorylineIndicator } from './components/StorylineIndicator';
 import { 
@@ -104,9 +103,10 @@ const App: React.FC = () => {
                 
                 {/* PARTE 2: O Chamado à Ação */}
                 <Section id="convite" title={content.slide14.title} icon={<IconMegaphone className="w-10 h-10 text-brand-primary" />}>
-                    <Animated>
-                        <p className="text-2xl leading-relaxed mb-6 text-center max-w-6xl mx-auto">{content.slide14.paragraph1}</p>
-                    </Animated>
+                    <AnimatedTypewriter 
+                        text={content.slide14.paragraph1} 
+                        className="text-2xl leading-relaxed mb-6 text-center max-w-6xl mx-auto"
+                    />
                     <div className="mt-10 max-w-4xl mx-auto">
                         <Animated delay={200}>
                             <div className="bg-brand-surface border border-brand-secondary/20 p-8 rounded-xl transition-all duration-500 hover:shadow-glow-primary hover:-translate-y-1 transform hover:border-brand-primary/50">
