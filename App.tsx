@@ -130,22 +130,6 @@ const App: React.FC = () => {
                     <Animated delay={100}>
                         <p className="text-2xl leading-relaxed max-w-6xl mx-auto">{content.slide15.promise}</p>
                     </Animated>
-                    <Animated delay={200}>
-                        <div className="mt-16 max-w-6xl mx-auto rounded-2xl p-0.5 bg-gradient-to-br from-brand-primary to-brand-secondary transition-all duration-500 hover:shadow-glow-primary hover:-translate-y-2 transform">
-                             <div className="relative bg-brand-background rounded-[14px] p-8 md:p-12 h-full w-full">
-                                <IconQuoteOpen className="w-6 h-6 md:w-10 md:h-10 text-brand-primary/20 absolute top-4 left-4" />
-                                <blockquote className="text-center relative z-10">
-                                    <p className="text-3xl md:text-4xl italic font-serif text-brand-text/90 leading-snug">
-                                        Todas as criaturas são nossos irmãos e irmãs
-                                    </p>
-                                    <footer className="mt-4 text-xl text-brand-text-secondary not-italic">
-                                        - São Francisco de Assis
-                                    </footer>
-                                </blockquote>
-                                <IconQuoteClose className="w-6 h-6 md:w-10 md:h-10 text-brand-primary/20 absolute bottom-4 right-4" />
-                            </div>
-                        </div>
-                    </Animated>
                 </Section>
 
                 {/* PARTE 3: A Nossa Estratégia */}

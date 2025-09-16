@@ -2,7 +2,7 @@
 export const content = {
     slide1: {
         title: "Um Momento Histórico de Reflexão",
-        paragraph1: "Vivemos um momento único na história da proteção animal. Este ano marca 100 anos desde o primeiro movimento mundial organizado pela causa animal, quando Heinrich Zimmermann plantou uma semente em 1925. Cem anos depois, podemos colher os frutos dessa semente através da música. São Francisco de Assis pregou há 800 anos sobre compaixão pelos animais. Sua mensagem chegou até nós para ser transformada em melodia.",
+        paragraph1: "Vivemos um momento único na história da proteção animal. Este ano marca 100 anos desde o primeiro movimento mundial organizado pela causa animal, quando Heinrich Zimmermann plantou uma semente em 1925. Cem anos depois, podemos colher os frutos dessa semente através da música, transformando uma mensagem histórica de compaixão em melodia.",
         subheading: "A Realidade Brasileira em Números",
         stats: [
             {

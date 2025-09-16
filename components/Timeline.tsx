@@ -70,8 +70,8 @@ export const Timeline: React.FC = () => {
                  <Animated delay={timelineEvents.length * 200}>
                     <div className="mt-16 max-w-4xl mx-auto rounded-2xl p-0.5 bg-gradient-to-br from-brand-primary to-brand-secondary transition-all duration-500 hover:shadow-glow-primary hover:-translate-y-2 transform">
                         <div className="bg-brand-background rounded-[14px] p-10 text-center h-full w-full">
-                            <h3 className="text-4xl font-serif text-brand-text mb-3">São Francisco de Assis - O Padroeiro</h3>
-                            <p className="text-2xl leading-relaxed">A escolha de 4 de outubro conecta nosso projeto a uma tradição de proteção animal que, no próximo ano, completará 800 anos: o dia de São Francisco, que pregou: "Todas as criaturas são nossos irmãos e irmãs".</p>
+                            <h3 className="text-4xl font-serif text-brand-text mb-3">A Conexão com 4 de Outubro</h3>
+                            <p className="text-2xl leading-relaxed">A escolha desta data conecta nosso projeto a uma tradição de proteção animal. Em 4 de outubro, celebra-se o dia de São Francisco de Assis, que há quase 800 anos pregou a compaixão por todos os seres com a mensagem: "Todas as criaturas são nossos irmãos e irmãs".</p>
                         </div>
                     </div>
                  </Animated>
