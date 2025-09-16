@@ -66,7 +66,7 @@ export const content = {
             { icon: 'IconShieldCheck', text: "Legitimidade artística que empresta credibilidade à causa" },
         ],
         quote: {
-            original: 'Na porta do estúdio, um cartaz de Quincy Jones dizia: "Deixe seu ego na porta".',
+            original: 'Quincy Jones tinha um cartaz no estúdio durante a gravação de "We Are the World" que dizia: "Deixe seu ego na porta"',
             adaptation: 'Aqui, diremos: "Deixe seu ego na porta e empreste sua voz a quem não pode se defender".'
         },
         conclusion: 'Queremos criar o primeiro hino global especificamente dedicado aos direitos dos animais.',
