@@ -1,3 +1,4 @@
+
 export const content = {
     slide1: {
         title: "Um Momento Histórico de Reflexão",
@@ -63,9 +64,6 @@ export const content = {
     },
     slide15: {
         title: "O Convite",
-        quote: 'Todas as criaturas são nossos irmãos e irmãs',
-        quoteAuthor: 'São Francisco de Assis',
-        paragraph1: "",
         invitation: "Junte sua voz às vozes dos que não podem se defender. Transforme seu talento em esperança para milhões de animais abandonados. Faça parte da música mais importante que você cantará em sua carreira.",
         promise: "Juntos, criaremos mais que uma canção - criaremos uma ferramenta de transformação social que ecoará pelos próximos 100 anos."
     }

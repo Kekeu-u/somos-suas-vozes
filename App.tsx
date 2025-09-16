@@ -125,29 +125,12 @@ const App: React.FC = () => {
                 </Section>
                  <Section id="o-convite" title={content.slide15.title} icon={<IconFeather className="w-10 h-10 text-brand-primary" />}>
                     <Animated>
-                        <div className="relative bg-brand-surface p-8 md:p-12 rounded-xl border border-brand-primary/20 mb-10 overflow-hidden transition-all duration-500 hover:shadow-glow-primary hover:border-brand-primary/50 max-w-6xl mx-auto">
-                            <IconQuoteOpen className="w-6 h-6 md:w-10 md:h-10 text-brand-primary/20 absolute top-2 left-2" />
-                            <blockquote className="text-center relative z-10">
-                                <p className="text-3xl md:text-4xl italic font-serif text-brand-text/90 leading-snug">
-                                    {content.slide15.quote}
-                                </p>
-                                <footer className="mt-4 text-xl text-brand-text-secondary not-italic">
-                                    - {content.slide15.quoteAuthor}
-                                </footer>
-                            </blockquote>
-                            <IconQuoteClose className="w-6 h-6 md:w-10 md:h-10 text-brand-primary/20 absolute bottom-2 right-2" />
-                        </div>
-                    </Animated>
-                    <Animated delay={200}>
-                        <p className="text-2xl leading-relaxed mb-6 max-w-6xl mx-auto">{content.slide15.paragraph1}</p>
-                    </Animated>
-                    <Animated delay={300}>
                         <p className="text-2xl font-semibold text-brand-primary mb-6 max-w-6xl mx-auto">{content.slide15.invitation}</p>
                     </Animated>
-                    <Animated delay={400}>
+                    <Animated delay={100}>
                         <p className="text-2xl leading-relaxed max-w-6xl mx-auto">{content.slide15.promise}</p>
                     </Animated>
-                    <Animated delay={500}>
+                    <Animated delay={200}>
                         <div className="mt-16 max-w-6xl mx-auto rounded-2xl p-0.5 bg-gradient-to-br from-brand-primary to-brand-secondary transition-all duration-500 hover:shadow-glow-primary hover:-translate-y-2 transform">
                              <div className="relative bg-brand-background rounded-[14px] p-8 md:p-12 h-full w-full">
                                 <IconQuoteOpen className="w-6 h-6 md:w-10 md:h-10 text-brand-primary/20 absolute top-4 left-4" />
