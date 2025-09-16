@@ -5,7 +5,7 @@ import { Hero } from './components/Hero';
 import { Section } from './components/Section';
 import { Timeline } from './components/Timeline';
 import { Footer } from './components/Footer';
-import { Animated } from './components/Animated';
+import { Animated, Counter } from './components/Animated';
 import { content } from './constants';
 import { StorylineIndicator } from './components/StorylineIndicator';
 import { 
@@ -81,11 +81,14 @@ const App: React.FC = () => {
                              <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
                                 {content.slide1.stats.map((stat, index) => {
                                     const StatIcon = iconMap[stat.icon];
+                                    const valueMatch = stat.value.match(/(\d+)\s*(.*)/);
+                                    const endValue = valueMatch ? parseInt(valueMatch[1], 10) : 0;
+                                    const suffix = valueMatch && valueMatch[2] ? ` ${valueMatch[2]}` : '';
                                     return (
                                         <Animated key={index} delay={index * 150}>
                                              <div className="bg-brand-surface/80 backdrop-blur-lg border border-brand-secondary/20 p-8 rounded-xl shadow-lg text-center h-full transition-all duration-500 hover:shadow-glow-primary hover:-translate-y-2 transform hover:border-brand-primary/50">
                                                 <StatIcon className="w-12 h-12 mx-auto text-brand-primary mb-4" />
-                                                <p className="text-5xl font-bold text-brand-text leading-none">{stat.value}</p>
+                                                <Counter end={endValue} suffix={suffix} />
                                                 <p className="text-xl text-brand-text-secondary mt-2">{stat.description}</p>
                                             </div>
                                         </Animated>
