@@ -2,7 +2,7 @@
 export const content = {
     slide1: {
         title: "Um Momento Histórico de Reflexão",
-        paragraph1: "Vivemos um momento único na história da proteção animal. Este ano marca 100 anos desde o primeiro movimento mundial organizado pela causa animal, quando Heinrich Zimmermann plantou uma semente em 1925. Cem anos depois, podemos colher os frutos dessa semente através da música, transformando uma mensagem histórica de compaixão em melodia.",
+        paragraph1: "Vivemos um momento único na história da proteção animal. Cem anos depois do primeiro movimento mundial organizado pela causa, podemos transformar uma mensagem histórica de compaixão em melodia. Em 4 de outubro, celebraremos os 800 anos do dia de São Francisco de Assis, que pregou: \"Todas as criaturas são nossos irmãos e irmãs\".",
         subheading: "A Realidade Brasileira em Números",
         stats: [
             {
@@ -64,7 +64,15 @@ export const content = {
     },
     slide15: {
         title: "O Convite",
-        invitation: "Junte sua voz às vozes dos que não podem se defender. Transforme seu talento em esperança para milhões de animais abandonados. Faça parte da música mais importante que você cantará em sua carreira.",
-        promise: "Juntos, criaremos mais que uma canção - criaremos uma ferramenta de transformação social que ecoará pelos próximos 100 anos."
+        cards: [
+            {
+                icon: 'IconHeart',
+                text: "Junte sua voz às vozes dos que não podem se defender. Transforme seu talento em esperança para milhões de animais abandonados e faça parte da música mais importante da sua carreira."
+            },
+            {
+                icon: 'IconTrendingUp',
+                text: "Juntos, criaremos mais que uma canção: uma ferramenta de transformação social que ecoará pelos próximos 100 anos, inspirando um futuro com mais compaixão."
+            }
+        ]
     }
 };

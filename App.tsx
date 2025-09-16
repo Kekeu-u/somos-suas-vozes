@@ -124,12 +124,21 @@ const App: React.FC = () => {
                     </div>
                 </Section>
                  <Section id="o-convite" title={content.slide15.title} icon={<IconFeather className="w-10 h-10 text-brand-primary" />}>
-                    <Animated>
-                        <p className="text-2xl font-semibold text-brand-primary mb-6 max-w-6xl mx-auto">{content.slide15.invitation}</p>
-                    </Animated>
-                    <Animated delay={100}>
-                        <p className="text-2xl leading-relaxed max-w-6xl mx-auto">{content.slide15.promise}</p>
-                    </Animated>
+                    <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                        {content.slide15.cards.map((card, index) => {
+                            const CardIcon = iconMap[card.icon];
+                            return (
+                                <Animated key={index} delay={index * 150}>
+                                    <div className="bg-brand-surface/80 backdrop-blur-lg border border-brand-secondary/20 p-8 rounded-xl shadow-lg h-full transition-all duration-500 hover:shadow-glow-primary hover:-translate-y-2 transform hover:border-brand-primary/50 flex flex-col items-center text-center">
+                                        <CardIcon className="w-12 h-12 text-brand-primary mb-6" />
+                                        <p className="text-2xl leading-relaxed text-brand-text/90">
+                                            {card.text}
+                                        </p>
+                                    </div>
+                                </Animated>
+                            );
+                        })}
+                    </div>
                 </Section>
 
                 {/* PARTE 3: A Nossa Estratégia */}
