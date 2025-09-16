@@ -9,11 +9,6 @@ export const Footer: React.FC = () => {
                      <IconPaw className="w-8 h-8 text-brand-text" />
                      <h3 className="text-3xl font-serif text-brand-text">Somos Suas Vozes</h3>
                 </div>
-                <p className="text-2xl text-brand-text font-semibold">4 de outubro de 2025</p>
-                <p className="text-xl mb-8">O dia em que a música brasileira deu voz aos animais.</p>
-                
-                <p className="italic text-brand-text/90 text-xl">"Porque onde existe vida, existe amor."</p>
-                <p className="mt-4 text-xl">Considerem este convite. Os animais precisam da nossa voz.</p>
                 <div className="mt-8 text-lg">
                     <p>&copy; {new Date().getFullYear()} Somos Suas Vozes. Todos os direitos reservados.</p>
                     <p className="mt-2">Idealizado por André Amorim</p>

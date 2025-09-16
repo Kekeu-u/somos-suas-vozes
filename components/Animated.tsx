@@ -180,7 +180,7 @@ export const AnimatedTypewriter: React.FC<AnimatedTypewriterProps> = ({ text, cl
                             {word.split('').map((char, charIdx) => (
                                 <span
                                     key={charIdx}
-                                    className="animate-fade-in-up opacity-0 inline-block"
+                                    className="animate-typewriter-reveal opacity-0 inline-block"
                                     style={{
                                         animationDelay: `${(startIndex + charIdx) * staggerMs}ms`,
                                     }}

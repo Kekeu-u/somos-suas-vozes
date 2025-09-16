@@ -44,11 +44,11 @@ const App: React.FC = () => {
                     icon={<IconMusic className="w-10 h-10 text-brand-primary" />}
                 >
                     <Animated>
-                        <p className="text-2xl leading-relaxed mb-12 text-center max-w-6xl mx-auto">
+                        <p className="text-2xl leading-relaxed mb-16 text-center max-w-6xl mx-auto">
                             Esta é a essência sonora do nosso movimento. Uma guia musical que representa a alma do projeto. Dê o play e sinta a força da nossa mensagem.
                         </p>
                     </Animated>
-                    <Animated delay={200}>
+                    <Animated delay={100}>
                          <div className="max-w-4xl mx-auto bg-brand-surface/80 p-4 rounded-xl border border-brand-secondary/20 shadow-lg backdrop-blur-lg transition-all duration-500 hover:shadow-glow-primary hover:-translate-y-2 transform hover:border-brand-primary/50">
                             <iframe 
                                 title="Somos Suas Vozes - Música Guia"
@@ -62,14 +62,42 @@ const App: React.FC = () => {
                             <div style={{fontSize: '10px', color: '#cccccc', lineHeight: 'normal', wordBreak: 'normal', overflow: 'hidden', whiteSpace: 'nowrap', textOverflow: 'ellipsis', fontFamily: 'Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif', fontWeight: 100}}>
                                 <a href="https://soundcloud.com/somos-suas-vozes" title="Somos suas vozes" target="_blank" rel="noopener noreferrer" style={{color: '#cccccc', textDecoration: 'none'}}>Somos suas vozes</a> · <a href="https://soundcloud.com/somos-suas-vozes/somos-suas-vozes-guia-v7/s-r9ZYzXCIu78" title="Somos suas vozes-Guia-V7" target="_blank" rel="noopener noreferrer" style={{color: '#cccccc', textDecoration: 'none'}}>Somos suas vozes-Guia-V7</a>
                             </div>
+                            <div className="mt-4 flex items-center justify-center space-x-3 text-center">
+                                <IconArrowUp className="w-5 h-5 text-brand-primary flex-shrink-0" />
+                                <p className="text-brand-text-secondary text-base">Para tocar a música, clique em <strong className="text-brand-text">"Ouvir no navegador"</strong> no player acima.</p>
+                            </div>
                         </div>
                     </Animated>
-                    <Animated delay={300}>
-                        <div className="mt-6 max-w-2xl mx-auto flex items-center justify-center space-x-4 bg-brand-surface/50 border border-brand-text/10 rounded-full py-3 px-6 shadow-lg">
-                            <IconArrowUp className="w-6 h-6 text-brand-primary flex-shrink-0" />
-                            <p className="text-brand-text-secondary text-lg">Para tocar a música, clique em <strong className="text-brand-text">"Ouvir no navegador"</strong> no player acima.</p>
-                        </div>
-                    </Animated>
+                    <div className="text-center max-w-4xl mx-auto mt-16">
+                        <Animated delay={300}>
+                            <AnimatedTypewriter
+                                text="4 de outubro de 2025"
+                                className="text-4xl md:text-5xl font-bold text-brand-primary font-serif mb-2"
+                                staggerMs={30}
+                            />
+                        </Animated>
+                        <Animated delay={930}>
+                            <AnimatedTypewriter
+                                text="O dia em que a música brasileira deu voz aos animais."
+                                className="text-2xl md:text-3xl text-brand-text mb-6"
+                                staggerMs={20}
+                            />
+                        </Animated>
+                        <Animated delay={1990}>
+                            <AnimatedTypewriter
+                                text={'Porque "onde existe vida, existe amor."'}
+                                className="italic text-brand-text/90 text-2xl mb-4"
+                                staggerMs={20}
+                            />
+                        </Animated>
+                        <Animated delay={2770}>
+                            <AnimatedTypewriter
+                                text="Considerem este convite. Os animais precisam da nossa voz."
+                                className="text-xl"
+                                staggerMs={20}
+                            />
+                        </Animated>
+                    </div>
                 </Section>
                 
                 {/* PARTE 1: A Realidade Urgente */}
