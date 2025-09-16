@@ -68,36 +68,30 @@ const App: React.FC = () => {
                             </div>
                         </div>
                     </Animated>
-                    <div className="text-center max-w-4xl mx-auto mt-16">
-                        <Animated delay={300}>
-                            <AnimatedTypewriter
-                                text="4 de outubro de 2025"
-                                className="text-4xl md:text-5xl font-bold text-brand-primary font-serif mb-2"
-                                staggerMs={30}
-                            />
-                        </Animated>
-                        <Animated delay={930}>
-                            <AnimatedTypewriter
-                                text="O dia em que a música brasileira deu voz aos animais."
-                                className="text-2xl md:text-3xl text-brand-text mb-6"
-                                staggerMs={20}
-                            />
-                        </Animated>
-                        <Animated delay={1990}>
-                            <AnimatedTypewriter
-                                text={'Porque "onde existe vida, existe amor."'}
-                                className="italic text-brand-text/90 text-2xl mb-4"
-                                staggerMs={20}
-                            />
-                        </Animated>
-                        <Animated delay={2770}>
-                            <AnimatedTypewriter
-                                text="Considerem este convite. Os animais precisam da nossa voz."
-                                className="text-xl"
-                                staggerMs={20}
-                            />
-                        </Animated>
-                    </div>
+                    <Animated>
+                        <AnimatedTypewriter
+                            containerClassName="text-center max-w-4xl mx-auto mt-16"
+                            staggerMs={25}
+                            lines={[
+                                {
+                                    text: "4 de outubro de 2025",
+                                    className: "text-3xl md:text-4xl font-bold text-brand-primary font-serif mb-3",
+                                },
+                                {
+                                    text: "O dia em que a música brasileira deu voz aos animais.",
+                                    className: "text-xl md:text-2xl text-brand-text mb-6",
+                                },
+                                {
+                                    text: 'Porque "onde existe vida, existe amor."',
+                                    className: "italic text-brand-text-secondary text-xl mb-6",
+                                },
+                                {
+                                    text: "Considerem este convite. Os animais precisam da nossa voz.",
+                                    className: "text-lg md:text-xl font-semibold",
+                                },
+                            ]}
+                        />
+                    </Animated>
                 </Section>
                 
                 {/* PARTE 1: A Realidade Urgente */}
@@ -140,8 +134,7 @@ const App: React.FC = () => {
                 {/* PARTE 2: O Chamado à Ação */}
                 <Section id="convite" title={content.slide14.title} icon={<IconMegaphone className="w-10 h-10 text-brand-primary" />}>
                     <AnimatedTypewriter 
-                        text={content.slide14.paragraph1} 
-                        className="text-xl md:text-2xl leading-relaxed mb-12 text-center max-w-4xl mx-auto"
+                        lines={[{ text: content.slide14.paragraph1, className: "text-xl md:text-2xl leading-relaxed mb-12 text-center max-w-4xl mx-auto" }]} 
                     />
                     <div className="mt-12 max-w-4xl mx-auto">
                         <Animated delay={200}>
@@ -235,13 +228,15 @@ const App: React.FC = () => {
                         <div className="mt-12 max-w-4xl mx-auto text-center relative px-8 md:px-16 py-8">
                             <IconQuoteOpen className="w-16 h-16 text-brand-secondary/20 absolute top-0 left-0 -translate-y-2 opacity-70" />
                             <AnimatedTypewriter
-                                text={content.slide6.quote.original}
-                                className="text-xl md:text-2xl leading-relaxed text-brand-text-secondary mb-4"
+                                lines={[
+                                    { text: content.slide6.quote.original, className: "text-xl md:text-2xl leading-relaxed text-brand-text-secondary mb-4" },
+                                ]}
                                 staggerMs={20}
                             />
                             <AnimatedTypewriter
-                                text={content.slide6.quote.adaptation}
-                                className="text-2xl md:text-3xl font-semibold font-serif text-brand-primary"
+                                 lines={[
+                                    { text: content.slide6.quote.adaptation, className: "text-2xl md:text-3xl font-semibold font-serif text-brand-primary" },
+                                ]}
                                 staggerMs={30}
                             />
                             <IconQuoteClose className="w-16 h-16 text-brand-secondary/20 absolute bottom-0 right-0 translate-y-2 opacity-70" />

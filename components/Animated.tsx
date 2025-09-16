@@ -129,77 +129,86 @@ export const Counter: React.FC<CounterProps> = ({
 };
 
 interface AnimatedTypewriterProps {
-    text: string;
-    className?: string;
+    lines: { text: string; className: string; }[];
     staggerMs?: number;
+    containerClassName?: string;
 }
 
-export const AnimatedTypewriter: React.FC<AnimatedTypewriterProps> = ({ text, className, staggerMs = 20 }) => {
+export const AnimatedTypewriter: React.FC<AnimatedTypewriterProps> = ({ lines, staggerMs = 25, containerClassName }) => {
     const [isVisible, setIsVisible] = useState(false);
-    const ref = useRef<HTMLParagraphElement>(null);
+    const ref = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         const element = ref.current;
         if (!element) return;
-
-        const observer = new IntersectionObserver(
-            ([entry]) => {
-                if (entry.isIntersecting) {
-                    setIsVisible(true);
-                    observer.unobserve(element);
-                }
-            },
-            { threshold: 0.1 }
-        );
-
+        const observer = new IntersectionObserver(([entry]) => {
+            if (entry.isIntersecting) {
+                setIsVisible(true);
+                observer.unobserve(element);
+            }
+        }, { threshold: 0.1 });
         observer.observe(element);
-
-        return () => {
-            if (element) observer.unobserve(element);
-        };
+        return () => { if (element) observer.unobserve(element); };
     }, []);
 
-    // Pre-calculate animation delays for each word and character
-    const words = text.split(' ');
-    const wordData: { word: string; startIndex: number }[] = [];
-    let currentIndex = 0;
-    words.forEach(word => {
-        wordData.push({ word, startIndex: currentIndex });
-        currentIndex += word.length + 1; // Add 1 for the space after the word
-    });
+    const animationPlan = React.useMemo(() => {
+        const plan: { lineClassName: string; words: { word: string; isLast: boolean; chars: { char: string; delay: number }[] }[] }[] = [];
+        let charCounter = 0;
+
+        for (const line of lines) {
+            const words = line.text.split(' ');
+            const wordPlans = words.map((word, index) => {
+                const charPlans = word.split('').map(char => {
+                    const charPlan = { char, delay: charCounter * staggerMs };
+                    charCounter++;
+                    return charPlan;
+                });
+                
+                if (index < words.length - 1) {
+                    charCounter++;
+                }
+
+                return {
+                    word,
+                    isLast: index === words.length - 1,
+                    chars: charPlans
+                };
+            });
+            plan.push({ lineClassName: line.className, words: wordPlans });
+        }
+        return plan;
+    }, [lines, staggerMs]);
 
     return (
-        <p ref={ref} className={className} aria-label={text}>
+        <div ref={ref} className={containerClassName} aria-label={lines.map(l => l.text).join('. ')}>
             {isVisible ? (
-                wordData.map(({ word, startIndex }, wordIdx) => (
-                    <React.Fragment key={wordIdx}>
-                        {/* Each word is wrapped in an inline-block span.
-                            This makes the word an atomic unit, preventing the browser
-                            from breaking it across multiple lines. */}
-                        <span className="inline-block">
-                            {word.split('').map((char, charIdx) => (
-                                <span
-                                    key={charIdx}
-                                    className="animate-typewriter-reveal opacity-0 inline-block"
-                                    style={{
-                                        animationDelay: `${(startIndex + charIdx) * staggerMs}ms`,
-                                    }}
-                                >
-                                    {char}
+                animationPlan.map((line, lineIndex) => (
+                    <p key={lineIndex} className={line.lineClassName}>
+                        {line.words.map((word, wordIndex) => (
+                            <React.Fragment key={wordIndex}>
+                                <span className="inline-block">
+                                    {word.chars.map((char, charIndex) => (
+                                        <span
+                                            key={charIndex}
+                                            className="animate-typewriter-reveal opacity-0 inline-block"
+                                            style={{ animationDelay: `${char.delay}ms` }}
+                                        >
+                                            {char.char}
+                                        </span>
+                                    ))}
                                 </span>
-                            ))}
-                        </span>
-                        {/* A normal space is added after each word (except the last).
-                            This is where the browser is allowed to create a line break. */}
-                        {wordIdx < words.length - 1 ? ' ' : ''}
-                    </React.Fragment>
+                                {!word.isLast ? ' ' : ''}
+                            </React.Fragment>
+                        ))}
+                    </p>
                 ))
             ) : (
-                // Render text invisibly to reserve space and prevent layout shifts
-                <span className="opacity-0" aria-hidden="true">
-                    {text}
-                </span>
+                <div className="opacity-0" aria-hidden="true">
+                    {lines.map((line, index) => (
+                        <p key={index} className={line.className}>{line.text}</p>
+                    ))}
+                </div>
             )}
-        </p>
+        </div>
     );
 };
