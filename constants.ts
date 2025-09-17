@@ -32,7 +32,7 @@ export const content = {
         bgImageUrl: "https://images.unsplash.com/photo-1597561542938-1e47b3113523?q=80&w=1920&auto=format&fit=crop",
         andre: {
             name: "André Amorim",
-            bio: "Produtor cultural, empresário artístico e diretor da ASSMURS, com projetos em rádio, TV e eventos sociais."
+            bio: "Produtor cultural, empresário e diretor da ASSMURS, com projetos em rádio, TV e eventos sociais."
         },
         story: [
             `A semente deste projeto foi plantada ao observar de perto a dedicação de sua irmã, <strong class="text-brand-primary">Raquel Amorim</strong>. Testemunhando sua luta incansável pela causa animal na comunidade, doando-se mais aos animais do que a si mesma, André sentiu-se profundamente tocado.`,
