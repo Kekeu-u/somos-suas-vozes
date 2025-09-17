@@ -27,33 +27,27 @@ export const content = {
         ],
         conclusion: "A música tem o poder de transformar estatísticas em histórias humanas, e números em emoções."
     },
-    slide5: {
-        title: "A Inspiração Por Trás do Projeto",
-        inspiration_story: [
-            {
-                icon: 'IconHeart',
-                title: 'Homenagem Pessoal',
-                description: 'Tudo começou como uma homenagem à minha irmã e à minha mãe, pela luta diária na causa animal.'
-            },
-            {
-                icon: 'IconEye',
-                title: 'Testemunho Inspirador',
-                description: 'Vendo-as dedicarem suas vidas ao resgate, André Amorim, idealizador do projeto, sentiu-se inspirado a criar algo maior.'
-            },
-            {
-                icon: 'IconGift',
-                title: 'Uma Surpresa Musical',
-                description: 'Uma homenagem musical que elas ainda não conhecem, transformando um gesto familiar em um movimento.'
-            }
+    historia: {
+        title: "A História Por Trás",
+        bgImageUrl: "https://images.unsplash.com/photo-1597561542938-1e47b3113523?q=80&w=1920&auto=format&fit=crop",
+        andre: {
+            name: "André Amorim",
+            bio: "Produtor cultural, empresário artístico e diretor da ASSMURS, com projetos em rádio, TV e eventos sociais."
+        },
+        story: [
+            `A semente deste projeto foi plantada ao observar de perto a dedicação de sua irmã, <strong class="text-brand-primary">Raquel Amorim</strong>. Testemunhando sua luta incansável pela causa animal na comunidade, doando-se mais aos animais do que a si mesma, André sentiu-se profundamente tocado.`,
+            `O que nasceu como uma homenagem pessoal e uma surpresa para sua irmã e mãe, floresceu, transformando-se em um movimento musical com potencial para alcançar o mundo, mas sempre mantendo a sua essência: ser a voz daqueles que não podem se defender.`
         ],
-        subheading: "A Motivação Pessoal",
-        motivationPoints: [
-            { icon: 'IconEye', text: "Testemunha diária do trabalho de proteção animal" },
-            { icon: 'IconMegaphone', text: "Desejo de amplificar o trabalho silencioso de protetores" },
-            { icon: 'IconGift', text: "Homenagem surpresa às duas mulheres que o inspiraram" },
-            { icon: 'IconTrendingUp', text: "Transformação de um gesto familiar em movimento nacional" },
-        ],
-        conclusion: "Não é um projeto comercial disfarçado de causa social - é uma causa social genuína que ganhou forma musical.",
+        motivation: {
+            subheading: "Uma Motivação Genuína",
+            points: [
+                { icon: 'IconEye', text: "Testemunha diária do trabalho de proteção animal" },
+                { icon: 'IconMegaphone', text: "Desejo de amplificar o trabalho silencioso de protetores" },
+                { icon: 'IconGift', text: "Homenagem surpresa às duas mulheres que o inspiraram" },
+                { icon: 'IconTrendingUp', text: "Transformação de um gesto familiar em movimento nacional" },
+            ],
+        },
+        conclusion: "Não é um projeto comercial disfarçado de causa social - é uma causa social genuína que ganhou forma musical."
     },
     slide6: {
         title: 'O Modelo "We Are The World"',
@@ -90,7 +84,7 @@ export const content = {
             },
             {
                 icon: 'IconTrendingUp',
-                text: "Juntos, criaremos mais que uma canção: uma ferramenta de transformação social que ecoará pelos próximos 100 anos, inspirando um futuro com mais compaixão."
+                text: "Juntos, criaremos mais que uma canção: uma ferramenta de transformação social que ecoará pela eternidade, inspirando um futuro com mais compaixão."
             }
         ]
     }

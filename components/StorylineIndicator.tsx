@@ -6,7 +6,8 @@ import {
     IconMegaphone, 
     IconFeather, 
     IconHome,
-    IconGlobe
+    IconGlobe,
+    IconUser
 } from './Icons';
 
 const storylineItems = [
@@ -15,7 +16,7 @@ const storylineItems = [
     { href: '#reflexao', icon: IconPaw },
     { href: '#o-convite', icon: IconMegaphone },
     { href: '#forca-da-musica', icon: IconGlobe },
-    { href: '#inspiracao', icon: IconHeart },
+    { href: '#a-historia-por-tras', icon: IconUser },
     { href: '#cronologia', icon: IconFeather },
 ];
 

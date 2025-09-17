@@ -11,7 +11,8 @@ import {
     IconPaw, IconMusic, IconUsers, IconHeart, IconMegaphone, IconFeather, 
     IconShield, IconGlobe, IconGift, IconEye, IconTrendingUp, 
     IconShieldCheck, IconCheckCircle, IconQuoteOpen, IconQuoteClose,
-    IconArrowUp
+    IconArrowUp,
+    IconUser
 } from './components/Icons';
 
 const iconMap: { [key: string]: React.FC<React.SVGProps<SVGSVGElement>> } = {
@@ -27,7 +28,8 @@ const iconMap: { [key: string]: React.FC<React.SVGProps<SVGSVGElement>> } = {
     IconEye,
     IconTrendingUp,
     IconShieldCheck,
-    IconCheckCircle
+    IconCheckCircle,
+    IconUser
 };
 
 const App: React.FC = () => {
@@ -246,32 +248,32 @@ const App: React.FC = () => {
                         <p className="italic text-brand-text/90 font-semibold text-2xl mt-8 text-center max-w-6xl mx-auto">{content.slide6.conclusion}</p>
                     </Animated>
                 </Section>
-
+                
                 <Section 
-                    id="inspiracao" 
-                    title={content.slide5.title} 
-                    icon={<IconHeart className="w-10 h-10 text-brand-primary" />}
-                    bgImageUrl="https://images.unsplash.com/photo-1597561542938-1e47b3113523?q=80&w=1920&auto=format&fit=crop"
+                    id="a-historia-por-tras" 
+                    title={content.historia.title} 
+                    icon={<IconUser className="w-10 h-10 text-brand-primary" />}
+                    bgImageUrl={content.historia.bgImageUrl}
                 >
-                    <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto mb-16">
-                        {content.slide5.inspiration_story.map((item, index) => {
-                            const CardIcon = iconMap[item.icon];
-                            return (
-                                <Animated key={index} delay={index * 150}>
-                                    <div className="bg-brand-surface/80 backdrop-blur-lg border border-brand-secondary/20 p-8 rounded-xl shadow-lg h-full transition-all duration-500 hover:shadow-glow-primary hover:-translate-y-2 transform flex flex-col items-center text-center">
-                                        <CardIcon className="w-12 h-12 text-brand-primary mb-6" />
-                                        <h4 className="text-2xl font-bold text-brand-text mb-3">{item.title}</h4>
-                                        <p className="text-xl leading-relaxed text-brand-text/90">{item.description}</p>
-                                    </div>
+                    <div className="max-w-4xl mx-auto">
+                        <div className="space-y-6 text-center">
+                            <Animated delay={100}>
+                                <h3 className="text-3xl font-bold font-serif text-brand-text">{content.historia.andre.name}</h3>
+                                <p className="text-xl text-brand-text-secondary mb-8">{content.historia.andre.bio}</p>
+                            </Animated>
+                            {content.historia.story.map((p, i) => (
+                                <Animated key={i} delay={200 + i * 100}>
+                                    <p className="text-2xl leading-relaxed text-left" dangerouslySetInnerHTML={{ __html: p }}></p>
                                 </Animated>
-                            );
-                        })}
+                            ))}
+                        </div>
                     </div>
+                    
                     <Animated delay={200}>
-                        <div className="bg-brand-surface/80 backdrop-blur-lg border border-brand-secondary/20 p-8 rounded-xl shadow-lg transition-all duration-500 hover:shadow-glow-primary hover:-translate-y-1 transform hover:border-brand-primary/50 max-w-6xl mx-auto">
-                            <h3 className="text-3xl font-semibold font-serif text-brand-text mb-6 text-center">{content.slide5.subheading}</h3>
+                        <div className="bg-brand-surface/80 backdrop-blur-lg border border-brand-secondary/20 p-8 rounded-xl shadow-lg transition-all duration-500 hover:shadow-glow-primary hover:-translate-y-1 transform hover:border-brand-primary/50 max-w-6xl mx-auto mt-20">
+                            <h3 className="text-3xl font-semibold font-serif text-brand-text mb-6 text-center">{content.historia.motivation.subheading}</h3>
                             <div className="grid md:grid-cols-2 gap-x-8 gap-y-4 mt-6">
-                                {content.slide5.motivationPoints.map((point, i) => {
+                                {content.historia.motivation.points.map((point, i) => {
                                     const PointIcon = iconMap[point.icon];
                                     return (
                                         <Animated key={i} delay={i * 100}>
@@ -286,10 +288,10 @@ const App: React.FC = () => {
                         </div>
                     </Animated>
                     <Animated delay={500}>
-                        <p className="italic text-brand-text/90 font-semibold text-2xl mt-8 text-center max-w-6xl mx-auto">{content.slide5.conclusion}</p>
+                        <p className="italic text-brand-text/90 font-semibold text-2xl mt-12 text-center max-w-6xl mx-auto">{content.historia.conclusion}</p>
                     </Animated>
                 </Section>
-                
+
                 <Timeline />
             </main>
             <Footer />

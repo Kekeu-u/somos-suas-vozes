@@ -6,7 +6,8 @@ import {
     IconMegaphone, 
     IconFeather, 
     IconHome,
-    IconGlobe
+    IconGlobe,
+    IconUser
 } from './Icons';
 
 const navItems = [
@@ -15,7 +16,7 @@ const navItems = [
     { href: '#reflexao', label: 'A Causa', icon: IconPaw },
     { href: '#o-convite', label: 'Junte-se a Nós', icon: IconMegaphone },
     { href: '#forca-da-musica', label: 'Estratégia', icon: IconGlobe },
-    { href: '#inspiracao', label: 'Inspiração', icon: IconHeart },
+    { href: '#a-historia-por-tras', label: 'A Origem', icon: IconUser },
     { href: '#cronologia', label: 'História', icon: IconFeather },
 ];
 
