@@ -12,7 +12,6 @@ export const Footer: React.FC = () => {
                 <div className="mt-8 text-lg">
                     <p>&copy; {new Date().getFullYear()} Somos Suas Vozes. Todos os direitos reservados.</p>
                     <p className="mt-2">Idealizado por André Amorim</p>
-                    <p className="mt-2">Inspirado por São Francisco de Assis</p>
                 </div>
             </div>
         </footer>
