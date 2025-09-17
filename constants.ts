@@ -63,7 +63,7 @@ export const content = {
             original: 'Quincy Jones tinha um cartaz no estúdio durante a gravação de "We Are the World" que dizia: "Deixe seu ego na porta"',
             adaptation: 'Aqui, diremos: "Deixe seu ego de lado e empreste sua voz a quem não pode se defender"'
         },
-        conclusion: 'Queremos criar o primeiro hino global especificamente dedicado aos direitos dos animais.',
+        conclusion: 'Queremos criar o <strong class="text-brand-primary font-black uppercase tracking-wider text-3xl mx-1">PRIMEIRO</strong> hino global especificamente dedicado aos direitos dos animais.',
     },
     slide14: {
         title: "Um Chamado Respeitoso",

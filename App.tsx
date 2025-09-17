@@ -245,7 +245,10 @@ const App: React.FC = () => {
                         </div>
                     </Animated>
                     <Animated delay={600}>
-                        <p className="italic text-brand-text/90 font-semibold text-2xl mt-8 text-center max-w-6xl mx-auto">{content.slide6.conclusion}</p>
+                        <p 
+                            className="italic text-brand-text/90 font-semibold text-2xl mt-8 text-center max-w-6xl mx-auto"
+                            dangerouslySetInnerHTML={{ __html: content.slide6.conclusion }}
+                        />
                     </Animated>
                 </Section>
                 
