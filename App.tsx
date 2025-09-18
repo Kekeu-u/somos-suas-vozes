@@ -62,11 +62,11 @@ const App: React.FC = () => {
                         <div className="max-w-4xl mx-auto rounded-xl overflow-hidden shadow-lg border border-brand-secondary/20 bg-brand-surface">
                              <iframe 
                                 width="100%" 
-                                height="166" 
+                                height="300" 
                                 scrolling="no" 
                                 frameBorder="no" 
                                 allow="autoplay" 
-                                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/2170987776%3Fsecret_token%3Ds-r9ZYzXCIu78&color=%23ffc72c&auto_play=false&hide_related=true&show_comments=false&show_user=true&show_reposts=false&show_teaser=true"
+                                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2170987776&color=%23858856&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
                                 title="Player da música Somos Suas Vozes"
                             ></iframe>
                         </div>
