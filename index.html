@@ -103,6 +103,40 @@
       .animate-float {
           animation: float 3s ease-in-out infinite;
       }
+
+      /* Animated border effect for the featured card */
+      @keyframes spin {
+          from { transform: rotate(0deg); }
+          to { transform: rotate(360deg); }
+      }
+
+      .animated-border-wrapper {
+          position: relative;
+          overflow: hidden;
+      }
+
+      .animated-border-wrapper::before {
+          content: '';
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          width: 200%; /* Larger than the container to avoid edges showing on rotation */
+          height: 200%;
+          margin-top: -100%; /* Center the pseudo-element */
+          margin-left: -100%; /* Center the pseudo-element */
+          background-image: conic-gradient(
+              /* A larger transparent area creates a shorter "comet trail" */
+              transparent 0deg,
+              transparent 270deg,
+              /* The glowing trail, now more concentrated */
+              #FFD700 315deg, 
+              #FFC72C 330deg,
+              /* Fade back to transparent */
+              transparent 360deg
+          );
+          animation: spin 6s linear infinite; /* Slower, more majestic rotation */
+      }
+
     </style>
     <script>
       tailwind.config = {
@@ -137,11 +171,16 @@
               typewriterReveal: {
                 'from': { opacity: 0, transform: 'translateY(5px)' },
                 'to': { opacity: 1, transform: 'translateY(0)' },
+              },
+              pulseGlow: {
+                '0%, 100%': { boxShadow: '0 0 25px 0 rgba(255, 199, 44, 0.45)' },
+                '50%': { boxShadow: '0 0 40px 5px rgba(255, 199, 44, 0.6)' },
               }
             },
             animation: {
               'fade-in-up': 'fadeInUp 0.5s ease-out forwards',
               'typewriter-reveal': 'typewriterReveal 0.2s ease-out forwards',
+              'pulse-glow': 'pulseGlow 3s ease-in-out infinite',
             }
           }
         }
@@ -152,7 +191,8 @@
   "imports": {
     "react/": "https://aistudiocdn.com/react@^19.1.1/",
     "react": "https://aistudiocdn.com/react@^19.1.1",
-    "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/"
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.1.1/",
+    "react-icons/": "https://esm.sh/react-icons@5.2.1/"
   }
 }
 </script>

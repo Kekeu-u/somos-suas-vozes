@@ -21,15 +21,21 @@ export const content = {
         title: "A Força Comprovada da Música",
         paragraph1: 'A história nos mostra que quando artistas se unem por uma causa, o mundo muda. "We Are The World" atingiu milhões de pessoas e gerou um impacto humanitário sem precedentes, mostrando o poder da união através da música.',
         examples: [
-            { icon: 'IconGlobe', title: '"We Are The World" (1985)', description: "Mobilizou o mundo para a fome na África" },
-            { icon: 'IconFeather', title: '"Imagine" (1971)', description: "Continua sendo símbolo de paz mundial" },
-            { icon: 'IconHeart', title: '"Heal The World" (1991)', description: "Inspirou programas de proteção infantil" },
+            { icon: 'IconDonationHand', title: '"We Are The World" (1985)', description: "Mobilizou o mundo para a fome na África" },
+            { icon: 'IconPeace', title: '"Imagine" (1971)', description: "Continua sendo símbolo de paz mundial" },
+            { icon: 'IconChildren', title: '"Heal The World" (1991)', description: "Inspirou programas de proteção infantil" },
+            { 
+                icon: 'IconPaw', 
+                title: '"Somos Suas Vozes" (2025)', 
+                description: "O primeiro hino global pela causa animal.",
+                isFeatured: true 
+            },
         ],
         conclusion: "A música tem o poder de transformar estatísticas em histórias humanas, e números em emoções."
     },
     historia: {
         title: "A História Por Trás",
-        bgImageUrl: "https://images.unsplash.com/photo-1597561542938-1e47b3113523?q=80&w=1920&auto=format&fit=crop",
+        bgImageUrl: "https://images.unsplash.com/photo-1597561542938-1e47b3113523?q=80&w=1920&auto-format&fit-crop",
         andre: {
             name: "André Amorim",
             bio: "Produtor cultural, empresário e diretor da ASSMURS, com projetos em rádio, TV e eventos sociais."

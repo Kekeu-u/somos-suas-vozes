@@ -12,7 +12,10 @@ import {
     IconShield, IconGlobe, IconGift, IconEye, IconTrendingUp, 
     IconShieldCheck, IconCheckCircle, IconQuoteOpen, IconQuoteClose,
     IconArrowUp,
-    IconUser
+    IconUser,
+    IconDonationHand,
+    IconPeace,
+    IconChildren
 } from './components/Icons';
 
 const iconMap: { [key: string]: React.FC<React.SVGProps<SVGSVGElement>> } = {
@@ -29,7 +32,10 @@ const iconMap: { [key: string]: React.FC<React.SVGProps<SVGSVGElement>> } = {
     IconTrendingUp,
     IconShieldCheck,
     IconCheckCircle,
-    IconUser
+    IconUser,
+    IconDonationHand,
+    IconPeace,
+    IconChildren,
 };
 
 const App: React.FC = () => {
@@ -185,16 +191,28 @@ const App: React.FC = () => {
                      <Animated>
                         <p className="text-2xl leading-relaxed mb-10 text-center max-w-6xl mx-auto">{content.slide2.paragraph1}</p>
                      </Animated>
-                     <div className="grid md:grid-cols-3 gap-6 max-w-6xl mx-auto">
+                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
                         {content.slide2.examples.map((ex, index) => {
                             const ExampleIcon = iconMap[ex.icon];
+                            const isFeatured = (ex as any).isFeatured;
+
                             return (
                                 <Animated key={index} delay={index * 150}>
-                                    <div className="bg-brand-surface/80 backdrop-blur-lg border border-brand-secondary/20 p-6 rounded-xl text-center h-full transition-all duration-500 hover:shadow-glow-primary hover:-translate-y-2 transform hover:border-brand-primary/50">
-                                        <ExampleIcon className="w-10 h-10 mx-auto text-brand-primary mb-4"/>
-                                        <h4 className="font-bold text-brand-text text-2xl mb-1">{ex.title}</h4>
-                                        <p className="text-xl text-brand-text-secondary">{ex.description}</p>
-                                    </div>
+                                    {isFeatured ? (
+                                        <div className="animated-border-wrapper rounded-xl p-[2px] h-full transition-all duration-500 shadow-glow-primary animate-pulse-glow hover:shadow-2xl hover:shadow-yellow-400/50 hover:-translate-y-2 transform">
+                                            <div className="bg-brand-surface backdrop-blur-lg rounded-[10px] h-full p-6 text-center">
+                                                <ExampleIcon className="w-10 h-10 mx-auto text-brand-primary mb-4"/>
+                                                <h4 className="font-bold text-brand-text text-2xl mb-1">{ex.title}</h4>
+                                                <p className="text-xl text-brand-text-secondary">{ex.description}</p>
+                                            </div>
+                                        </div>
+                                    ) : (
+                                        <div className="bg-brand-surface/80 backdrop-blur-lg border border-brand-secondary/20 p-6 rounded-xl text-center h-full transition-all duration-500 hover:shadow-glow-primary hover:-translate-y-2 transform hover:border-brand-primary/50">
+                                            <ExampleIcon className="w-10 h-10 mx-auto text-brand-primary mb-4"/>
+                                            <h4 className="font-bold text-brand-text text-2xl mb-1">{ex.title}</h4>
+                                            <p className="text-xl text-brand-text-secondary">{ex.description}</p>
+                                        </div>
+                                    )}
                                 </Animated>
                             )
                         })}
