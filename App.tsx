@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
@@ -76,30 +77,18 @@ const App: React.FC = () => {
                             </div>
                         </div>
                     </Animated>
-                    <Animated>
+                    <div className="text-center max-w-4xl mx-auto mt-16">
                         <AnimatedTypewriter
-                            containerClassName="text-center max-w-4xl mx-auto mt-16"
-                            staggerMs={25}
                             lines={[
-                                {
-                                    text: "4 de outubro de 2025",
-                                    className: "text-2xl sm:text-3xl md:text-4xl font-bold text-brand-primary font-serif mb-3",
-                                },
-                                {
-                                    text: "O dia em que a música brasileira deu voz aos animais.",
-                                    className: "text-base sm:text-lg md:text-2xl text-brand-text mb-6",
-                                },
-                                {
-                                    text: 'Porque "onde existe vida, existe amor."',
-                                    className: "italic text-brand-text-secondary text-base md:text-lg mb-6",
-                                },
-                                {
-                                    text: "Os animais precisam da nossa voz.",
-                                    className: "text-base md:text-xl font-semibold",
-                                },
+                                { text: "4 de outubro de 2025", className: "text-2xl sm:text-3xl md:text-4xl font-bold text-brand-primary font-serif mb-3" },
+                                { text: "O dia em que a música brasileira deu voz aos animais.", className: "text-base sm:text-lg md:text-2xl text-brand-text mb-6" },
+                                { text: 'Porque "onde existe vida, existe amor."', className: "italic text-brand-text-secondary text-base md:text-lg mb-6" },
+                                { text: "Os animais precisam da nossa voz.", className: "text-base md:text-xl font-semibold" }
                             ]}
+                            staggerMs={15}
+                            animationMode="parallel"
                         />
-                    </Animated>
+                    </div>
                 </Section>
                 
                 {/* PARTE 1: A Realidade Urgente */}

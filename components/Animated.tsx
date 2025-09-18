@@ -1,3 +1,4 @@
+
 import React, { useEffect, useRef, useState } from 'react';
 
 interface AnimatedProps {
@@ -132,9 +133,10 @@ interface AnimatedTypewriterProps {
     lines: { text: string; className: string; }[];
     staggerMs?: number;
     containerClassName?: string;
+    animationMode?: 'sequential' | 'parallel';
 }
 
-export const AnimatedTypewriter: React.FC<AnimatedTypewriterProps> = ({ lines, staggerMs = 25, containerClassName }) => {
+export const AnimatedTypewriter: React.FC<AnimatedTypewriterProps> = ({ lines, staggerMs = 25, containerClassName, animationMode = 'sequential' }) => {
     const [isVisible, setIsVisible] = useState(false);
     const ref = useRef<HTMLDivElement>(null);
 
@@ -156,6 +158,10 @@ export const AnimatedTypewriter: React.FC<AnimatedTypewriterProps> = ({ lines, s
         let charCounter = 0;
 
         for (const line of lines) {
+            if (animationMode === 'parallel') {
+                charCounter = 0; // Reset counter for each line to make them run in parallel
+            }
+
             const words = line.text.split(' ');
             const wordPlans = words.map((word, index) => {
                 const charPlans = word.split('').map(char => {
@@ -177,7 +183,7 @@ export const AnimatedTypewriter: React.FC<AnimatedTypewriterProps> = ({ lines, s
             plan.push({ lineClassName: line.className, words: wordPlans });
         }
         return plan;
-    }, [lines, staggerMs]);
+    }, [lines, staggerMs, animationMode]);
 
     return (
         <div ref={ref} className={containerClassName} aria-label={lines.map(l => l.text).join('. ')}>
