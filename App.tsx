@@ -70,8 +70,8 @@ const App: React.FC = () => {
                             <div style={{fontSize: '10px', color: '#cccccc', lineHeight: 'normal', wordBreak: 'normal', overflow: 'hidden', whiteSpace: 'nowrap', textOverflow: 'ellipsis', fontFamily: 'Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif', fontWeight: 100}}>
                                 <a href="https://soundcloud.com/somos-suas-vozes" title="Somos suas vozes" target="_blank" rel="noopener noreferrer" style={{color: '#cccccc', textDecoration: 'none'}}>Somos suas vozes</a> · <a href="https://soundcloud.com/somos-suas-vozes/somos-suas-vozes-guia-v7/s-r9ZYzXCIu78" title="Somos suas vozes-Guia-V7" target="_blank" rel="noopener noreferrer" style={{color: '#cccccc', textDecoration: 'none'}}>Somos suas vozes-Guia-V7</a>
                             </div>
-                            <div className="mt-4 flex items-center justify-center space-x-3 text-center">
-                                <IconArrowUp className="w-5 h-5 text-brand-primary flex-shrink-0" />
+                            <div className="mt-4 flex flex-col sm:flex-row items-center justify-center text-center sm:space-x-3">
+                                <IconArrowUp className="w-5 h-5 text-brand-primary flex-shrink-0 mb-2 sm:mb-0" />
                                 <p className="text-brand-text-secondary text-base">Para tocar a música, clique em <strong className="text-brand-text">"Ouvir no navegador"</strong> no player acima.</p>
                             </div>
                         </div>
