@@ -52,7 +52,7 @@ const App: React.FC = () => {
                     icon={<IconMusic className="w-10 h-10 text-brand-primary" />}
                 >
                     <Animated>
-                        <p className="text-2xl leading-relaxed mb-16 text-center max-w-6xl mx-auto">
+                        <p className="text-base sm:text-lg md:text-xl leading-relaxed mb-16 text-center max-w-6xl mx-auto">
                             Esta é a essência sonora do nosso movimento. Uma guia musical que representa a alma do projeto. Dê o play e sinta a força da nossa mensagem.
                         </p>
                     </Animated>
@@ -83,19 +83,19 @@ const App: React.FC = () => {
                             lines={[
                                 {
                                     text: "4 de outubro de 2025",
-                                    className: "text-3xl md:text-4xl font-bold text-brand-primary font-serif mb-3",
+                                    className: "text-2xl sm:text-3xl md:text-4xl font-bold text-brand-primary font-serif mb-3",
                                 },
                                 {
                                     text: "O dia em que a música brasileira deu voz aos animais.",
-                                    className: "text-xl md:text-2xl text-brand-text mb-6",
+                                    className: "text-base sm:text-lg md:text-2xl text-brand-text mb-6",
                                 },
                                 {
                                     text: 'Porque "onde existe vida, existe amor."',
-                                    className: "italic text-brand-text-secondary text-xl mb-6",
+                                    className: "italic text-brand-text-secondary text-base md:text-lg mb-6",
                                 },
                                 {
-                                    text: "Considerem este convite. Os animais precisam da nossa voz.",
-                                    className: "text-lg md:text-xl font-semibold",
+                                    text: "Os animais precisam da nossa voz.",
+                                    className: "text-base md:text-xl font-semibold",
                                 },
                             ]}
                         />
@@ -110,11 +110,11 @@ const App: React.FC = () => {
                     bgImageUrl="https://images.unsplash.com/photo-1583511655826-0ab469152a48?q=80&w=1920&auto=format&fit=crop"
                 >
                     <Animated>
-                        <p className="text-2xl leading-relaxed mb-12 text-center max-w-6xl mx-auto">{content.slide1.paragraph1}</p>
+                        <p className="text-base sm:text-lg md:text-xl leading-relaxed mb-12 text-center max-w-6xl mx-auto">{content.slide1.paragraph1}</p>
                     </Animated>
                     <Animated delay={200}>
                         <div className="text-center mb-12">
-                             <h3 className="text-4xl font-semibold font-serif text-brand-text mb-8">{content.slide1.subheading}</h3>
+                             <h3 className="text-2xl sm:text-3xl md:text-4xl font-semibold font-serif text-brand-text mb-8">{content.slide1.subheading}</h3>
                              <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
                                 {content.slide1.stats.map((stat, index) => {
                                     const StatIcon = iconMap[stat.icon];
@@ -126,7 +126,7 @@ const App: React.FC = () => {
                                              <div className="bg-brand-surface/80 backdrop-blur-lg border border-brand-secondary/20 p-8 rounded-xl shadow-lg text-center h-full transition-all duration-500 hover:shadow-glow-primary hover:-translate-y-2 transform hover:border-brand-primary/50">
                                                 <StatIcon className="w-12 h-12 mx-auto text-brand-primary mb-4" />
                                                 <Counter end={endValue} suffix={suffix} />
-                                                <p className="text-xl text-brand-text-secondary mt-2">{stat.description}</p>
+                                                <p className="text-base md:text-lg text-brand-text-secondary mt-2">{stat.description}</p>
                                             </div>
                                         </Animated>
                                     );
@@ -135,24 +135,24 @@ const App: React.FC = () => {
                         </div>
                     </Animated>
                     <Animated delay={500}>
-                        <p className="italic text-brand-primary text-center text-3xl font-serif">{content.slide1.conclusion}</p>
+                        <p className="italic text-brand-primary text-center text-xl sm:text-2xl md:text-3xl font-serif">{content.slide1.conclusion}</p>
                     </Animated>
                 </Section>
                 
                 {/* PARTE 2: O Chamado à Ação */}
                 <Section id="convite" title={content.slide14.title} icon={<IconMegaphone className="w-10 h-10 text-brand-primary" />}>
                     <AnimatedTypewriter 
-                        lines={[{ text: content.slide14.paragraph1, className: "text-xl md:text-2xl leading-relaxed mb-12 text-center max-w-4xl mx-auto" }]} 
+                        lines={[{ text: content.slide14.paragraph1, className: "text-base sm:text-lg md:text-2xl leading-relaxed mb-12 text-center max-w-4xl mx-auto" }]} 
                     />
                     <div className="mt-12 max-w-4xl mx-auto">
                         <Animated delay={200}>
                             <div className="bg-brand-surface border border-brand-secondary/20 p-6 md:p-8 rounded-xl transition-all duration-500 hover:shadow-glow-primary hover:-translate-y-1 transform hover:border-brand-primary/50">
-                                <h3 className="text-2xl md:text-3xl font-semibold font-serif text-brand-text mb-6 text-center">{content.slide14.expectTitle}</h3>
+                                <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold font-serif text-brand-text mb-6 text-center">{content.slide14.expectTitle}</h3>
                                 <ul className="space-y-4 md:space-y-6">
                                     {content.slide14.expectation.map((item, i) => {
                                         const ExpectIcon = iconMap[item.icon];
                                         return (
-                                            <li key={i} className="flex items-start text-lg md:text-xl">
+                                            <li key={i} className="flex items-start text-base md:text-lg">
                                                 <ExpectIcon className="w-7 h-7 md:w-8 md:h-8 text-brand-secondary mr-4 mt-1 flex-shrink-0" />
                                                 <span>{item.text}</span>
                                             </li>
@@ -171,7 +171,7 @@ const App: React.FC = () => {
                                 <Animated key={index} delay={index * 150}>
                                     <div className="bg-brand-surface/80 backdrop-blur-lg border border-brand-secondary/20 p-8 rounded-xl shadow-lg h-full transition-all duration-500 hover:shadow-glow-primary hover:-translate-y-2 transform hover:border-brand-primary/50 flex flex-col items-center text-center">
                                         <CardIcon className="w-12 h-12 text-brand-primary mb-6" />
-                                        <p className="text-2xl leading-relaxed text-brand-text/90">
+                                        <p className="text-base md:text-lg leading-relaxed text-brand-text/90">
                                             {card.text}
                                         </p>
                                     </div>
@@ -189,7 +189,7 @@ const App: React.FC = () => {
                     bgImageUrl="https://images.unsplash.com/photo-1507838153414-b4b713384a76?q=80&w=1920&auto=format&fit=crop"
                 >
                      <Animated>
-                        <p className="text-2xl leading-relaxed mb-10 text-center max-w-6xl mx-auto">{content.slide2.paragraph1}</p>
+                        <p className="text-base sm:text-lg md:text-xl leading-relaxed mb-10 text-center max-w-6xl mx-auto">{content.slide2.paragraph1}</p>
                      </Animated>
                      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
                         {content.slide2.examples.map((ex, index) => {
@@ -202,15 +202,15 @@ const App: React.FC = () => {
                                         <div className="animated-border-wrapper rounded-xl p-[2px] h-full transition-all duration-500 shadow-glow-primary animate-pulse-glow hover:shadow-2xl hover:shadow-yellow-400/50 hover:-translate-y-2 transform">
                                             <div className="bg-brand-surface backdrop-blur-lg rounded-[10px] h-full p-6 text-center">
                                                 <ExampleIcon className="w-10 h-10 mx-auto text-brand-primary mb-4"/>
-                                                <h4 className="font-bold text-brand-text text-2xl mb-1">{ex.title}</h4>
-                                                <p className="text-xl text-brand-text-secondary">{ex.description}</p>
+                                                <h4 className="font-bold text-brand-text text-lg md:text-xl mb-1">{ex.title}</h4>
+                                                <p className="text-base md:text-lg text-brand-text-secondary">{ex.description}</p>
                                             </div>
                                         </div>
                                     ) : (
                                         <div className="bg-brand-surface/80 backdrop-blur-lg border border-brand-secondary/20 p-6 rounded-xl text-center h-full transition-all duration-500 hover:shadow-glow-primary hover:-translate-y-2 transform hover:border-brand-primary/50">
                                             <ExampleIcon className="w-10 h-10 mx-auto text-brand-primary mb-4"/>
-                                            <h4 className="font-bold text-brand-text text-2xl mb-1">{ex.title}</h4>
-                                            <p className="text-xl text-brand-text-secondary">{ex.description}</p>
+                                            <h4 className="font-bold text-brand-text text-lg md:text-xl mb-1">{ex.title}</h4>
+                                            <p className="text-base md:text-lg text-brand-text-secondary">{ex.description}</p>
                                         </div>
                                     )}
                                 </Animated>
@@ -218,17 +218,17 @@ const App: React.FC = () => {
                         })}
                      </div>
                      <Animated delay={500}>
-                        <p className="mt-10 text-center italic text-2xl font-serif max-w-6xl mx-auto">{content.slide2.conclusion}</p>
+                        <p className="mt-10 text-center italic text-lg sm:text-xl md:text-2xl font-serif max-w-6xl mx-auto">{content.slide2.conclusion}</p>
                      </Animated>
                 </Section>
 
                 <Section id="modelo" title={content.slide6.title} icon={<IconUsers className="w-10 h-10 text-brand-primary" />}>
                     <Animated>
-                        <p className="text-2xl leading-relaxed mb-8 text-center max-w-6xl mx-auto">{content.slide6.paragraph1}</p>
+                        <p className="text-base sm:text-lg md:text-xl leading-relaxed mb-8 text-center max-w-6xl mx-auto">{content.slide6.paragraph1}</p>
                     </Animated>
                     <Animated delay={200}>
                         <div className="bg-brand-surface border border-brand-secondary/20 p-8 rounded-xl shadow-lg transition-all duration-500 hover:shadow-glow-primary hover:-translate-y-1 transform hover:border-brand-primary/50 max-w-6xl mx-auto">
-                            <h3 className="text-3xl font-semibold font-serif text-brand-text mb-6 text-center">{content.slide6.subheading}</h3>
+                            <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold font-serif text-brand-text mb-6 text-center">{content.slide6.subheading}</h3>
                              <div className="grid md:grid-cols-2 gap-x-8 gap-y-4 mt-6">
                                 {content.slide6.points.map((point, i) => {
                                      const PointIcon = iconMap[point.icon];
@@ -236,7 +236,7 @@ const App: React.FC = () => {
                                         <Animated key={i} delay={i * 100}>
                                             <div className="flex items-start space-x-4 p-4">
                                                 <PointIcon className="w-8 h-8 text-brand-secondary mt-1 flex-shrink-0" />
-                                                <p className="text-xl">{point.text}</p>
+                                                <p className="text-base md:text-lg">{point.text}</p>
                                             </div>
                                         </Animated>
                                     )
@@ -249,13 +249,13 @@ const App: React.FC = () => {
                             <IconQuoteOpen className="w-16 h-16 text-brand-secondary/20 absolute top-0 left-0 -translate-y-2 opacity-70" />
                             <AnimatedTypewriter
                                 lines={[
-                                    { text: content.slide6.quote.original, className: "text-xl md:text-2xl leading-relaxed text-brand-text-secondary mb-4" },
+                                    { text: content.slide6.quote.original, className: "text-base md:text-xl leading-relaxed text-brand-text-secondary mb-4" },
                                 ]}
                                 staggerMs={20}
                             />
                             <AnimatedTypewriter
                                  lines={[
-                                    { text: content.slide6.quote.adaptation, className: "text-2xl md:text-3xl font-semibold font-serif text-brand-primary" },
+                                    { text: content.slide6.quote.adaptation, className: "text-lg sm:text-2xl md:text-3xl font-semibold font-serif text-brand-primary" },
                                 ]}
                                 staggerMs={30}
                             />
@@ -264,7 +264,7 @@ const App: React.FC = () => {
                     </Animated>
                     <Animated delay={600}>
                         <p 
-                            className="italic text-brand-text/90 font-semibold text-2xl mt-8 text-center max-w-6xl mx-auto"
+                            className="italic text-brand-text/90 font-semibold text-lg sm:text-xl md:text-2xl mt-8 text-center max-w-6xl mx-auto"
                             dangerouslySetInnerHTML={{ __html: content.slide6.conclusion }}
                         />
                     </Animated>
@@ -279,12 +279,12 @@ const App: React.FC = () => {
                     <div className="max-w-4xl mx-auto">
                         <div className="space-y-6 text-center">
                             <Animated delay={100}>
-                                <h3 className="text-3xl font-bold font-serif text-brand-text">{content.historia.andre.name}</h3>
-                                <p className="text-xl text-brand-text-secondary mb-8">{content.historia.andre.bio}</p>
+                                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold font-serif text-brand-text">{content.historia.andre.name}</h3>
+                                <p className="text-base md:text-lg text-brand-text-secondary mb-8">{content.historia.andre.bio}</p>
                             </Animated>
                             {content.historia.story.map((p, i) => (
                                 <Animated key={i} delay={200 + i * 100}>
-                                    <p className="text-2xl leading-relaxed text-left" dangerouslySetInnerHTML={{ __html: p }}></p>
+                                    <p className="text-base md:text-xl leading-relaxed text-left" dangerouslySetInnerHTML={{ __html: p }}></p>
                                 </Animated>
                             ))}
                         </div>
@@ -292,7 +292,7 @@ const App: React.FC = () => {
                     
                     <Animated delay={200}>
                         <div className="bg-brand-surface/80 backdrop-blur-lg border border-brand-secondary/20 p-8 rounded-xl shadow-lg transition-all duration-500 hover:shadow-glow-primary hover:-translate-y-1 transform hover:border-brand-primary/50 max-w-6xl mx-auto mt-20">
-                            <h3 className="text-3xl font-semibold font-serif text-brand-text mb-6 text-center">{content.historia.motivation.subheading}</h3>
+                            <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold font-serif text-brand-text mb-6 text-center">{content.historia.motivation.subheading}</h3>
                             <div className="grid md:grid-cols-2 gap-x-8 gap-y-4 mt-6">
                                 {content.historia.motivation.points.map((point, i) => {
                                     const PointIcon = iconMap[point.icon];
@@ -300,7 +300,7 @@ const App: React.FC = () => {
                                         <Animated key={i} delay={i * 100}>
                                             <div className="flex items-start space-x-4 p-4">
                                                 <PointIcon className="w-8 h-8 text-brand-secondary mt-1 flex-shrink-0" />
-                                                <p className="text-xl">{point.text}</p>
+                                                <p className="text-base md:text-lg">{point.text}</p>
                                             </div>
                                         </Animated>
                                     )
@@ -309,7 +309,7 @@ const App: React.FC = () => {
                         </div>
                     </Animated>
                     <Animated delay={500}>
-                        <p className="italic text-brand-text/90 font-semibold text-2xl mt-12 text-center max-w-6xl mx-auto">{content.historia.conclusion}</p>
+                        <p className="italic text-brand-text/90 font-semibold text-lg sm:text-xl md:text-2xl mt-12 text-center max-w-6xl mx-auto">{content.historia.conclusion}</p>
                     </Animated>
                 </Section>
 

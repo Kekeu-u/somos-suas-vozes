@@ -119,7 +119,7 @@ export const Counter: React.FC<CounterProps> = ({
         requestAnimationFrame(step);
     }, [end, duration, isInView]);
 
-    const defaultClassName = "text-5xl font-bold text-brand-text leading-none";
+    const defaultClassName = "text-4xl sm:text-5xl font-bold text-brand-text leading-none";
 
     return (
         <p ref={ref} className={className || defaultClassName}>

@@ -35,7 +35,7 @@ export const content = {
     },
     historia: {
         title: "A História Por Trás",
-        bgImageUrl: "https://images.unsplash.com/photo-1597561542938-1e47b3113523?q=80&w=1920&auto-format&fit-crop",
+        bgImageUrl: "https://images.unsplash.com/photo-1597561542938-1e47b3113523?q=80&w=1920&auto-format&fit=crop",
         andre: {
             name: "André Amorim",
             bio: "Produtor cultural, empresário e diretor da ASSMURS, com projetos em rádio, TV e eventos sociais."
@@ -69,7 +69,7 @@ export const content = {
             original: 'Quincy Jones tinha um cartaz no estúdio durante a gravação de "We Are the World" que dizia: "Deixe seu ego na porta"',
             adaptation: 'Aqui, diremos: "Deixe seu ego de lado e empreste sua voz a quem não pode se defender"'
         },
-        conclusion: 'Queremos criar o <strong class="text-brand-primary font-black uppercase tracking-wider text-3xl mx-1">PRIMEIRO</strong> hino global especificamente dedicado aos direitos dos animais.',
+        conclusion: 'Queremos criar o <strong class="text-brand-primary font-black uppercase tracking-wider text-xl sm:text-2xl md:text-3xl mx-1">PRIMEIRO</strong> hino global especificamente dedicado aos direitos dos animais.',
     },
     slide14: {
         title: "Um Chamado Respeitoso",
