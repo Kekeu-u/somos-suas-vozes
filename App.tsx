@@ -52,7 +52,7 @@ const App: React.FC = () => {
                     icon={<IconMusic className="w-10 h-10 text-brand-primary" />}
                 >
                     <Animated>
-                        <p className="text-base sm:text-lg md:text-xl leading-relaxed mb-16 text-center max-w-6xl mx-auto">
+                        <p className="text-base sm:text-lg md:text-xl leading-relaxed mb-16 text-center max-w-6xl mx-auto text-balance">
                             Esta é a essência sonora do nosso movimento. Uma guia musical que representa a alma do projeto. Dê o play e sinta a força da nossa mensagem.
                         </p>
                     </Animated>
@@ -110,7 +110,7 @@ const App: React.FC = () => {
                     bgImageUrl="https://images.unsplash.com/photo-1583511655826-0ab469152a48?q=80&w=1920&auto=format&fit=crop"
                 >
                     <Animated>
-                        <p className="text-base sm:text-lg md:text-xl leading-relaxed mb-12 text-center max-w-6xl mx-auto">{content.slide1.paragraph1}</p>
+                        <p className="text-base sm:text-lg md:text-xl leading-relaxed mb-12 text-center max-w-6xl mx-auto text-balance">{content.slide1.paragraph1}</p>
                     </Animated>
                     <Animated delay={200}>
                         <div className="text-center mb-12">
@@ -142,7 +142,7 @@ const App: React.FC = () => {
                 {/* PARTE 2: O Chamado à Ação */}
                 <Section id="convite" title={content.slide14.title} icon={<IconMegaphone className="w-10 h-10 text-brand-primary" />}>
                     <AnimatedTypewriter 
-                        lines={[{ text: content.slide14.paragraph1, className: "text-base sm:text-lg md:text-2xl leading-relaxed mb-12 text-center max-w-4xl mx-auto" }]} 
+                        lines={[{ text: content.slide14.paragraph1, className: "text-base sm:text-lg md:text-2xl leading-relaxed mb-12 text-center max-w-4xl mx-auto text-balance" }]} 
                     />
                     <div className="mt-12 max-w-4xl mx-auto">
                         <Animated delay={200}>
@@ -189,7 +189,7 @@ const App: React.FC = () => {
                     bgImageUrl="https://images.unsplash.com/photo-1507838153414-b4b713384a76?q=80&w=1920&auto=format&fit=crop"
                 >
                      <Animated>
-                        <p className="text-base sm:text-lg md:text-xl leading-relaxed mb-10 text-center max-w-6xl mx-auto">{content.slide2.paragraph1}</p>
+                        <p className="text-base sm:text-lg md:text-xl leading-relaxed mb-10 text-center max-w-6xl mx-auto text-balance">{content.slide2.paragraph1}</p>
                      </Animated>
                      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
                         {content.slide2.examples.map((ex, index) => {
@@ -224,7 +224,7 @@ const App: React.FC = () => {
 
                 <Section id="modelo" title={content.slide6.title} icon={<IconUsers className="w-10 h-10 text-brand-primary" />}>
                     <Animated>
-                        <p className="text-base sm:text-lg md:text-xl leading-relaxed mb-8 text-center max-w-6xl mx-auto">{content.slide6.paragraph1}</p>
+                        <p className="text-base sm:text-lg md:text-xl leading-relaxed mb-8 text-center max-w-6xl mx-auto text-balance">{content.slide6.paragraph1}</p>
                     </Animated>
                     <Animated delay={200}>
                         <div className="bg-brand-surface border border-brand-secondary/20 p-8 rounded-xl shadow-lg transition-all duration-500 hover:shadow-glow-primary hover:-translate-y-1 transform hover:border-brand-primary/50 max-w-6xl mx-auto">
@@ -277,14 +277,14 @@ const App: React.FC = () => {
                     bgImageUrl={content.historia.bgImageUrl}
                 >
                     <div className="max-w-4xl mx-auto">
-                        <div className="space-y-6 text-center">
+                        <div className="space-y-6">
                             <Animated delay={100}>
-                                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold font-serif text-brand-text">{content.historia.andre.name}</h3>
-                                <p className="text-base md:text-lg text-brand-text-secondary mb-8">{content.historia.andre.bio}</p>
+                                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold font-serif text-brand-text text-center">{content.historia.andre.name}</h3>
+                                <p className="text-base md:text-lg text-brand-text-secondary mb-8 text-center">{content.historia.andre.bio}</p>
                             </Animated>
                             {content.historia.story.map((p, i) => (
                                 <Animated key={i} delay={200 + i * 100}>
-                                    <p className="text-base md:text-xl leading-relaxed text-left" dangerouslySetInnerHTML={{ __html: p }}></p>
+                                    <p className="text-base md:text-xl leading-relaxed text-justify" dangerouslySetInnerHTML={{ __html: p }}></p>
                                 </Animated>
                             ))}
                         </div>
