@@ -53,47 +53,42 @@ const App: React.FC = () => {
                     icon={<IconMusic className="w-10 h-10 text-brand-primary" />}
                 >
                     <Animated>
-                        <p className="text-base sm:text-lg md:text-xl leading-relaxed text-center max-w-6xl mx-auto text-balance mb-12">
-                            A música é a alma do nosso movimento. Uma canção-guia que carrega a força da nossa mensagem e o apelo por compaixão. Dê o play e sinta a emoção que nos une.
+                        <p className="text-base sm:text-lg md:text-xl leading-relaxed mb-16 text-center max-w-6xl mx-auto text-balance">
+                            Esta é a essência sonora do nosso movimento. Uma guia musical que representa a alma do projeto. Dê o play e sinta a força da nossa mensagem.
                         </p>
                     </Animated>
-                    
-                    <Animated delay={200}>
-                        <div className="max-w-4xl mx-auto rounded-xl overflow-hidden shadow-lg border border-brand-secondary/20 bg-brand-surface">
-                             <iframe 
+                    <Animated delay={100}>
+                         <div className="max-w-4xl mx-auto bg-brand-surface/80 p-4 rounded-xl border border-brand-secondary/20 shadow-lg backdrop-blur-lg transition-all duration-500 hover:shadow-glow-primary hover:-translate-y-2 transform hover:border-brand-primary/50">
+                            <iframe 
+                                title="Somos Suas Vozes - Música Guia"
                                 width="100%" 
                                 height="300" 
                                 scrolling="no" 
                                 frameBorder="no" 
                                 allow="autoplay" 
-                                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/soundcloud%253Atracks%253A2170987776&color=%23858856&auto_play=true&hide_related=false&show_comments=true&show_user=true&show_reposts=false&show_teaser=true&visual=true"
-                                title="Player da música Somos Suas Vozes"
-                            ></iframe>
+                                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/2170987776%3Fsecret_token%3Ds-r9ZYzXCIu78&color=%23FFC72C&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false&show_teaser=true&visual=true">
+                            </iframe>
+                            <div style={{fontSize: '10px', color: '#cccccc', lineHeight: 'normal', wordBreak: 'normal', overflow: 'hidden', whiteSpace: 'nowrap', textOverflow: 'ellipsis', fontFamily: 'Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif', fontWeight: 100}}>
+                                <a href="https://soundcloud.com/somos-suas-vozes" title="Somos suas vozes" target="_blank" rel="noopener noreferrer" style={{color: '#cccccc', textDecoration: 'none'}}>Somos suas vozes</a> · <a href="https://soundcloud.com/somos-suas-vozes/somos-suas-vozes-guia-v7/s-r9ZYzXCIu78" title="Somos suas vozes-Guia-V7" target="_blank" rel="noopener noreferrer" style={{color: '#cccccc', textDecoration: 'none'}}>Somos suas vozes-Guia-V7</a>
+                            </div>
+                            <div className="mt-4 flex flex-col sm:flex-row items-center justify-center text-center sm:space-x-3">
+                                <IconArrowUp className="w-5 h-5 text-brand-primary flex-shrink-0 mb-2 sm:mb-0" />
+                                <p className="text-brand-text-secondary text-base">Clique no player acima para ouvir. Pode ser necessário clicar em <strong className="text-brand-text">"Ouvir no navegador"</strong>.</p>
+                            </div>
                         </div>
                     </Animated>
-
-                    <Animated delay={300}>
-                        <p className="text-center text-sm text-brand-text-secondary mt-4 mb-12 max-w-4xl mx-auto">
-                            Para tocar a música, clique em "Ouvir no navegador" no player acima.
-                        </p>
-                    </Animated>
-
-                    <Animated delay={400}>
-                        <div className="text-center max-w-4xl mx-auto">
-                            <p className="text-2xl sm:text-3xl md:text-4xl font-bold text-brand-primary font-serif mb-3">
-                                4 de outubro de 2025
-                            </p>
-                            <p className="text-base sm:text-lg md:text-2xl text-brand-text mb-6">
-                                O dia em que a música brasileira deu voz aos animais.
-                            </p>
-                            <p className="italic text-brand-text-secondary text-base md:text-lg mb-6">
-                                Porque "onde existe vida, existe amor."
-                            </p>
-                            <p className="text-base md:text-xl font-semibold">
-                                Os animais precisam da nossa voz.
-                            </p>
-                        </div>
-                    </Animated>
+                    <div className="text-center max-w-4xl mx-auto mt-16">
+                        <AnimatedTypewriter
+                            lines={[
+                                { text: "4 de outubro de 2025", className: "text-2xl sm:text-3xl md:text-4xl font-bold text-brand-primary font-serif mb-3" },
+                                { text: "O dia em que a música brasileira deu voz aos animais.", className: "text-base sm:text-lg md:text-2xl text-brand-text mb-6" },
+                                { text: 'Porque "onde existe vida, existe amor."', className: "italic text-brand-text-secondary text-base md:text-lg mb-6" },
+                                { text: "Os animais precisam da nossa voz.", className: "text-base md:text-xl font-semibold" }
+                            ]}
+                            staggerMs={15}
+                            animationMode="parallel"
+                        />
+                    </div>
                 </Section>
                 
                 {/* PARTE 1: A Realidade Urgente */}
@@ -134,36 +129,40 @@ const App: React.FC = () => {
                 </Section>
                 
                 {/* PARTE 2: O Chamado à Ação */}
-                {/* FIX: Corrected section ID from 'convite' to 'o-convite' to match navigation links */}
-                <Section id="o-convite" title={content.slide14.title} icon={<IconMegaphone className="w-10 h-10 text-brand-primary" />}>
+                <Section id="convite" title={content.slide14.title} icon={<IconMegaphone className="w-10 h-10 text-brand-primary" />}>
                     <AnimatedTypewriter 
                         lines={[{ text: content.slide14.paragraph1, className: "text-base sm:text-lg md:text-2xl leading-relaxed mb-12 text-center max-w-4xl mx-auto text-balance" }]} 
                     />
-                    {/* FIX: Reconstructed missing content for the 'o-convite' section */}
-                    <div className="mt-12">
-                         <h3 className="text-2xl sm:text-3xl md:text-4xl font-semibold font-serif text-brand-text mb-8 text-center">{content.slide14.expectTitle}</h3>
-                        <div className="max-w-4xl mx-auto space-y-6">
-                            {content.slide14.expectation.map((item, index) => {
-                                const ItemIcon = iconMap[item.icon];
-                                return (
-                                    <Animated key={index} delay={index * 150}>
-                                        <div className="flex items-start space-x-6 bg-brand-surface/50 backdrop-blur-lg border border-brand-secondary/20 p-6 rounded-xl shadow-lg transition-all duration-500 hover:shadow-glow-primary hover:-translate-y-1 transform hover:border-brand-primary/50">
-                                            <ItemIcon className="w-8 h-8 text-brand-primary mt-1 flex-shrink-0" />
-                                            <p className="text-base md:text-lg text-brand-text-secondary">{item.text}</p>
-                                        </div>
-                                    </Animated>
-                                );
-                            })}
-                        </div>
+                    <div className="mt-12 max-w-4xl mx-auto">
+                        <Animated delay={200}>
+                            <div className="bg-brand-surface border border-brand-secondary/20 p-6 md:p-8 rounded-xl transition-all duration-500 hover:shadow-glow-primary hover:-translate-y-1 transform hover:border-brand-primary/50">
+                                <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold font-serif text-brand-text mb-6 text-center">{content.slide14.expectTitle}</h3>
+                                <ul className="space-y-4 md:space-y-6">
+                                    {content.slide14.expectation.map((item, i) => {
+                                        const ExpectIcon = iconMap[item.icon];
+                                        return (
+                                            <li key={i} className="flex items-start text-base md:text-lg">
+                                                <ExpectIcon className="w-7 h-7 md:w-8 md:h-8 text-brand-secondary mr-4 mt-1 flex-shrink-0" />
+                                                <span>{item.text}</span>
+                                            </li>
+                                        )
+                                    })}
+                                </ul>
+                            </div>
+                        </Animated>
                     </div>
-                    <div className="grid md:grid-cols-2 gap-8 mt-16 max-w-6xl mx-auto">
+                </Section>
+                 <Section id="o-convite" title={content.slide15.title} icon={<IconFeather className="w-10 h-10 text-brand-primary" />}>
+                    <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
                         {content.slide15.cards.map((card, index) => {
                             const CardIcon = iconMap[card.icon];
                             return (
-                                <Animated key={index} delay={index * 200 + 500}>
-                                    <div className="bg-brand-surface/80 backdrop-blur-lg border border-brand-secondary/20 p-8 rounded-xl shadow-lg text-center h-full transition-all duration-500 hover:shadow-glow-primary hover:-translate-y-2 transform hover:border-brand-primary/50">
-                                        <CardIcon className="w-12 h-12 mx-auto text-brand-primary mb-6" />
-                                        <p className="text-base md:text-lg text-brand-text-secondary">{card.text}</p>
+                                <Animated key={index} delay={index * 150}>
+                                    <div className="bg-brand-surface/80 backdrop-blur-lg border border-brand-secondary/20 p-8 rounded-xl shadow-lg h-full transition-all duration-500 hover:shadow-glow-primary hover:-translate-y-2 transform hover:border-brand-primary/50 flex flex-col items-center text-center">
+                                        <CardIcon className="w-12 h-12 text-brand-primary mb-6" />
+                                        <p className="text-base md:text-lg leading-relaxed text-brand-text/90">
+                                            {card.text}
+                                        </p>
                                     </div>
                                 </Animated>
                             );
@@ -171,117 +170,138 @@ const App: React.FC = () => {
                     </div>
                 </Section>
 
-                {/* PARTE 3: A Estratégia */}
-                 <Section 
+                {/* PARTE 3: A Nossa Estratégia */}
+                <Section 
                     id="forca-da-musica" 
                     title={content.slide2.title} 
                     icon={<IconGlobe className="w-10 h-10 text-brand-primary" />}
+                    bgImageUrl="https://images.unsplash.com/photo-1507838153414-b4b713384a76?q=80&w=1920&auto=format&fit=crop"
                 >
-                    <Animated>
-                        <p className="text-base sm:text-lg md:text-xl leading-relaxed mb-12 text-center max-w-6xl mx-auto text-balance">{content.slide2.paragraph1}</p>
-                    </Animated>
-                    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto mb-16">
-                        {content.slide2.examples.map((example, index) => {
-                            const ExampleIcon = iconMap[example.icon];
+                     <Animated>
+                        <p className="text-base sm:text-lg md:text-xl leading-relaxed mb-10 text-center max-w-6xl mx-auto text-balance">{content.slide2.paragraph1}</p>
+                     </Animated>
+                     <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                        {content.slide2.examples.map((ex, index) => {
+                            const ExampleIcon = iconMap[ex.icon];
+                            const isFeatured = (ex as any).isFeatured;
+
                             return (
                                 <Animated key={index} delay={index * 150}>
-                                    <div className={`p-8 rounded-xl text-center h-full transition-all duration-500 transform hover:-translate-y-2 ${example.isFeatured ? 'bg-gradient-to-br from-brand-primary to-brand-secondary text-brand-background shadow-glow-primary' : 'bg-brand-surface/80 backdrop-blur-lg border border-brand-secondary/20 hover:shadow-glow-primary'}`}>
-                                        <ExampleIcon className={`w-12 h-12 mx-auto mb-4 ${example.isFeatured ? 'text-brand-background' : 'text-brand-primary'}`} />
-                                        <h4 className="text-lg font-bold mb-2">{example.title}</h4>
-                                        <p className={`text-sm ${example.isFeatured ? 'text-brand-background/90' : 'text-brand-text-secondary'}`}>{example.description}</p>
-                                    </div>
+                                    {isFeatured ? (
+                                        <div className="animated-border-wrapper rounded-xl p-[2px] h-full transition-all duration-500 shadow-glow-primary animate-pulse-glow hover:shadow-2xl hover:shadow-yellow-400/50 hover:-translate-y-2 transform">
+                                            <div className="bg-brand-surface backdrop-blur-lg rounded-[10px] h-full p-6 text-center">
+                                                <ExampleIcon className="w-10 h-10 mx-auto text-brand-primary mb-4"/>
+                                                <h4 className="font-bold text-brand-text text-lg md:text-xl mb-1">{ex.title}</h4>
+                                                <p className="text-base md:text-lg text-brand-text-secondary">{ex.description}</p>
+                                            </div>
+                                        </div>
+                                    ) : (
+                                        <div className="bg-brand-surface/80 backdrop-blur-lg border border-brand-secondary/20 p-6 rounded-xl text-center h-full transition-all duration-500 hover:shadow-glow-primary hover:-translate-y-2 transform hover:border-brand-primary/50">
+                                            <ExampleIcon className="w-10 h-10 mx-auto text-brand-primary mb-4"/>
+                                            <h4 className="font-bold text-brand-text text-lg md:text-xl mb-1">{ex.title}</h4>
+                                            <p className="text-base md:text-lg text-brand-text-secondary">{ex.description}</p>
+                                        </div>
+                                    )}
                                 </Animated>
-                            );
+                            )
                         })}
-                    </div>
-                    <Animated delay={600}>
-                        <p className="italic text-brand-primary text-center text-xl sm:text-2xl md:text-3xl font-serif">{content.slide2.conclusion}</p>
+                     </div>
+                     <Animated delay={500}>
+                        <p className="mt-10 text-center italic text-lg sm:text-xl md:text-2xl font-serif max-w-6xl mx-auto">{content.slide2.conclusion}</p>
+                     </Animated>
+                </Section>
+
+                <Section id="modelo" title={content.slide6.title} icon={<IconUsers className="w-10 h-10 text-brand-primary" />}>
+                    <Animated>
+                        <p className="text-base sm:text-lg md:text-xl leading-relaxed mb-8 text-center max-w-6xl mx-auto text-balance">{content.slide6.paragraph1}</p>
                     </Animated>
-                    <div className="mt-24">
-                        <Animated>
-                            <h3 className="text-3xl sm:text-4xl md:text-5xl font-bold font-serif text-brand-text text-center mb-4">{content.slide6.title}</h3>
-                            <p className="text-base sm:text-lg md:text-xl leading-relaxed mb-12 text-center max-w-6xl mx-auto text-balance">{content.slide6.paragraph1}</p>
-                        </Animated>
-                        <div className="grid md:grid-cols-2 gap-12 max-w-6xl mx-auto items-center">
-                            <Animated delay={200}>
-                                <div>
-                                    <h4 className="text-2xl font-semibold text-brand-text mb-6">{content.slide6.subheading}</h4>
-                                    <ul className="space-y-4">
-                                        {content.slide6.points.map((point, index) => {
-                                            const PointIcon = iconMap[point.icon];
-                                            return (
-                                                <li key={index} className="flex items-start space-x-4">
-                                                    <PointIcon className="w-6 h-6 text-brand-primary mt-1 flex-shrink-0" />
-                                                    <span className="text-brand-text-secondary">{point.text}</span>
-                                                </li>
-                                            );
-                                        })}
-                                    </ul>
-                                </div>
-                            </Animated>
-                            <Animated delay={400}>
-                                <div className="bg-brand-surface/50 backdrop-blur-lg border border-brand-secondary/20 p-8 rounded-xl shadow-lg">
-                                    <IconQuoteOpen className="w-8 h-8 text-brand-primary/50 mb-4" />
-                                    <p className="italic text-brand-text-secondary mb-4">"{content.slide6.quote.original}"</p>
-                                    <p className="font-semibold text-brand-text">"{content.slide6.quote.adaptation}"</p>
-                                    <IconQuoteClose className="w-8 h-8 text-brand-primary/50 mt-4 ml-auto" />
-                                </div>
-                            </Animated>
+                    <Animated delay={200}>
+                        <div className="bg-brand-surface border border-brand-secondary/20 p-8 rounded-xl shadow-lg transition-all duration-500 hover:shadow-glow-primary hover:-translate-y-1 transform hover:border-brand-primary/50 max-w-6xl mx-auto">
+                            <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold font-serif text-brand-text mb-6 text-center">{content.slide6.subheading}</h3>
+                             <div className="grid md:grid-cols-2 gap-x-8 gap-y-4 mt-6">
+                                {content.slide6.points.map((point, i) => {
+                                     const PointIcon = iconMap[point.icon];
+                                    return (
+                                        <Animated key={i} delay={i * 100}>
+                                            <div className="flex items-start space-x-4 p-4">
+                                                <PointIcon className="w-8 h-8 text-brand-secondary mt-1 flex-shrink-0" />
+                                                <p className="text-base md:text-lg">{point.text}</p>
+                                            </div>
+                                        </Animated>
+                                    )
+                                })}
+                            </div>
                         </div>
-                        <Animated delay={600}>
-                            <p className="text-center mt-16 text-lg md:text-xl" dangerouslySetInnerHTML={{ __html: content.slide6.conclusion }}></p>
-                        </Animated>
-                    </div>
+                    </Animated>
+                    <Animated delay={400}>
+                        <div className="mt-12 max-w-4xl mx-auto text-center relative px-8 md:px-16 py-8">
+                            <IconQuoteOpen className="w-16 h-16 text-brand-secondary/20 absolute top-0 left-0 -translate-y-2 opacity-70" />
+                            <AnimatedTypewriter
+                                lines={[
+                                    { text: content.slide6.quote.original, className: "text-base md:text-xl leading-relaxed text-brand-text-secondary mb-4" },
+                                ]}
+                                staggerMs={20}
+                            />
+                            <AnimatedTypewriter
+                                 lines={[
+                                    { text: content.slide6.quote.adaptation, className: "text-lg sm:text-2xl md:text-3xl font-semibold font-serif text-brand-primary" },
+                                ]}
+                                staggerMs={30}
+                            />
+                            <IconQuoteClose className="w-16 h-16 text-brand-secondary/20 absolute bottom-0 right-0 translate-y-2 opacity-70" />
+                        </div>
+                    </Animated>
+                    <Animated delay={600}>
+                        <p 
+                            className="italic text-brand-text/90 font-semibold text-lg sm:text-xl md:text-2xl mt-8 text-center max-w-6xl mx-auto"
+                            dangerouslySetInnerHTML={{ __html: content.slide6.conclusion }}
+                        />
+                    </Animated>
                 </Section>
                 
-                {/* PARTE 4: A Origem */}
                 <Section 
-                    id="a-historia-por-tras"
-                    title={content.historia.title}
+                    id="a-historia-por-tras" 
+                    title={content.historia.title} 
                     icon={<IconUser className="w-10 h-10 text-brand-primary" />}
                     bgImageUrl={content.historia.bgImageUrl}
                 >
-                    <div className="max-w-6xl mx-auto grid md:grid-cols-3 gap-12 items-start">
-                        <Animated className="md:col-span-1">
-                            <div className="bg-brand-surface/80 backdrop-blur-lg border border-brand-secondary/20 p-8 rounded-xl shadow-lg text-center">
-                                <img src="https://somossuasvozes.com.br/wp-content/uploads/2024/07/Andre-Amorim-300x300.webp" alt={content.historia.andre.name} className="w-32 h-32 rounded-full mx-auto mb-4 border-4 border-brand-primary shadow-lg" />
-                                <h4 className="text-xl font-bold text-brand-text">{content.historia.andre.name}</h4>
-                                <p className="text-brand-text-secondary">{content.historia.andre.bio}</p>
-                            </div>
-                        </Animated>
-                        <div className="md:col-span-2 space-y-6">
-                            {content.historia.story.map((paragraph, index) => (
-                                <Animated key={index} delay={index * 150}>
-                                    <p className="text-base md:text-lg text-brand-text-secondary leading-relaxed" dangerouslySetInnerHTML={{ __html: paragraph }}></p>
+                    <div className="max-w-4xl mx-auto">
+                        <div className="space-y-6">
+                            <Animated delay={100}>
+                                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold font-serif text-brand-text text-center">{content.historia.andre.name}</h3>
+                                <p className="text-base md:text-lg text-brand-text-secondary mb-8 text-center">{content.historia.andre.bio}</p>
+                            </Animated>
+                            {content.historia.story.map((p, i) => (
+                                <Animated key={i} delay={200 + i * 100}>
+                                    <p className="text-base md:text-xl leading-relaxed text-justify" dangerouslySetInnerHTML={{ __html: p }}></p>
                                 </Animated>
                             ))}
                         </div>
                     </div>
-                    <div className="mt-20">
-                        <Animated delay={300}>
-                            <h3 className="text-3xl sm:text-4xl font-semibold font-serif text-brand-text text-center mb-10">{content.historia.motivation.subheading}</h3>
-                        </Animated>
-                        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
-                            {content.historia.motivation.points.map((point, index) => {
-                                const PointIcon = iconMap[point.icon];
-                                return (
-                                    <Animated key={index} delay={400 + index * 150}>
-                                        <div className="flex items-center space-x-4 bg-brand-surface/50 backdrop-blur-lg border border-brand-secondary/20 p-6 rounded-xl shadow-lg h-full">
-                                            <PointIcon className="w-8 h-8 text-brand-primary flex-shrink-0" />
-                                            <p className="text-brand-text-secondary">{point.text}</p>
-                                        </div>
-                                    </Animated>
-                                );
-                            })}
-                        </div>
-                    </div>
-                    <Animated delay={1000}>
-                        <div className="mt-20 text-center text-xl sm:text-2xl md:text-3xl font-serif italic text-brand-primary p-8 bg-brand-surface/50 backdrop-blur-lg rounded-xl max-w-4xl mx-auto">
-                            {content.historia.conclusion}
+                    
+                    <Animated delay={200}>
+                        <div className="bg-brand-surface/80 backdrop-blur-lg border border-brand-secondary/20 p-8 rounded-xl shadow-lg transition-all duration-500 hover:shadow-glow-primary hover:-translate-y-1 transform hover:border-brand-primary/50 max-w-6xl mx-auto mt-20">
+                            <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold font-serif text-brand-text mb-6 text-center">{content.historia.motivation.subheading}</h3>
+                            <div className="grid md:grid-cols-2 gap-x-8 gap-y-4 mt-6">
+                                {content.historia.motivation.points.map((point, i) => {
+                                    const PointIcon = iconMap[point.icon];
+                                    return (
+                                        <Animated key={i} delay={i * 100}>
+                                            <div className="flex items-start space-x-4 p-4">
+                                                <PointIcon className="w-8 h-8 text-brand-secondary mt-1 flex-shrink-0" />
+                                                <p className="text-base md:text-lg">{point.text}</p>
+                                            </div>
+                                        </Animated>
+                                    )
+                                })}
+                            </div>
                         </div>
                     </Animated>
+                    <Animated delay={500}>
+                        <p className="italic text-brand-text/90 font-semibold text-lg sm:text-xl md:text-2xl mt-12 text-center max-w-6xl mx-auto">{content.historia.conclusion}</p>
+                    </Animated>
                 </Section>
-                
+
                 <Timeline />
             </main>
             <Footer />
@@ -289,5 +309,4 @@ const App: React.FC = () => {
     );
 };
 
-// FIX: Added default export to make the App component available for import in index.tsx
 export default App;
