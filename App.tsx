@@ -59,17 +59,16 @@ const App: React.FC = () => {
                     </Animated>
                     <Animated delay={100}>
                          <div className="max-w-4xl mx-auto bg-brand-surface/80 p-4 rounded-xl border border-brand-secondary/20 shadow-lg backdrop-blur-lg transition-all duration-500 hover:shadow-glow-primary hover:-translate-y-2 transform hover:border-brand-primary/50">
-                            <iframe 
-                                title="Somos Suas Vozes - Música Guia"
-                                width="100%" 
-                                height="200" 
-                                scrolling="no" 
-                                frameBorder="no" 
-                                allow="autoplay" 
-                                src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/2170987776%3Fsecret_token%3Ds-r9ZYzXCIu78&color=%23FFC72C&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false&show_teaser=true&visual=false">
-                            </iframe>
-                            <div style={{fontSize: '10px', color: '#cccccc', lineHeight: 'normal', wordBreak: 'normal', overflow: 'hidden', whiteSpace: 'nowrap', textOverflow: 'ellipsis', fontFamily: 'Interstate,Lucida Grande,Lucida Sans Unicode,Lucida Sans,Garuda,Verdana,Tahoma,sans-serif', fontWeight: 100}}>
-                                <a href="https://soundcloud.com/somos-suas-vozes" title="Somos suas vozes" target="_blank" rel="noopener noreferrer" style={{color: '#cccccc', textDecoration: 'none'}}>Somos suas vozes</a> · <a href="https://soundcloud.com/somos-suas-vozes/somos-suas-vozes-guia-v7/s-r9ZYzXCIu78" title="Somos suas vozes-Guia-V7" target="_blank" rel="noopener noreferrer" style={{color: '#cccccc', textDecoration: 'none'}}>Somos suas vozes-Guia-V7</a>
+                            <div className="relative z-10">
+                                <iframe 
+                                    title="Somos Suas Vozes - Música Guia"
+                                    width="100%" 
+                                    height="200" 
+                                    scrolling="no" 
+                                    frameBorder="no" 
+                                    allow="autoplay" 
+                                    src="https://w.soundcloud.com/player/?url=https%3A//api.soundcloud.com/tracks/2170987776%3Fsecret_token%3Ds-r9ZYzXCIu78&color=%23FFC72C&auto_play=false&hide_related=false&show_comments=false&show_user=true&show_reposts=false&show_teaser=true&visual=false">
+                                </iframe>
                             </div>
                             <div className="mt-4 flex flex-col sm:flex-row items-center justify-center text-center sm:space-x-3">
                                 <IconArrowUp className="w-5 h-5 text-brand-primary flex-shrink-0 mb-2 sm:mb-0" />
