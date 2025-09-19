@@ -24,14 +24,18 @@ export const Hero: React.FC = () => {
             className: "text-xl sm:text-3xl md:text-4xl font-light mb-2 font-serif italic text-brand-primary",
         },
         {
-            text: "Cada vida tem valor. A forma como cuidamos pode variar, mas o respeito é universal",
+            text: "Cada vida tem valor.",
+            className: "text-lg sm:text-2xl md:text-3xl max-w-2xl mx-auto drop-shadow-md text-balance",
+        },
+        {
+            text: "A forma como cuidamos pode variar, mas o respeito é universal",
             className: "text-lg sm:text-2xl md:text-3xl max-w-2xl mx-auto drop-shadow-md mb-8 text-balance",
         },
     ];
 
     return (
         <section id="home" className="h-screen flex items-center justify-center relative text-center text-white overflow-hidden">
-            <div className="absolute inset-0 bg-cover bg-center kenburns-bg" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1574870111867-c85f5e451368?q=80&w=1920&auto=format&fit=crop')" }}></div>
+            <div className="absolute inset-0 bg-cover bg-center kenburns-bg" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1574870111867-c85f5e451368?q=80&w=1920&auto-format&fit=crop')" }}></div>
             <div className="absolute inset-0" style={{backgroundImage: "radial-gradient(circle, rgba(7,9,13,0.3) 0%, rgba(7,9,13,0.9) 90%)"}}></div>
             <div className="relative z-10 p-6 max-w-4xl mx-auto">
                 <AnimatedTypewriter
