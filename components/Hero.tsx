@@ -24,7 +24,7 @@ export const Hero: React.FC = () => {
             className: "text-xl sm:text-3xl md:text-4xl font-light mb-2 font-serif italic text-brand-primary",
         },
         {
-            text: "Um Projeto Musical em Defesa dos Animais",
+            text: "Cada vida tem valor. A forma como cuidamos pode variar, mas o respeito é universal",
             className: "text-lg sm:text-2xl md:text-3xl max-w-2xl mx-auto drop-shadow-md mb-8 text-balance",
         },
     ];
