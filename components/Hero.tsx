@@ -1,7 +1,17 @@
-import React from 'react';
-import { AnimatedTypewriter, Animated } from './Animated';
+import React, { useState, useEffect } from 'react';
+import { AnimatedTypewriter } from './Animated';
 
 export const Hero: React.FC = () => {
+    const [isLoaded, setIsLoaded] = useState(false);
+
+    useEffect(() => {
+        // Delay the animation to start after the typewriter effect has had time to complete
+        const timer = setTimeout(() => {
+            setIsLoaded(true);
+        }, 1000); 
+        return () => clearTimeout(timer);
+    }, []);
+    
     const mainTitleLines = [
         {
             text: "Somos Suas",
@@ -32,24 +42,23 @@ export const Hero: React.FC = () => {
             </div>
 
             {/* Tagline - Positioned absolutely near the bottom */}
-            <Animated
-                delay={1000}
-                className="absolute bottom-24 md:bottom-20 left-0 right-0 z-10 p-6 max-w-3xl mx-auto"
+            <div
+                className={`absolute bottom-24 md:bottom-20 left-0 right-0 z-10 p-6 max-w-3xl mx-auto transition-all duration-700 ease-out-quint ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}
             >
                 <p className="text-lg sm:text-xl md:text-2xl drop-shadow-md text-balance">
                     Cada vida tem valor.
                     <br />
                     A forma como cuidamos pode variar, mas o respeito é universal.
                 </p>
-            </Animated>
+            </div>
 
             {/* Scroll Arrow */}
-            <Animated
-                delay={1200}
-                className="absolute bottom-10 left-0 right-0 flex justify-center animate-float"
+            <div
+                className={`absolute bottom-10 left-0 right-0 flex justify-center animate-float transition-opacity duration-700 ease-out-quint ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
+                style={{ transitionDelay: '200ms' }}
             >
                 <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7"></path></svg>
-            </Animated>
+            </div>
         </section>
     );
 };
