@@ -25,11 +25,11 @@ export const Hero: React.FC = () => {
         },
         {
             text: "Cada vida tem valor.",
-            className: "text-lg sm:text-2xl md:text-3xl max-w-2xl mx-auto drop-shadow-md text-balance",
+            className: "mt-16 text-lg sm:text-2xl md:text-3xl max-w-2xl mx-auto drop-shadow-md text-balance",
         },
         {
             text: "A forma como cuidamos pode variar, mas o respeito é universal",
-            className: "text-lg sm:text-2xl md:text-3xl max-w-2xl mx-auto drop-shadow-md mb-8 text-balance",
+            className: "mt-16 text-lg sm:text-2xl md:text-3xl max-w-2xl mx-auto drop-shadow-md mb-8 text-balance",
         },
     ];
 
