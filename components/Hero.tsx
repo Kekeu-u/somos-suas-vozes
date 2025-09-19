@@ -16,12 +16,12 @@ export const Hero: React.FC = () => {
        {
         // Título principal - primeira linha
         text: "Somos suas",
-        className: "text-6xl sm:text-7xl md:text-8xl font-bold font-serif leading-tight drop-shadow-lg",
+        className: "text-4xl sm:text-7xl md:text-8xl font-bold font-serif leading-tight drop-shadow-lg",
     },
     {
             // Título principal - segunda linha
         text: "Vozes",
-        className: "text-6xl sm:text-7xl md:text-8xl font-bold font-serif leading-tight mb-4 drop-shadow-lg",
+        className: "text-4xl sm:text-7xl md:text-8xl font-bold font-serif leading-tight mb-4 drop-shadow-lg",
     },
     {
             text: "We are your voices",
