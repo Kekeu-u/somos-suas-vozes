@@ -16,7 +16,11 @@ export const Hero: React.FC = () => {
 
     const mainTitleLines = [
         {
-            text: "Somos Suas Vozes",
+            text: "Somos Suas",
+            className: "text-6xl sm:text-7xl md:text-8xl font-bold font-serif leading-tight drop-shadow-lg",
+        },
+        {
+            text: "Vozes",
             className: "text-6xl sm:text-7xl md:text-8xl font-bold font-serif leading-tight mb-4 drop-shadow-lg",
         },
         {
