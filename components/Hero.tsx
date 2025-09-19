@@ -13,11 +13,17 @@ export const Hero: React.FC = () => {
     }, []);
     
     const mainTitleLines = [
-        {
-            text: "Somos\u00A0Suas Vozes",
-            className: "text-6xl sm:text-7xl md:text-8xl font-bold font-serif leading-tight mb-4 drop-shadow-lg",
-        },
-        {
+       {
+        // Título principal - primeira linha
+        text: "Somos suas",
+        className: "text-6xl sm:text-7xl md:text-8xl font-bold font-serif leading-tight drop-shadow-lg",
+    },
+    {
+            // Título principal - segunda linha
+        text: "Vozes",
+        className: "text-6xl sm:text-7xl md:text-8xl font-bold font-serif leading-tight mb-4 drop-shadow-lg",
+    },
+    {
             text: "We are your voices",
             className: "text-xl sm:text-3xl md:text-4xl font-light mb-8 font-serif italic text-brand-primary",
         },
