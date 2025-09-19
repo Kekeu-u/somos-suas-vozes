@@ -17,11 +17,11 @@ export const Hero: React.FC = () => {
     const heroLines = [
         {
             text: "Somos Suas Vozes",
-            className: "text-4xl sm:text-6xl md:text-8xl font-bold font-serif leading-tight mb-4 drop-shadow-lg",
+            className: "text-5xl sm:text-6xl md:text-8xl font-bold font-serif leading-tight mb-4 drop-shadow-lg",
         },
         {
             text: "We are your voices",
-            className: "text-xl sm:text-3xl md:text-4xl font-light mb-2 font-serif italic text-brand-primary",
+            className: "text-xl sm:text-3xl md:text-4xl font-light mb-16 sm:mb-8 md:mb-2 font-serif italic text-brand-primary",
         },
         {
             text: "Cada vida tem valor.",
