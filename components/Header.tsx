@@ -14,9 +14,9 @@ const navItems = [
     { href: '#home', label: 'Início', icon: IconHome },
     { href: '#musica', label: 'A Música', icon: IconMusic },
     { href: '#reflexao', label: 'A Causa', icon: IconPaw },
-    { href: '#o-convite', label: 'Junte-se a Nós', icon: IconMegaphone },
-    { href: '#forca-da-musica', label: 'Estratégia', icon: IconGlobe },
     { href: '#a-historia-por-tras', label: 'A Origem', icon: IconUser },
+    { href: '#forca-da-musica', label: 'Estratégia', icon: IconGlobe },
+    { href: '#o-convite', label: 'Junte-se a Nós', icon: IconMegaphone },
     { href: '#cronologia', label: 'História', icon: IconFeather },
 ];
 

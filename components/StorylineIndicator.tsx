@@ -14,9 +14,9 @@ const storylineItems = [
     { href: '#home', icon: IconHome },
     { href: '#musica', icon: IconMusic },
     { href: '#reflexao', icon: IconPaw },
-    { href: '#o-convite', icon: IconMegaphone },
-    { href: '#forca-da-musica', icon: IconGlobe },
     { href: '#a-historia-por-tras', icon: IconUser },
+    { href: '#forca-da-musica', icon: IconGlobe },
+    { href: '#o-convite', icon: IconMegaphone },
     { href: '#cronologia', icon: IconFeather },
 ];
 

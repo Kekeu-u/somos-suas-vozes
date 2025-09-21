@@ -101,7 +101,7 @@ const App: React.FC = () => {
                     </div>
                 </Section>
                 
-                {/* PARTE 1: A Realidade Urgente */}
+                {/* PARTE 1: A REALIDADE URGENTE */}
                 <Section 
                     id="reflexao" 
                     title={content.slide1.title} 
@@ -137,50 +137,52 @@ const App: React.FC = () => {
                         <p className="italic text-brand-primary text-center text-xl sm:text-2xl md:text-3xl font-serif">{content.slide1.conclusion}</p>
                     </Animated>
                 </Section>
-                
-                {/* PARTE 2: O Chamado à Ação */}
-                <Section id="convite" title={content.slide14.title} icon={<IconMegaphone className="w-10 h-10 text-brand-primary" />}>
-                    <AnimatedTypewriter 
-                        lines={[{ text: content.slide14.paragraph1, className: "text-base sm:text-lg md:text-2xl leading-relaxed mb-12 text-center max-w-4xl mx-auto text-balance" }]} 
-                    />
-                    <div className="mt-12 max-w-4xl mx-auto">
-                        <Animated delay={200}>
-                            <div className="bg-brand-surface border border-brand-secondary/20 p-6 md:p-8 rounded-xl transition-all duration-500 hover:shadow-glow-primary hover:-translate-y-1 transform hover:border-brand-primary/50">
-                                <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold font-serif text-brand-text mb-6 text-center">{content.slide14.expectTitle}</h3>
-                                <ul className="space-y-4 md:space-y-6">
-                                    {content.slide14.expectation.map((item, i) => {
-                                        const ExpectIcon = iconMap[item.icon];
-                                        return (
-                                            <li key={i} className="flex items-start text-base md:text-lg">
-                                                <ExpectIcon className="w-7 h-7 md:w-8 md:h-8 text-brand-secondary mr-4 mt-1 flex-shrink-0" />
-                                                <span>{item.text}</span>
-                                            </li>
-                                        )
-                                    })}
-                                </ul>
-                            </div>
-                        </Animated>
-                    </div>
-                </Section>
-                 <Section id="o-convite" title={content.slide15.title} icon={<IconFeather className="w-10 h-10 text-brand-primary" />}>
-                    <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
-                        {content.slide15.cards.map((card, index) => {
-                            const CardIcon = iconMap[card.icon];
-                            return (
-                                <Animated key={index} delay={index * 150}>
-                                    <div className="bg-brand-surface/80 backdrop-blur-lg border border-brand-secondary/20 p-8 rounded-xl shadow-lg h-full transition-all duration-500 hover:shadow-glow-primary hover:-translate-y-2 transform hover:border-brand-primary/50 flex flex-col items-center text-center">
-                                        <CardIcon className="w-12 h-12 text-brand-primary mb-6" />
-                                        <p className="text-base md:text-lg leading-relaxed text-brand-text/90">
-                                            {card.text}
-                                        </p>
-                                    </div>
-                                </Animated>
-                            );
-                        })}
-                    </div>
-                </Section>
 
-                {/* PARTE 3: A Nossa Estratégia */}
+                {/* PARTE 2: A ORIGEM DA CAUSA */}
+                <Section 
+                    id="a-historia-por-tras" 
+                    title={content.historia.title} 
+                    icon={<IconUser className="w-10 h-10 text-brand-primary" />}
+                    bgImageUrl={content.historia.bgImageUrl}
+                >
+                    <div className="max-w-4xl mx-auto">
+                        <div className="space-y-6">
+                            <Animated delay={100}>
+                                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold font-serif text-brand-text text-center">{content.historia.andre.name}</h3>
+                                <p className="text-base md:text-lg text-brand-text-secondary mb-8 text-center">{content.historia.andre.bio}</p>
+                            </Animated>
+                            {content.historia.story.map((p, i) => (
+                                <Animated key={i} delay={200 + i * 100}>
+                                    <p className="text-base md:text-xl leading-relaxed text-justify" dangerouslySetInnerHTML={{ __html: p }}></p>
+                                </Animated>
+                            ))}
+                        </div>
+                    </div>
+                    
+                    <Animated delay={200}>
+                        <div className="bg-brand-surface/80 backdrop-blur-lg border border-brand-secondary/20 p-8 rounded-xl shadow-lg transition-all duration-500 hover:shadow-glow-primary hover:-translate-y-1 transform hover:border-brand-primary/50 max-w-6xl mx-auto mt-20">
+                            <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold font-serif text-brand-text mb-6 text-center">{content.historia.motivation.subheading}</h3>
+                            <div className="grid md:grid-cols-2 gap-x-8 gap-y-4 mt-6">
+                                {content.historia.motivation.points.map((point, i) => {
+                                    const PointIcon = iconMap[point.icon];
+                                    return (
+                                        <Animated key={i} delay={i * 100}>
+                                            <div className="flex items-start space-x-4 p-4">
+                                                <PointIcon className="w-8 h-8 text-brand-secondary mt-1 flex-shrink-0" />
+                                                <p className="text-base md:text-lg">{point.text}</p>
+                                            </div>
+                                        </Animated>
+                                    )
+                                })}
+                            </div>
+                        </div>
+                    </Animated>
+                    <Animated delay={500}>
+                        <p className="italic text-brand-text/90 font-semibold text-lg sm:text-xl md:text-2xl mt-12 text-center max-w-6xl mx-auto">{content.historia.conclusion}</p>
+                    </Animated>
+                </Section>
+                
+                {/* PARTE 3: A NOSSA ESTRATÉGIA */}
                 <Section 
                     id="forca-da-musica" 
                     title={content.slide2.title} 
@@ -269,49 +271,49 @@ const App: React.FC = () => {
                     </Animated>
                 </Section>
                 
-                <Section 
-                    id="a-historia-por-tras" 
-                    title={content.historia.title} 
-                    icon={<IconUser className="w-10 h-10 text-brand-primary" />}
-                    bgImageUrl={content.historia.bgImageUrl}
-                >
-                    <div className="max-w-4xl mx-auto">
-                        <div className="space-y-6">
-                            <Animated delay={100}>
-                                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold font-serif text-brand-text text-center">{content.historia.andre.name}</h3>
-                                <p className="text-base md:text-lg text-brand-text-secondary mb-8 text-center">{content.historia.andre.bio}</p>
-                            </Animated>
-                            {content.historia.story.map((p, i) => (
-                                <Animated key={i} delay={200 + i * 100}>
-                                    <p className="text-base md:text-xl leading-relaxed text-justify" dangerouslySetInnerHTML={{ __html: p }}></p>
-                                </Animated>
-                            ))}
-                        </div>
-                    </div>
-                    
-                    <Animated delay={200}>
-                        <div className="bg-brand-surface/80 backdrop-blur-lg border border-brand-secondary/20 p-8 rounded-xl shadow-lg transition-all duration-500 hover:shadow-glow-primary hover:-translate-y-1 transform hover:border-brand-primary/50 max-w-6xl mx-auto mt-20">
-                            <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold font-serif text-brand-text mb-6 text-center">{content.historia.motivation.subheading}</h3>
-                            <div className="grid md:grid-cols-2 gap-x-8 gap-y-4 mt-6">
-                                {content.historia.motivation.points.map((point, i) => {
-                                    const PointIcon = iconMap[point.icon];
-                                    return (
-                                        <Animated key={i} delay={i * 100}>
-                                            <div className="flex items-start space-x-4 p-4">
-                                                <PointIcon className="w-8 h-8 text-brand-secondary mt-1 flex-shrink-0" />
-                                                <p className="text-base md:text-lg">{point.text}</p>
-                                            </div>
-                                        </Animated>
-                                    )
-                                })}
+                {/* PARTE 4: O CHAMADO À AÇÃO */}
+                <Section id="convite" title={content.slide14.title} icon={<IconMegaphone className="w-10 h-10 text-brand-primary" />}>
+                    <AnimatedTypewriter 
+                        lines={[{ text: content.slide14.paragraph1, className: "text-base sm:text-lg md:text-2xl leading-relaxed mb-12 text-center max-w-4xl mx-auto text-balance" }]} 
+                    />
+                    <div className="mt-12 max-w-4xl mx-auto">
+                        <Animated delay={200}>
+                            <div className="bg-brand-surface border border-brand-secondary/20 p-6 md:p-8 rounded-xl transition-all duration-500 hover:shadow-glow-primary hover:-translate-y-1 transform hover:border-brand-primary/50">
+                                <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold font-serif text-brand-text mb-6 text-center">{content.slide14.expectTitle}</h3>
+                                <ul className="space-y-4 md:space-y-6">
+                                    {content.slide14.expectation.map((item, i) => {
+                                        const ExpectIcon = iconMap[item.icon];
+                                        return (
+                                            <li key={i} className="flex items-start text-base md:text-lg">
+                                                <ExpectIcon className="w-7 h-7 md:w-8 md:h-8 text-brand-secondary mr-4 mt-1 flex-shrink-0" />
+                                                <span>{item.text}</span>
+                                            </li>
+                                        )
+                                    })}
+                                </ul>
                             </div>
-                        </div>
-                    </Animated>
-                    <Animated delay={500}>
-                        <p className="italic text-brand-text/90 font-semibold text-lg sm:text-xl md:text-2xl mt-12 text-center max-w-6xl mx-auto">{content.historia.conclusion}</p>
-                    </Animated>
+                        </Animated>
+                    </div>
                 </Section>
-
+                 <Section id="o-convite" title={content.slide15.title} icon={<IconFeather className="w-10 h-10 text-brand-primary" />}>
+                    <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                        {content.slide15.cards.map((card, index) => {
+                            const CardIcon = iconMap[card.icon];
+                            return (
+                                <Animated key={index} delay={index * 150}>
+                                    <div className="bg-brand-surface/80 backdrop-blur-lg border border-brand-secondary/20 p-8 rounded-xl shadow-lg h-full transition-all duration-500 hover:shadow-glow-primary hover:-translate-y-2 transform hover:border-brand-primary/50 flex flex-col items-center text-center">
+                                        <CardIcon className="w-12 h-12 text-brand-primary mb-6" />
+                                        <p className="text-base md:text-lg leading-relaxed text-brand-text/90">
+                                            {card.text}
+                                        </p>
+                                    </div>
+                                </Animated>
+                            );
+                        })}
+                    </div>
+                </Section>
+                
+                {/* PARTE 5: CONTEXTO HISTÓRICO */}
                 <Timeline />
             </main>
             <Footer />
