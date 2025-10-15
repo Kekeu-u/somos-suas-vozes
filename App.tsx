@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Header } from './components/Header';
 import { Hero } from './components/Hero';
@@ -137,51 +136,7 @@ const App: React.FC = () => {
                     </Animated>
                 </Section>
 
-                {/* PARTE 2: A ORIGEM DA CAUSA */}
-                <Section 
-                    id="a-historia-por-tras" 
-                    title={content.historia.title} 
-                    icon={<IconUser className="w-10 h-10 text-brand-primary" />}
-                    bgImageUrl={content.historia.bgImageUrl}
-                >
-                    <div className="max-w-4xl mx-auto">
-                        <div className="space-y-6">
-                            <Animated delay={100}>
-                                <h3 className="text-xl sm:text-2xl md:text-3xl font-bold font-serif text-brand-text text-center">{content.historia.andre.name}</h3>
-                                <p className="text-base md:text-lg text-brand-text-secondary mb-8 text-center">{content.historia.andre.bio}</p>
-                            </Animated>
-                            {content.historia.story.map((p, i) => (
-                                <Animated key={i} delay={200 + i * 100}>
-                                    <p className="text-base md:text-xl leading-relaxed text-justify" dangerouslySetInnerHTML={{ __html: p }}></p>
-                                </Animated>
-                            ))}
-                        </div>
-                    </div>
-                    
-                    <Animated delay={200}>
-                        <div className="bg-brand-surface/80 backdrop-blur-lg border border-brand-secondary/20 p-8 rounded-xl shadow-lg transition-all duration-500 hover:shadow-glow-primary hover:-translate-y-1 transform hover:border-brand-primary/50 max-w-6xl mx-auto mt-20">
-                            <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold font-serif text-brand-text mb-6 text-center">{content.historia.motivation.subheading}</h3>
-                            <div className="grid md:grid-cols-2 gap-x-8 gap-y-4 mt-6">
-                                {content.historia.motivation.points.map((point, i) => {
-                                    const PointIcon = iconMap[point.icon];
-                                    return (
-                                        <Animated key={i} delay={i * 100}>
-                                            <div className="flex items-start space-x-4 p-4">
-                                                <PointIcon className="w-8 h-8 text-brand-secondary mt-1 flex-shrink-0" />
-                                                <p className="text-base md:text-lg">{point.text}</p>
-                                            </div>
-                                        </Animated>
-                                    )
-                                })}
-                            </div>
-                        </div>
-                    </Animated>
-                    <Animated delay={500}>
-                        <p className="italic text-brand-text/90 font-semibold text-lg sm:text-xl md:text-2xl mt-12 text-center max-w-6xl mx-auto">{content.historia.conclusion}</p>
-                    </Animated>
-                </Section>
-                
-                {/* PARTE 3: A NOSSA ESTRATÉGIA */}
+                {/* PARTE 2: A NOSSA ESTRATÉGIA */}
                 <Section 
                     id="forca-da-musica" 
                     title={content.slide2.title} 
@@ -270,7 +225,7 @@ const App: React.FC = () => {
                     </Animated>
                 </Section>
                 
-                {/* PARTE 4: O CHAMADO À AÇÃO */}
+                {/* PARTE 3: O CHAMADO À AÇÃO */}
                 <Section id="convite" title={content.slide14.title} icon={<IconMegaphone className="w-10 h-10 text-brand-primary" />}>
                     <AnimatedTypewriter 
                         lines={[{ text: content.slide14.paragraph1, className: "text-base sm:text-lg md:text-2xl leading-relaxed mb-12 text-center max-w-4xl mx-auto text-balance" }]} 
@@ -312,7 +267,24 @@ const App: React.FC = () => {
                     </div>
                 </Section>
                 
-                {/* PARTE 5: CONTEXTO HISTÓRICO */}
+                {/* NOVA SEÇÃO: AGRADECIMENTO */}
+                <Section id="agradecimento" title={content.agradecimento.title} icon={<IconHeart className="w-10 h-10 text-brand-primary" />}>
+                    <Animated>
+                        <p className="text-base sm:text-lg md:text-xl leading-relaxed mb-12 text-center max-w-6xl mx-auto text-balance">
+                            {content.agradecimento.paragraph1}
+                        </p>
+                    </Animated>
+                    <Animated delay={200}>
+                        <div className="flex justify-center w-full" dangerouslySetInnerHTML={{ __html: content.agradecimento.instagramEmbed }} />
+                    </Animated>
+                    <Animated delay={400}>
+                        <p className="italic text-brand-primary text-center text-xl sm:text-2xl md:text-3xl font-serif mt-12">
+                            {content.agradecimento.conclusion}
+                        </p>
+                    </Animated>
+                </Section>
+                
+                {/* PARTE 4: CONTEXTO HISTÓRICO */}
                 <Timeline />
             </main>
             <Footer />
