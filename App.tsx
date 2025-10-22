@@ -46,14 +46,14 @@ const App: React.FC = () => {
             <main>
                 <Hero />
 
-                <Section 
-                    id="musica" 
-                    title="Ouça o Chamado" 
+                <Section
+                    id="musica"
+                    title="Ouça Nossa Canção"
                     icon={<IconMusic className="w-10 h-10 text-brand-primary" />}
                 >
                     <Animated>
                         <p className="text-base sm:text-lg md:text-xl leading-relaxed mb-16 text-center max-w-6xl mx-auto text-balance">
-                            Esta é a essência sonora do nosso movimento. Uma guia musical que representa a alma do projeto. Dê o play e sinta a força da nossa mensagem.
+                            Esta é a música gravada por artistas do sul do Brasil em 29 de setembro de 2024, celebrando o Dia Mundial dos Animais. Ouça e sinta a força da nossa mensagem de amor e proteção aos animais.
                         </p>
                     </Animated>
                     <Animated delay={100}>
@@ -88,10 +88,10 @@ const App: React.FC = () => {
                     <div className="text-center max-w-4xl mx-auto mt-16">
                         <AnimatedTypewriter
                             lines={[
-                                { text: "4 de outubro de 2025", className: "text-2xl sm:text-3xl md:text-4xl font-bold text-brand-primary font-serif mb-3" },
-                                { text: "O dia em que a música brasileira deu voz aos animais.", className: "text-base sm:text-lg md:text-2xl text-brand-text mb-6" },
+                                { text: "29 de setembro de 2024", className: "text-2xl sm:text-3xl md:text-4xl font-bold text-brand-primary font-serif mb-3" },
+                                { text: "O dia em que artistas brasileiros deram voz aos animais.", className: "text-base sm:text-lg md:text-2xl text-brand-text mb-6" },
                                 { text: 'Porque "onde existe vida, existe amor."', className: "italic text-brand-text-secondary text-base md:text-lg mb-6" },
-                                { text: "Os animais precisam da nossa voz.", className: "text-base md:text-xl font-semibold" }
+                                { text: "Essa gravação histórica celebrou o Dia Mundial dos Animais.", className: "text-base md:text-xl font-semibold" }
                             ]}
                             staggerMs={15}
                             animationMode="parallel"
@@ -226,7 +226,7 @@ const App: React.FC = () => {
                 </Section>
                 
                 {/* PARTE 3: O CHAMADO À AÇÃO */}
-                <Section id="convite" title={content.slide14.title} icon={<IconMegaphone className="w-10 h-10 text-brand-primary" />}>
+                <Section id="movimento" title={content.slide14.title} icon={<IconMegaphone className="w-10 h-10 text-brand-primary" />}>
                     <AnimatedTypewriter 
                         lines={[{ text: content.slide14.paragraph1, className: "text-base sm:text-lg md:text-2xl leading-relaxed mb-12 text-center max-w-4xl mx-auto text-balance" }]} 
                     />
@@ -266,20 +266,190 @@ const App: React.FC = () => {
                         })}
                     </div>
                 </Section>
-                
-                {/* NOVA SEÇÃO: AGRADECIMENTO */}
+
+                {/* SEÇÃO: AGRADECIMENTO */}
                 <Section id="agradecimento" title={content.agradecimento.title} icon={<IconHeart className="w-10 h-10 text-brand-primary" />}>
                     <Animated>
                         <p className="text-base sm:text-lg md:text-xl leading-relaxed mb-12 text-center max-w-6xl mx-auto text-balance">
                             {content.agradecimento.paragraph1}
                         </p>
                     </Animated>
+
+                    {/* Artistas */}
                     <Animated delay={200}>
-                        <div className="flex justify-center w-full" dangerouslySetInnerHTML={{ __html: content.agradecimento.instagramEmbed }} />
+                        <div className="max-w-6xl mx-auto mb-12">
+                            <h3 className="text-2xl sm:text-3xl md:text-4xl font-semibold font-serif text-brand-text mb-8 text-center">{content.agradecimento.subtitle}</h3>
+                            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                                {content.agradecimento.artists.map((artist: string, index: number) => (
+                                    <Animated key={index} delay={index * 50}>
+                                        <div className="bg-brand-surface/80 backdrop-blur-lg border border-brand-secondary/20 p-4 rounded-lg text-center transition-all duration-300 hover:shadow-glow-primary hover:-translate-y-1 transform hover:border-brand-primary/50">
+                                            <IconMusic className="w-6 h-6 mx-auto text-brand-primary mb-2" />
+                                            <p className="text-sm md:text-base font-semibold">{artist}</p>
+                                        </div>
+                                    </Animated>
+                                ))}
+                            </div>
+                        </div>
                     </Animated>
+
+                    {/* Equipe Técnica */}
                     <Animated delay={400}>
+                        <div className="max-w-6xl mx-auto mb-12">
+                            <h3 className="text-2xl sm:text-3xl md:text-4xl font-semibold font-serif text-brand-text mb-8 text-center">{content.agradecimento.teamTitle}</h3>
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                {content.agradecimento.team.map((member: any, index: number) => (
+                                    <Animated key={index} delay={index * 50}>
+                                        <div className="bg-brand-surface/80 backdrop-blur-lg border border-brand-secondary/20 p-4 rounded-lg flex items-center space-x-4 transition-all duration-300 hover:shadow-glow-primary hover:-translate-y-1 transform hover:border-brand-primary/50">
+                                            <IconUser className="w-8 h-8 text-brand-primary flex-shrink-0" />
+                                            <div className="text-left">
+                                                <p className="font-semibold text-base md:text-lg">{member.name}</p>
+                                                <p className="text-sm text-brand-text-secondary">{member.role}</p>
+                                            </div>
+                                        </div>
+                                    </Animated>
+                                ))}
+                            </div>
+                        </div>
+                    </Animated>
+
+                    {/* Homenageadas */}
+                    <Animated delay={600}>
+                        <div className="max-w-4xl mx-auto mb-12">
+                            <h3 className="text-2xl sm:text-3xl md:text-4xl font-semibold font-serif text-brand-text mb-8 text-center">{content.agradecimento.tributeTitle}</h3>
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                {content.agradecimento.tribute.map((person: string, index: number) => (
+                                    <Animated key={index} delay={index * 100}>
+                                        <div className="bg-brand-surface/80 backdrop-blur-lg border border-brand-secondary/20 p-6 rounded-lg text-center transition-all duration-300 hover:shadow-glow-primary hover:-translate-y-1 transform hover:border-brand-primary/50">
+                                            <IconHeart className="w-8 h-8 mx-auto text-brand-primary mb-2" />
+                                            <p className="font-semibold text-lg">{person}</p>
+                                        </div>
+                                    </Animated>
+                                ))}
+                            </div>
+                        </div>
+                    </Animated>
+
+                    {/* Instagram */}
+                    <Animated delay={800}>
+                        <div className="max-w-4xl mx-auto mb-12">
+                            <h3 className="text-2xl sm:text-3xl md:text-4xl font-semibold font-serif text-brand-text mb-8 text-center">{content.agradecimento.instagramTitle}</h3>
+                            <div className="flex justify-center w-full" dangerouslySetInnerHTML={{ __html: content.agradecimento.instagramEmbed }} />
+                        </div>
+                    </Animated>
+
+                    <Animated delay={1000}>
                         <p className="italic text-brand-primary text-center text-xl sm:text-2xl md:text-3xl font-serif mt-12">
                             {content.agradecimento.conclusion}
+                        </p>
+                    </Animated>
+                </Section>
+
+                {/* SEÇÃO: QUEM SOMOS */}
+                <Section
+                    id="quem-somos"
+                    title={content.quemSomos.title}
+                    icon={<IconUsers className="w-10 h-10 text-brand-primary" />}
+                    bgImageUrl="https://images.unsplash.com/photo-1450778869180-41d0601e046e?q=80&w=1920&auto=format&fit=crop"
+                >
+                    <Animated>
+                        <p className="text-base sm:text-lg md:text-xl leading-relaxed mb-8 text-center max-w-6xl mx-auto text-balance">{content.quemSomos.paragraph1}</p>
+                    </Animated>
+                    <Animated delay={200}>
+                        <p className="text-base sm:text-lg md:text-xl leading-relaxed mb-12 text-center max-w-6xl mx-auto text-balance">{content.quemSomos.paragraph2}</p>
+                    </Animated>
+
+                    {/* Nossa Missão */}
+                    <Animated delay={400}>
+                        <div className="max-w-6xl mx-auto mb-12">
+                            <h3 className="text-2xl sm:text-3xl md:text-4xl font-semibold font-serif text-brand-text mb-8 text-center">{content.quemSomos.mission.title}</h3>
+                            <div className="grid md:grid-cols-2 gap-6">
+                                {content.quemSomos.mission.items.map((item: any, index: number) => {
+                                    const MissionIcon = iconMap[item.icon];
+                                    return (
+                                        <Animated key={index} delay={index * 100}>
+                                            <div className="bg-brand-surface/80 backdrop-blur-lg border border-brand-secondary/20 p-6 rounded-xl text-center transition-all duration-300 hover:shadow-glow-primary hover:-translate-y-1 transform hover:border-brand-primary/50">
+                                                <MissionIcon className="w-10 h-10 mx-auto text-brand-primary mb-4" />
+                                                <p className="text-base md:text-lg">{item.text}</p>
+                                            </div>
+                                        </Animated>
+                                    );
+                                })}
+                            </div>
+                        </div>
+                    </Animated>
+
+                    {/* Nossos Valores */}
+                    <Animated delay={600}>
+                        <div className="max-w-6xl mx-auto">
+                            <h3 className="text-2xl sm:text-3xl md:text-4xl font-semibold font-serif text-brand-text mb-8 text-center">{content.quemSomos.values.title}</h3>
+                            <div className="grid md:grid-cols-2 gap-6">
+                                {content.quemSomos.values.items.map((item: any, index: number) => {
+                                    const ValueIcon = iconMap[item.icon];
+                                    return (
+                                        <Animated key={index} delay={index * 100}>
+                                            <div className="bg-brand-surface/80 backdrop-blur-lg border border-brand-secondary/20 p-6 rounded-xl text-center transition-all duration-300 hover:shadow-glow-primary hover:-translate-y-1 transform hover:border-brand-primary/50">
+                                                <ValueIcon className="w-10 h-10 mx-auto text-brand-primary mb-4" />
+                                                <p className="text-base md:text-lg">{item.text}</p>
+                                            </div>
+                                        </Animated>
+                                    );
+                                })}
+                            </div>
+                        </div>
+                    </Animated>
+                </Section>
+
+                {/* SEÇÃO: CAUSAS QUE APOIAMOS */}
+                <Section
+                    id="causas"
+                    title={content.causas.title}
+                    icon={<IconShield className="w-10 h-10 text-brand-primary" />}
+                >
+                    <Animated>
+                        <p className="text-base sm:text-lg md:text-xl leading-relaxed mb-12 text-center max-w-6xl mx-auto text-balance">{content.causas.paragraph1}</p>
+                    </Animated>
+
+                    {/* Categorias */}
+                    <Animated delay={200}>
+                        <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto mb-12">
+                            {content.causas.categories.map((category: any, index: number) => {
+                                const CategoryIcon = iconMap[category.icon];
+                                return (
+                                    <Animated key={index} delay={index * 150}>
+                                        <div className="bg-brand-surface/80 backdrop-blur-lg border border-brand-secondary/20 p-8 rounded-xl shadow-lg h-full transition-all duration-500 hover:shadow-glow-primary hover:-translate-y-2 transform hover:border-brand-primary/50">
+                                            <CategoryIcon className="w-12 h-12 mx-auto text-brand-primary mb-4" />
+                                            <h4 className="font-bold text-brand-text text-xl md:text-2xl mb-4 text-center">{category.title}</h4>
+                                            <p className="text-base md:text-lg text-brand-text-secondary text-center">{category.description}</p>
+                                        </div>
+                                    </Animated>
+                                );
+                            })}
+                        </div>
+                    </Animated>
+
+                    {/* Call to Action */}
+                    <Animated delay={600}>
+                        <div className="max-w-4xl mx-auto mb-12">
+                            <h3 className="text-2xl sm:text-3xl md:text-4xl font-semibold font-serif text-brand-text mb-8 text-center">{content.causas.callToAction.title}</h3>
+                            <div className="grid md:grid-cols-2 gap-6">
+                                {content.causas.callToAction.items.map((item: any, index: number) => {
+                                    const ActionIcon = iconMap[item.icon];
+                                    return (
+                                        <Animated key={index} delay={index * 100}>
+                                            <div className="bg-brand-surface/80 backdrop-blur-lg border border-brand-secondary/20 p-6 rounded-xl flex items-center space-x-4 transition-all duration-300 hover:shadow-glow-primary hover:-translate-y-1 transform hover:border-brand-primary/50">
+                                                <ActionIcon className="w-10 h-10 text-brand-primary flex-shrink-0" />
+                                                <p className="text-base md:text-lg text-left">{item.text}</p>
+                                            </div>
+                                        </Animated>
+                                    );
+                                })}
+                            </div>
+                        </div>
+                    </Animated>
+
+                    <Animated delay={800}>
+                        <p className="italic text-brand-primary text-center text-xl sm:text-2xl md:text-3xl font-serif">
+                            {content.causas.conclusion}
                         </p>
                     </Animated>
                 </Section>
