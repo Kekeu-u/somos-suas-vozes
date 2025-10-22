@@ -76,7 +76,7 @@ export const content = {
     // Seção de agradecimento com o link do Instagram
     agradecimento: {
         title: "Agradecimento Especial",
-        paragraph1: "No dia 29 de setembro de 2024, celebramos o Dia Mundial dos Animais com uma gravação histórica. Artistas talentosos da região sul do Brasil se reuniram em estúdio para emprestar suas vozes a quem não pode falar por si mesmo. Esta foi uma homenagem especial aos 100 anos do primeiro evento em defesa dos animais e aos 800 anos (em 2026) do legado de São Francisco de Assis, patrono dos animais.",
+        paragraph1: "No dia 29 de setembro de 2024, celebramos o Dia Mundial dos Animais com uma gravação histórica. Artistas talentosos da região sul do Brasil se reuniram em estúdio para emprestar suas vozes a quem não pode falar por si mesmo. Esta foi uma homenagem especial aos 100 anos do primeiro evento em defesa dos animais.",
         subtitle: "Nossos Artistas",
         artists: [
             "Lorenzo Ferreira",
@@ -107,8 +107,7 @@ export const content = {
             { name: "Saimon Baumhardt", role: "Compositor e Maestro" },
             { name: "SB Food Park", role: "Alimentação" },
             { name: "Radio Web 4K", role: "Apoio" },
-            { name: "Miguel Benetti", role: "Apoio" },
-            { name: "André Amorim", role: "Idealizador, Diretor e Produtor" }
+            { name: "Miguel Benetti", role: "Apoio" }
         ],
         tributeTitle: "Homenageadas",
         tribute: [
@@ -170,15 +169,6 @@ export const content = {
                 description: "Acreditamos na educação como ferramenta de transformação. Apoiamos campanhas de conscientização sobre posse responsável e direitos animais."
             }
         ],
-        callToAction: {
-            title: "Como Você Pode Ajudar",
-            items: [
-                { icon: 'IconDonationHand', text: "Doe para ONGs e protetores de animais" },
-                { icon: 'IconHeart', text: "Adote, não compre. Salve uma vida" },
-                { icon: 'IconMegaphone', text: "Compartilhe nossa mensagem nas redes sociais" },
-                { icon: 'IconUsers', text: "Seja voluntário em projetos de proteção animal" }
-            ]
-        },
         conclusion: "Juntos, podemos fazer a diferença. Cada ação, por menor que seja, contribui para um mundo mais compassivo."
     }
 };
