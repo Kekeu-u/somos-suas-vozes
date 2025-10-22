@@ -48,9 +48,9 @@ export const Hero: React.FC = () => {
                 className={`absolute bottom-24 md:bottom-20 left-0 right-0 z-10 p-6 max-w-3xl mx-auto transition-all duration-700 ease-out-quint ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}
             >
                 <p className="text-lg sm:text-xl md:text-2xl drop-shadow-md text-balance">
-                    Cada vida tem valor.
+                    Uma homenagem histórica realizada em 29 de setembro de 2024.
                     <br />
-                    A forma como cuidamos pode variar, mas o respeito é universal.
+                    Onde existe vida, existe amor.
                 </p>
             </div>
 
