@@ -5,11 +5,12 @@ import { Section } from './components/Section';
 import { Timeline } from './components/Timeline';
 import { Footer } from './components/Footer';
 import { Animated, Counter, AnimatedTypewriter } from './components/Animated';
+import { InstagramEmbed } from './components/InstagramEmbed';
 import { content } from './constants';
 import { StorylineIndicator } from './components/StorylineIndicator';
-import { 
-    IconPaw, IconMusic, IconUsers, IconHeart, IconMegaphone, IconFeather, 
-    IconShield, IconGlobe, IconGift, IconEye, IconTrendingUp, 
+import {
+    IconPaw, IconMusic, IconUsers, IconHeart, IconMegaphone, IconFeather,
+    IconShield, IconGlobe, IconGift, IconEye, IconTrendingUp,
     IconShieldCheck, IconCheckCircle, IconQuoteOpen, IconQuoteClose,
     IconArrowUp,
     IconUser,
@@ -333,7 +334,7 @@ const App: React.FC = () => {
                     <Animated delay={800}>
                         <div className="max-w-3xl mx-auto mb-12 px-6">
                             <h3 className="text-heading font-semibold font-serif text-brand-text mb-8 text-center">{content.agradecimento.instagramTitle}</h3>
-                            <div className="flex justify-center w-full" dangerouslySetInnerHTML={{ __html: content.agradecimento.instagramEmbed }} />
+                            <InstagramEmbed url={content.agradecimento.instagramUrl} />
                         </div>
                     </Animated>
 
