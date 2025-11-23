@@ -29,7 +29,7 @@ export const Hero: React.FC = () => {
         },
         {
             text: "29 de Setembro de 2024",
-            className: "text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-16 sm:mb-20 md:mb-2 font-serif text-brand-primary drop-shadow-2xl tracking-wide",
+            className: "text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-12 sm:mb-14 md:mb-2 font-serif text-brand-primary drop-shadow-2xl tracking-wide md:tracking-wider lg:tracking-widest",
         },
     ];
 

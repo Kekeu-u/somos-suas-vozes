@@ -174,13 +174,13 @@ export const content = {
         team: [
             { name: "Soma Music Hub", role: "Estúdio" },
             { name: "M Laços Music", role: "Produção Musical" },
-            { name: "Asaph Uri", role: "Filmmaker" },
+            { name: "Miguel Benetti", role: "Apoio" },
             { name: "Fábio Canalli", role: "Apoio" },
             { name: "Tom Amorim", role: "Compositor e Produtor" },
             { name: "Saimon Baumhardt", role: "Compositor e Maestro" },
             { name: "SB Food Park", role: "Alimentação" },
             { name: "Radio Web 4K", role: "Apoio" },
-            { name: "Miguel Benetti", role: "Apoio" }
+            { name: "Asaph Uri", role: "Filmmaker" }
         ],
         tributeTitle: "Homenageadas",
         tribute: [
