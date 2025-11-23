@@ -29,7 +29,7 @@ export const Hero: React.FC = () => {
         },
         {
             text: "29 de Setembro de 2024",
-            className: "text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-2 font-serif text-brand-primary drop-shadow-2xl tracking-wide",
+            className: "text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-16 sm:mb-20 md:mb-2 font-serif text-brand-primary drop-shadow-2xl tracking-wide",
         },
     ];
 
@@ -49,12 +49,12 @@ export const Hero: React.FC = () => {
 
             {/* Tagline - Positioned absolutely near the bottom */}
             <div
-                className={`absolute bottom-24 md:bottom-20 left-0 right-0 z-10 p-6 max-w-4xl mx-auto transition-all duration-700 ease-out-quint ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}
+                className={`absolute bottom-20 md:bottom-20 left-0 right-0 z-10 px-6 py-4 max-w-4xl mx-auto transition-all duration-700 ease-out-quint ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}
             >
-                <p className="text-lg sm:text-xl md:text-2xl drop-shadow-md text-balance font-semibold">
+                <p className="text-base sm:text-lg md:text-2xl drop-shadow-md text-balance font-semibold">
                     O dia em que artistas brasileiros transformaram compaixão em melodia
                 </p>
-                <p className="text-base sm:text-lg md:text-xl drop-shadow-md text-balance mt-3 text-brand-primary italic">
+                <p className="text-sm sm:text-base md:text-xl drop-shadow-md text-balance mt-2 text-brand-primary italic">
                     Onde existe vida, existe amor
                 </p>
             </div>
