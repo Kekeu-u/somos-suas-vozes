@@ -5,11 +5,12 @@ import { Section } from './components/Section';
 import { Timeline } from './components/Timeline';
 import { Footer } from './components/Footer';
 import { Animated, Counter, AnimatedTypewriter } from './components/Animated';
+import { InstagramEmbed } from './components/InstagramEmbed';
 import { content } from './constants';
 import { StorylineIndicator } from './components/StorylineIndicator';
-import { 
-    IconPaw, IconMusic, IconUsers, IconHeart, IconMegaphone, IconFeather, 
-    IconShield, IconGlobe, IconGift, IconEye, IconTrendingUp, 
+import {
+    IconPaw, IconMusic, IconUsers, IconHeart, IconMegaphone, IconFeather,
+    IconShield, IconGlobe, IconGift, IconEye, IconTrendingUp,
     IconShieldCheck, IconCheckCircle, IconQuoteOpen, IconQuoteClose,
     IconArrowUp,
     IconUser,
@@ -277,13 +278,13 @@ const App: React.FC = () => {
 
                     {/* Artistas */}
                     <Animated delay={200}>
-                        <div className="max-w-6xl mx-auto mb-12">
-                            <h3 className="text-2xl sm:text-3xl md:text-4xl font-semibold font-serif text-brand-text mb-8 text-center">{content.agradecimento.subtitle}</h3>
-                            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
+                        <div className="golden-container mb-12">
+                            <h3 className="text-heading font-semibold font-serif text-brand-text mb-8 text-center">{content.agradecimento.subtitle}</h3>
+                            <div className="card-grid mobile-card-stagger">
                                 {content.agradecimento.artists.map((artist: string, index: number) => (
                                     <Animated key={index} delay={index * 50}>
-                                        <div className="bg-brand-surface/80 backdrop-blur-lg border border-brand-secondary/20 p-4 rounded-lg text-center transition-all duration-300 hover:shadow-glow-primary hover:-translate-y-1 transform hover:border-brand-primary/50">
-                                            <IconMusic className="w-6 h-6 mx-auto text-brand-primary mb-2" />
+                                        <div className="bg-brand-surface/80 backdrop-blur-lg border border-brand-secondary/20 p-6 rounded-lg text-center transition-all duration-300 hover:shadow-glow-primary hover:-translate-y-1 transform hover:border-brand-primary/50">
+                                            <IconMusic className="w-6 h-6 mx-auto text-brand-primary mb-3" />
                                             <p className="text-sm md:text-base font-semibold">{artist}</p>
                                         </div>
                                     </Animated>
@@ -294,15 +295,15 @@ const App: React.FC = () => {
 
                     {/* Equipe Técnica */}
                     <Animated delay={400}>
-                        <div className="max-w-6xl mx-auto mb-12">
-                            <h3 className="text-2xl sm:text-3xl md:text-4xl font-semibold font-serif text-brand-text mb-8 text-center">{content.agradecimento.teamTitle}</h3>
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div className="golden-container mb-12">
+                            <h3 className="text-heading font-semibold font-serif text-brand-text mb-8 text-center">{content.agradecimento.teamTitle}</h3>
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
                                 {content.agradecimento.team.map((member: any, index: number) => (
                                     <Animated key={index} delay={index * 50}>
-                                        <div className="bg-brand-surface/80 backdrop-blur-lg border border-brand-secondary/20 p-4 rounded-lg flex items-center space-x-4 transition-all duration-300 hover:shadow-glow-primary hover:-translate-y-1 transform hover:border-brand-primary/50">
-                                            <IconUser className="w-8 h-8 text-brand-primary flex-shrink-0" />
-                                            <div className="text-left">
-                                                <p className="font-semibold text-base md:text-lg">{member.name}</p>
+                                        <div className="bg-brand-surface/80 backdrop-blur-lg border border-brand-secondary/20 p-5 md:p-6 rounded-lg flex items-center gap-4 transition-all duration-300 hover:shadow-glow-primary hover:-translate-y-1 transform hover:border-brand-primary/50">
+                                            <IconUser className="w-10 h-10 text-brand-primary flex-shrink-0" />
+                                            <div className="text-left min-w-0">
+                                                <p className="font-semibold text-base md:text-lg truncate">{member.name}</p>
                                                 <p className="text-sm text-brand-text-secondary">{member.role}</p>
                                             </div>
                                         </div>
@@ -314,14 +315,14 @@ const App: React.FC = () => {
 
                     {/* Homenageadas */}
                     <Animated delay={600}>
-                        <div className="max-w-4xl mx-auto mb-12">
-                            <h3 className="text-2xl sm:text-3xl md:text-4xl font-semibold font-serif text-brand-text mb-8 text-center">{content.agradecimento.tributeTitle}</h3>
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div className="max-w-3xl mx-auto mb-12 px-6">
+                            <h3 className="text-heading font-semibold font-serif text-brand-text mb-8 text-center">{content.agradecimento.tributeTitle}</h3>
+                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                                 {content.agradecimento.tribute.map((person: string, index: number) => (
                                     <Animated key={index} delay={index * 100}>
-                                        <div className="bg-brand-surface/80 backdrop-blur-lg border border-brand-secondary/20 p-6 rounded-lg text-center transition-all duration-300 hover:shadow-glow-primary hover:-translate-y-1 transform hover:border-brand-primary/50">
-                                            <IconHeart className="w-8 h-8 mx-auto text-brand-primary mb-2" />
-                                            <p className="font-semibold text-lg">{person}</p>
+                                        <div className="bg-brand-surface/80 backdrop-blur-lg border border-brand-secondary/20 p-8 rounded-lg text-center transition-all duration-300 hover:shadow-glow-primary hover:-translate-y-1 transform hover:border-brand-primary/50">
+                                            <IconHeart className="w-10 h-10 mx-auto text-brand-primary mb-3" />
+                                            <p className="font-semibold text-lg md:text-xl">{person}</p>
                                         </div>
                                     </Animated>
                                 ))}
@@ -331,14 +332,14 @@ const App: React.FC = () => {
 
                     {/* Instagram */}
                     <Animated delay={800}>
-                        <div className="max-w-4xl mx-auto mb-12">
-                            <h3 className="text-2xl sm:text-3xl md:text-4xl font-semibold font-serif text-brand-text mb-8 text-center">{content.agradecimento.instagramTitle}</h3>
-                            <div className="flex justify-center w-full" dangerouslySetInnerHTML={{ __html: content.agradecimento.instagramEmbed }} />
+                        <div className="max-w-3xl mx-auto mb-12 px-6">
+                            <h3 className="text-heading font-semibold font-serif text-brand-text mb-8 text-center">{content.agradecimento.instagramTitle}</h3>
+                            <InstagramEmbed url={content.agradecimento.instagramUrl} />
                         </div>
                     </Animated>
 
                     <Animated delay={1000}>
-                        <p className="italic text-brand-primary text-center text-xl sm:text-2xl md:text-3xl font-serif mt-12">
+                        <p className="italic text-brand-primary text-center text-subheading font-serif mt-12 px-6 max-w-4xl mx-auto">
                             {content.agradecimento.conclusion}
                         </p>
                     </Animated>
@@ -352,23 +353,23 @@ const App: React.FC = () => {
                     bgImageUrl="https://images.unsplash.com/photo-1450778869180-41d0601e046e?q=80&w=1920&auto=format&fit=crop"
                 >
                     <Animated>
-                        <p className="text-base sm:text-lg md:text-xl leading-relaxed mb-8 text-center max-w-6xl mx-auto text-balance">{content.quemSomos.paragraph1}</p>
+                        <p className="text-body leading-relaxed mb-8 text-center golden-container text-balance">{content.quemSomos.paragraph1}</p>
                     </Animated>
                     <Animated delay={200}>
-                        <p className="text-base sm:text-lg md:text-xl leading-relaxed mb-12 text-center max-w-6xl mx-auto text-balance">{content.quemSomos.paragraph2}</p>
+                        <p className="text-body leading-relaxed mb-12 text-center golden-container text-balance">{content.quemSomos.paragraph2}</p>
                     </Animated>
 
                     {/* Nossa Missão */}
                     <Animated delay={400}>
-                        <div className="max-w-6xl mx-auto mb-12">
-                            <h3 className="text-2xl sm:text-3xl md:text-4xl font-semibold font-serif text-brand-text mb-8 text-center">{content.quemSomos.mission.title}</h3>
-                            <div className="grid md:grid-cols-2 gap-6">
+                        <div className="golden-container mb-12">
+                            <h3 className="text-heading font-semibold font-serif text-brand-text mb-8 text-center">{content.quemSomos.mission.title}</h3>
+                            <div className="grid sm:grid-cols-2 gap-6 md:gap-8">
                                 {content.quemSomos.mission.items.map((item: any, index: number) => {
                                     const MissionIcon = iconMap[item.icon];
                                     return (
                                         <Animated key={index} delay={index * 100}>
-                                            <div className="bg-brand-surface/80 backdrop-blur-lg border border-brand-secondary/20 p-6 rounded-xl text-center transition-all duration-300 hover:shadow-glow-primary hover:-translate-y-1 transform hover:border-brand-primary/50">
-                                                <MissionIcon className="w-10 h-10 mx-auto text-brand-primary mb-4" />
+                                            <div className="bg-brand-surface/80 backdrop-blur-lg border border-brand-secondary/20 p-8 rounded-xl text-center transition-all duration-300 hover:shadow-glow-primary hover:-translate-y-1 transform hover:border-brand-primary/50">
+                                                <MissionIcon className="w-12 h-12 mx-auto text-brand-primary mb-4" />
                                                 <p className="text-base md:text-lg">{item.text}</p>
                                             </div>
                                         </Animated>
@@ -380,15 +381,15 @@ const App: React.FC = () => {
 
                     {/* Nossos Valores */}
                     <Animated delay={600}>
-                        <div className="max-w-6xl mx-auto">
-                            <h3 className="text-2xl sm:text-3xl md:text-4xl font-semibold font-serif text-brand-text mb-8 text-center">{content.quemSomos.values.title}</h3>
-                            <div className="grid md:grid-cols-2 gap-6">
+                        <div className="golden-container">
+                            <h3 className="text-heading font-semibold font-serif text-brand-text mb-8 text-center">{content.quemSomos.values.title}</h3>
+                            <div className="grid sm:grid-cols-2 gap-6 md:gap-8">
                                 {content.quemSomos.values.items.map((item: any, index: number) => {
                                     const ValueIcon = iconMap[item.icon];
                                     return (
                                         <Animated key={index} delay={index * 100}>
-                                            <div className="bg-brand-surface/80 backdrop-blur-lg border border-brand-secondary/20 p-6 rounded-xl text-center transition-all duration-300 hover:shadow-glow-primary hover:-translate-y-1 transform hover:border-brand-primary/50">
-                                                <ValueIcon className="w-10 h-10 mx-auto text-brand-primary mb-4" />
+                                            <div className="bg-brand-surface/80 backdrop-blur-lg border border-brand-secondary/20 p-8 rounded-xl text-center transition-all duration-300 hover:shadow-glow-primary hover:-translate-y-1 transform hover:border-brand-primary/50">
+                                                <ValueIcon className="w-12 h-12 mx-auto text-brand-primary mb-4" />
                                                 <p className="text-base md:text-lg">{item.text}</p>
                                             </div>
                                         </Animated>
@@ -406,20 +407,20 @@ const App: React.FC = () => {
                     icon={<IconShield className="w-10 h-10 text-brand-primary" />}
                 >
                     <Animated>
-                        <p className="text-base sm:text-lg md:text-xl leading-relaxed mb-12 text-center max-w-6xl mx-auto text-balance">{content.causas.paragraph1}</p>
+                        <p className="text-body leading-relaxed mb-12 text-center golden-container text-balance">{content.causas.paragraph1}</p>
                     </Animated>
 
                     {/* Categorias */}
                     <Animated delay={200}>
-                        <div className="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto mb-12">
+                        <div className="grid sm:grid-cols-2 gap-6 md:gap-8 golden-container mb-12">
                             {content.causas.categories.map((category: any, index: number) => {
                                 const CategoryIcon = iconMap[category.icon];
                                 return (
                                     <Animated key={index} delay={index * 150}>
-                                        <div className="bg-brand-surface/80 backdrop-blur-lg border border-brand-secondary/20 p-8 rounded-xl shadow-lg h-full transition-all duration-500 hover:shadow-glow-primary hover:-translate-y-2 transform hover:border-brand-primary/50">
-                                            <CategoryIcon className="w-12 h-12 mx-auto text-brand-primary mb-4" />
+                                        <div className="bg-brand-surface/80 backdrop-blur-lg border border-brand-secondary/20 p-8 md:p-10 rounded-xl shadow-lg h-full transition-all duration-500 hover:shadow-glow-primary hover:-translate-y-2 transform hover:border-brand-primary/50 flex flex-col items-center">
+                                            <CategoryIcon className="w-14 h-14 text-brand-primary mb-5" />
                                             <h4 className="font-bold text-brand-text text-xl md:text-2xl mb-4 text-center">{category.title}</h4>
-                                            <p className="text-base md:text-lg text-brand-text-secondary text-center">{category.description}</p>
+                                            <p className="text-base md:text-lg text-brand-text-secondary text-center leading-relaxed">{category.description}</p>
                                         </div>
                                     </Animated>
                                 );
@@ -427,28 +428,8 @@ const App: React.FC = () => {
                         </div>
                     </Animated>
 
-                    {/* Call to Action */}
                     <Animated delay={600}>
-                        <div className="max-w-4xl mx-auto mb-12">
-                            <h3 className="text-2xl sm:text-3xl md:text-4xl font-semibold font-serif text-brand-text mb-8 text-center">{content.causas.callToAction.title}</h3>
-                            <div className="grid md:grid-cols-2 gap-6">
-                                {content.causas.callToAction.items.map((item: any, index: number) => {
-                                    const ActionIcon = iconMap[item.icon];
-                                    return (
-                                        <Animated key={index} delay={index * 100}>
-                                            <div className="bg-brand-surface/80 backdrop-blur-lg border border-brand-secondary/20 p-6 rounded-xl flex items-center space-x-4 transition-all duration-300 hover:shadow-glow-primary hover:-translate-y-1 transform hover:border-brand-primary/50">
-                                                <ActionIcon className="w-10 h-10 text-brand-primary flex-shrink-0" />
-                                                <p className="text-base md:text-lg text-left">{item.text}</p>
-                                            </div>
-                                        </Animated>
-                                    );
-                                })}
-                            </div>
-                        </div>
-                    </Animated>
-
-                    <Animated delay={800}>
-                        <p className="italic text-brand-primary text-center text-xl sm:text-2xl md:text-3xl font-serif">
+                        <p className="italic text-brand-primary text-center text-subheading font-serif px-6 max-w-4xl mx-auto">
                             {content.causas.conclusion}
                         </p>
                     </Animated>
