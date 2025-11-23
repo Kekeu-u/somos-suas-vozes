@@ -254,12 +254,21 @@ const App: React.FC = () => {
                 >
                     <Animated>
                         <div className="max-w-4xl mx-auto mb-12">
-                            <p className="text-base sm:text-lg md:text-xl leading-relaxed mb-6 text-center text-balance">
+                            <p className="text-base sm:text-lg md:text-xl leading-relaxed mb-8 text-center text-balance">
                                 {content.motivacao.story}
                             </p>
-                            <p className="text-base sm:text-lg md:text-xl leading-relaxed text-center text-balance italic text-brand-primary">
-                                {content.motivacao.connection}
-                            </p>
+                        </div>
+                    </Animated>
+
+                    <Animated delay={200}>
+                        <div className="max-w-5xl mx-auto mb-12 relative px-6 md:px-12 py-10 md:py-12">
+                            <div className="bg-gradient-to-br from-brand-primary/10 to-brand-secondary/10 backdrop-blur-lg border-2 border-brand-primary/30 rounded-2xl p-8 md:p-12 shadow-2xl shadow-brand-primary/20 hover:shadow-glow-primary transition-all duration-500 hover:-translate-y-1 transform">
+                                <IconQuoteOpen className="w-12 h-12 md:w-16 md:h-16 text-brand-primary/40 absolute top-4 left-4 md:top-6 md:left-6" />
+                                <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-center text-balance leading-relaxed text-brand-primary font-serif relative z-10">
+                                    {content.motivacao.connection}
+                                </p>
+                                <IconQuoteClose className="w-12 h-12 md:w-16 md:h-16 text-brand-primary/40 absolute bottom-4 right-4 md:bottom-6 md:right-6" />
+                            </div>
                         </div>
                     </Animated>
 
