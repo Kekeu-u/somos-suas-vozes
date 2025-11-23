@@ -121,11 +121,11 @@ export const content = {
             original: 'Quincy Jones tinha um cartaz no estúdio durante a gravação de "We Are the World" que dizia: "Deixe seu ego na porta"',
             adaptation: 'Aqui, diremos: "Deixe seu ego de lado e empreste sua voz a quem não pode se defender"'
         },
-        conclusion: 'Queremos criar o <strong class="text-brand-primary font-black uppercase tracking-wider text-xl sm:text-2xl md:text-3xl mx-1">PRIMEIRO</strong> hino global especificamente dedicado aos direitos dos animais.',
+        conclusion: 'Criamos o <strong class="text-brand-primary font-black uppercase tracking-wider text-xl sm:text-2xl md:text-3xl mx-1">PRIMEIRO</strong> hino global especificamente dedicado aos direitos dos animais.',
     },
     slide14: {
         title: "O Movimento Continua",
-        paragraph1: "A gravação histórica de 29 de setembro de 2024 foi apenas o começo. Este movimento pela proteção animal precisa crescer e alcançar mais pessoas.",
+        paragraph1: "A gravação histórica de 29 de setembro de 2024 foi apenas o começo. Este movimento pela proteção animal continua crescendo e alcançando mais pessoas.",
         expectTitle: "Como Você Pode Participar:",
         expectation: [
             { icon: 'IconMegaphone', text: "Compartilhe nossa música e mensagem nas redes sociais." },
