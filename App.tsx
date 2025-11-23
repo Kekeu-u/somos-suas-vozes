@@ -16,7 +16,15 @@ import {
     IconUser,
     IconDonationHand,
     IconPeace,
-    IconChildren
+    IconChildren,
+    IconTrophy,
+    IconMedal,
+    IconStar,
+    IconCalendar,
+    IconLightbulb,
+    IconHistory,
+    IconCamera,
+    IconMicrophone
 } from './components/Icons';
 
 const iconMap: { [key: string]: React.FC<React.SVGProps<SVGSVGElement>> } = {
@@ -37,6 +45,14 @@ const iconMap: { [key: string]: React.FC<React.SVGProps<SVGSVGElement>> } = {
     IconDonationHand,
     IconPeace,
     IconChildren,
+    IconTrophy,
+    IconMedal,
+    IconStar,
+    IconCalendar,
+    IconLightbulb,
+    IconHistory,
+    IconCamera,
+    IconMicrophone,
 };
 
 const App: React.FC = () => {
@@ -46,6 +62,58 @@ const App: React.FC = () => {
             <StorylineIndicator />
             <main>
                 <Hero />
+
+                {/* MARCO HISTÓRICO */}
+                <Section
+                    id="marco-historico"
+                    title={content.marcoHistorico.title}
+                    icon={<IconTrophy className="w-10 h-10 text-brand-primary" />}
+                    bgImageUrl="https://images.unsplash.com/photo-1511379938547-c1f69419868d?q=80&w=1920&auto=format&fit=crop"
+                >
+                    <Animated>
+                        <p className="text-2xl sm:text-3xl md:text-4xl font-semibold text-center mb-4 text-brand-secondary font-serif">
+                            {content.marcoHistorico.subtitle}
+                        </p>
+                    </Animated>
+                    <Animated delay={100}>
+                        <p className="text-base sm:text-lg md:text-xl leading-relaxed mb-16 text-center max-w-6xl mx-auto text-balance">
+                            {content.marcoHistorico.description}
+                        </p>
+                    </Animated>
+
+                    {/* Trophy Highlights */}
+                    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto mb-12">
+                        {content.marcoHistorico.highlights.map((highlight, index) => {
+                            const HighlightIcon = iconMap[highlight.icon];
+                            return (
+                                <Animated key={index} delay={200 + index * 100}>
+                                    <div className="bg-brand-surface/80 backdrop-blur-lg border border-brand-secondary/20 p-8 rounded-xl shadow-lg text-center h-full transition-all duration-500 hover:shadow-glow-primary hover:-translate-y-2 transform hover:border-brand-primary/50">
+                                        <HighlightIcon className="w-16 h-16 mx-auto text-brand-primary mb-4" />
+                                        <div className="text-5xl md:text-6xl font-bold text-brand-primary mb-2 font-serif">
+                                            {highlight.number}
+                                        </div>
+                                        <h4 className="text-xl md:text-2xl font-semibold text-brand-text mb-2">
+                                            {highlight.label}
+                                        </h4>
+                                        <p className="text-base text-brand-text-secondary">
+                                            {highlight.description}
+                                        </p>
+                                    </div>
+                                </Animated>
+                            );
+                        })}
+                    </div>
+
+                    <Animated delay={600}>
+                        <div className="max-w-4xl mx-auto text-center relative px-8 md:px-16 py-8">
+                            <IconQuoteOpen className="w-16 h-16 text-brand-secondary/20 absolute top-0 left-0 -translate-y-2 opacity-70" />
+                            <p className="italic text-brand-primary text-xl sm:text-2xl md:text-3xl font-serif">
+                                {content.marcoHistorico.quote}
+                            </p>
+                            <IconQuoteClose className="w-16 h-16 text-brand-secondary/20 absolute bottom-0 right-0 translate-y-2 opacity-70" />
+                        </div>
+                    </Animated>
+                </Section>
 
                 <Section
                     id="musica"
@@ -178,6 +246,43 @@ const App: React.FC = () => {
                      </Animated>
                 </Section>
 
+                {/* MOTIVAÇÃO */}
+                <Section
+                    id="motivacao"
+                    title={content.motivacao.title}
+                    icon={<IconLightbulb className="w-10 h-10 text-brand-primary" />}
+                >
+                    <Animated>
+                        <div className="max-w-4xl mx-auto mb-12">
+                            <p className="text-base sm:text-lg md:text-xl leading-relaxed mb-6 text-center text-balance">
+                                {content.motivacao.story}
+                            </p>
+                            <p className="text-base sm:text-lg md:text-xl leading-relaxed text-center text-balance italic text-brand-primary">
+                                {content.motivacao.connection}
+                            </p>
+                        </div>
+                    </Animated>
+
+                    <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto mt-16">
+                        {content.motivacao.cards.map((card, index) => {
+                            const CardIcon = iconMap[card.icon];
+                            return (
+                                <Animated key={index} delay={200 + index * 150}>
+                                    <div className="bg-brand-surface/80 backdrop-blur-lg border border-brand-secondary/20 p-8 rounded-xl shadow-lg h-full transition-all duration-500 hover:shadow-glow-primary hover:-translate-y-2 transform hover:border-brand-primary/50 flex flex-col items-center">
+                                        <CardIcon className="w-14 h-14 text-brand-primary mb-5" />
+                                        <h4 className="font-bold text-brand-text text-xl md:text-2xl mb-4 text-center">
+                                            {card.title}
+                                        </h4>
+                                        <p className="text-base md:text-lg text-brand-text-secondary text-center leading-relaxed">
+                                            {card.text}
+                                        </p>
+                                    </div>
+                                </Animated>
+                            );
+                        })}
+                    </div>
+                </Section>
+
                 <Section id="modelo" title={content.slide6.title} icon={<IconUsers className="w-10 h-10 text-brand-primary" />}>
                     <Animated>
                         <p className="text-base sm:text-lg md:text-xl leading-relaxed mb-8 text-center max-w-6xl mx-auto text-balance">{content.slide6.paragraph1}</p>
@@ -219,13 +324,63 @@ const App: React.FC = () => {
                         </div>
                     </Animated>
                     <Animated delay={600}>
-                        <p 
+                        <p
                             className="italic text-brand-text/90 font-semibold text-lg sm:text-xl md:text-2xl mt-8 text-center max-w-6xl mx-auto"
                             dangerouslySetInnerHTML={{ __html: content.slide6.conclusion }}
                         />
                     </Animated>
                 </Section>
-                
+
+                {/* COMO ACONTECEU */}
+                <Section
+                    id="como-aconteceu"
+                    title={content.comoAconteceu.title}
+                    icon={<IconCamera className="w-10 h-10 text-brand-primary" />}
+                    bgImageUrl="https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?q=80&w=1920&auto=format&fit=crop"
+                >
+                    <Animated>
+                        <p className="text-xl sm:text-2xl md:text-3xl font-semibold text-center mb-4 text-brand-primary font-serif">
+                            {content.comoAconteceu.subtitle}
+                        </p>
+                    </Animated>
+                    <Animated delay={100}>
+                        <p className="text-base sm:text-lg md:text-xl leading-relaxed mb-16 text-center max-w-6xl mx-auto text-balance">
+                            {content.comoAconteceu.description}
+                        </p>
+                    </Animated>
+
+                    {/* Timeline */}
+                    <div className="max-w-4xl mx-auto">
+                        {content.comoAconteceu.timeline.map((item, index) => {
+                            const PhaseIcon = iconMap[item.icon];
+                            const isLast = index === content.comoAconteceu.timeline.length - 1;
+
+                            return (
+                                <Animated key={index} delay={200 + index * 150}>
+                                    <div className="flex items-start group mb-12">
+                                        <div className="flex flex-col items-center mr-6">
+                                            <div className="w-16 h-16 bg-brand-primary rounded-full flex items-center justify-center text-brand-background font-bold flex-shrink-0 transition-all duration-300 group-hover:scale-110 group-hover:shadow-glow-primary">
+                                                <PhaseIcon className="w-8 h-8" />
+                                            </div>
+                                            {!isLast && (
+                                                <div className="w-1 h-full bg-gradient-to-b from-brand-primary to-brand-secondary/50 my-2 min-h-[80px]"></div>
+                                            )}
+                                        </div>
+                                        <div className={!isLast ? "pb-8" : ""}>
+                                            <h4 className="text-2xl md:text-3xl font-serif font-bold text-brand-primary mb-3 transition-colors duration-300 group-hover:text-brand-secondary">
+                                                {item.phase}
+                                            </h4>
+                                            <p className="text-base md:text-lg text-brand-text-secondary leading-relaxed">
+                                                {item.description}
+                                            </p>
+                                        </div>
+                                    </div>
+                                </Animated>
+                            );
+                        })}
+                    </div>
+                </Section>
+
                 {/* PARTE 3: O CHAMADO À AÇÃO */}
                 <Section id="movimento" title={content.slide14.title} icon={<IconMegaphone className="w-10 h-10 text-brand-primary" />}>
                     <AnimatedTypewriter 

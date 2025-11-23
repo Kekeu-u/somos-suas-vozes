@@ -1,7 +1,7 @@
 import React from 'react';
 
 // Font Awesome
-import { FaPaw, FaMusic, FaUsers, FaHeart, FaFeatherAlt, FaGlobe, FaGift, FaEye, FaQuoteLeft, FaQuoteRight, FaUser, FaHome, FaHandHoldingHeart, FaPeace } from 'react-icons/fa';
+import { FaPaw, FaMusic, FaUsers, FaHeart, FaFeatherAlt, FaGlobe, FaGift, FaEye, FaQuoteLeft, FaQuoteRight, FaUser, FaHome, FaHandHoldingHeart, FaPeace, FaTrophy, FaMedal, FaStar, FaCalendarCheck, FaLightbulb, FaHistory, FaCamera, FaMicrophone } from 'react-icons/fa';
 // Font Awesome 6 - For a better 'children' icon
 import { FaChildren } from 'react-icons/fa6';
 
@@ -36,3 +36,11 @@ export const IconArrowUp: React.FC<React.SVGProps<SVGSVGElement>> = FiArrowUp;
 export const IconDonationHand: React.FC<React.SVGProps<SVGSVGElement>> = FaHandHoldingHeart;
 export const IconPeace: React.FC<React.SVGProps<SVGSVGElement>> = FaPeace;
 export const IconChildren: React.FC<React.SVGProps<SVGSVGElement>> = FaChildren;
+export const IconTrophy: React.FC<React.SVGProps<SVGSVGElement>> = FaTrophy;
+export const IconMedal: React.FC<React.SVGProps<SVGSVGElement>> = FaMedal;
+export const IconStar: React.FC<React.SVGProps<SVGSVGElement>> = FaStar;
+export const IconCalendar: React.FC<React.SVGProps<SVGSVGElement>> = FaCalendarCheck;
+export const IconLightbulb: React.FC<React.SVGProps<SVGSVGElement>> = FaLightbulb;
+export const IconHistory: React.FC<React.SVGProps<SVGSVGElement>> = FaHistory;
+export const IconCamera: React.FC<React.SVGProps<SVGSVGElement>> = FaCamera;
+export const IconMicrophone: React.FC<React.SVGProps<SVGSVGElement>> = FaMicrophone;

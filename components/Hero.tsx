@@ -15,7 +15,7 @@ export const Hero: React.FC = () => {
     const mainTitleLines = [
        {
         // Título principal - primeira linha
-        text: "Somos suas",
+        text: "Somos Suas",
         className: "text-5xl sm:text-7xl md:text-8xl font-bold font-serif leading-tight drop-shadow-lg",
     },
     {
@@ -24,8 +24,12 @@ export const Hero: React.FC = () => {
         className: "text-5xl sm:text-7xl md:text-8xl font-bold font-serif leading-tight mb-4 drop-shadow-lg",
     },
     {
-            text: "We are your voices",
-            className: "text-xl sm:text-3xl md:text-4xl font-light mb-8 font-serif italic text-brand-primary",
+            text: "Um Marco Histórico",
+            className: "text-2xl sm:text-4xl md:text-5xl font-semibold mb-4 font-serif text-brand-primary",
+        },
+        {
+            text: "29 de Setembro de 2024",
+            className: "text-xl sm:text-2xl md:text-3xl font-light mb-2 italic text-brand-secondary",
         },
     ];
 
@@ -45,12 +49,13 @@ export const Hero: React.FC = () => {
 
             {/* Tagline - Positioned absolutely near the bottom */}
             <div
-                className={`absolute bottom-24 md:bottom-20 left-0 right-0 z-10 p-6 max-w-3xl mx-auto transition-all duration-700 ease-out-quint ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}
+                className={`absolute bottom-24 md:bottom-20 left-0 right-0 z-10 p-6 max-w-4xl mx-auto transition-all duration-700 ease-out-quint ${isLoaded ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'}`}
             >
-                <p className="text-lg sm:text-xl md:text-2xl drop-shadow-md text-balance">
-                    Uma homenagem histórica realizada em 29 de setembro de 2024.
-                    <br />
-                    Onde existe vida, existe amor.
+                <p className="text-lg sm:text-xl md:text-2xl drop-shadow-md text-balance font-semibold">
+                    O dia em que artistas brasileiros transformaram compaixão em melodia
+                </p>
+                <p className="text-base sm:text-lg md:text-xl drop-shadow-md text-balance mt-3 text-brand-primary italic">
+                    Onde existe vida, existe amor
                 </p>
             </div>
 

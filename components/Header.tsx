@@ -1,19 +1,25 @@
 import React, { useState, useEffect } from 'react';
-import { 
-    IconPaw, 
-    IconMusic, 
-    IconHeart, 
-    IconMegaphone, 
-    IconFeather, 
+import {
+    IconPaw,
+    IconMusic,
+    IconHeart,
+    IconMegaphone,
+    IconFeather,
     IconHome,
     IconGlobe,
-    IconUser
+    IconUser,
+    IconTrophy,
+    IconLightbulb,
+    IconCamera
 } from './Icons';
 
 const navItems = [
     { href: '#home', label: 'Início', icon: IconHome },
+    { href: '#marco-historico', label: 'O Marco', icon: IconTrophy },
     { href: '#musica', label: 'A Música', icon: IconMusic },
     { href: '#reflexao', label: 'A Causa', icon: IconPaw },
+    { href: '#motivacao', label: 'Motivação', icon: IconLightbulb },
+    { href: '#como-aconteceu', label: 'Como Aconteceu', icon: IconCamera },
     { href: '#agradecimento', label: 'Agradecimentos', icon: IconHeart },
     { href: '#quem-somos', label: 'Quem Somos', icon: IconUser },
     { href: '#causas', label: 'Causas', icon: IconMegaphone },
