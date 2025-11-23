@@ -71,7 +71,7 @@ const App: React.FC = () => {
                     bgImageUrl="https://images.unsplash.com/photo-1511379938547-c1f69419868d?q=80&w=1920&auto=format&fit=crop"
                 >
                     <Animated>
-                        <p className="text-2xl sm:text-3xl md:text-4xl font-semibold text-center mb-4 text-brand-secondary font-serif">
+                        <p className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-center mb-4 text-brand-primary font-serif drop-shadow-2xl tracking-wide">
                             {content.marcoHistorico.subtitle}
                         </p>
                     </Animated>
@@ -157,7 +157,7 @@ const App: React.FC = () => {
                     <div className="text-center max-w-4xl mx-auto mt-16">
                         <AnimatedTypewriter
                             lines={[
-                                { text: "29 de setembro de 2024", className: "text-2xl sm:text-3xl md:text-4xl font-bold text-brand-primary font-serif mb-3" },
+                                { text: "29 de setembro de 2024", className: "text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-brand-primary font-serif mb-4 drop-shadow-2xl tracking-wide" },
                                 { text: "O dia em que artistas brasileiros deram voz aos animais.", className: "text-base sm:text-lg md:text-2xl text-brand-text mb-6" },
                                 { text: 'Porque "onde existe vida, existe amor."', className: "italic text-brand-text-secondary text-base md:text-lg mb-6" },
                                 { text: "Essa gravação histórica celebrou o Dia Mundial dos Animais.", className: "text-base md:text-xl font-semibold" }
