@@ -486,29 +486,27 @@ const App: React.FC = () => {
                     <Animated delay={200}>
                         <div className="mb-12">
                             <h3 className="text-heading font-semibold font-serif text-brand-text mb-8 text-center px-4">{content.agradecimento.subtitle}</h3>
-                            {/* Mobile: Horizontal Scroll */}
-                            <div className="md:hidden">
-                                <HorizontalScroll itemWidth="200px" gap="1rem">
-                                    {content.agradecimento.artists.map((artist: string, index: number) => (
-                                        <div key={index} className="bg-brand-surface/80 backdrop-blur-lg border border-brand-secondary/20 p-6 rounded-lg text-center transition-all duration-300 hover:shadow-glow-primary hover:-translate-y-1 transform hover:border-brand-primary/50 h-full">
-                                            <IconMusic className="w-6 h-6 mx-auto text-brand-primary mb-3" />
-                                            <p className="text-sm font-semibold">{artist}</p>
-                                        </div>
-                                    ))}
-                                </HorizontalScroll>
-                            </div>
-                            {/* Desktop: Grid */}
-                            <div className="hidden md:block golden-container">
-                                <div className="card-grid">
-                                    {content.agradecimento.artists.map((artist: string, index: number) => (
-                                        <Animated key={index} delay={index * 50}>
-                                            <div className="bg-brand-surface/80 backdrop-blur-lg border border-brand-secondary/20 p-6 rounded-lg text-center transition-all duration-300 hover:shadow-glow-primary hover:-translate-y-1 transform hover:border-brand-primary/50">
-                                                <IconMusic className="w-6 h-6 mx-auto text-brand-primary mb-3" />
-                                                <p className="text-base font-semibold">{artist}</p>
+                            {/* Mobile & Desktop: Horizontal Scroll with Grid Layout (3 rows x 2 cols) */}
+                            <div className="w-full">
+                                <HorizontalScroll itemWidth="85vw" gap="1.5rem" showIndicators={true}>
+                                    {(() => {
+                                        const itemsPerPage = 6; // 3 rows x 2 cols
+                                        const pages = [];
+                                        for (let i = 0; i < content.agradecimento.artists.length; i += itemsPerPage) {
+                                            pages.push(content.agradecimento.artists.slice(i, i + itemsPerPage));
+                                        }
+                                        return pages.map((pageArtists, pageIndex) => (
+                                            <div key={pageIndex} className="grid grid-cols-2 grid-rows-3 gap-3 md:gap-4 h-full">
+                                                {pageArtists.map((artist: string, index: number) => (
+                                                    <div key={index} className="bg-brand-surface/80 backdrop-blur-lg border border-brand-secondary/20 p-4 md:p-6 rounded-lg text-center transition-all duration-300 hover:shadow-glow-primary hover:-translate-y-1 transform hover:border-brand-primary/50">
+                                                        <IconMusic className="w-5 h-5 md:w-6 md:h-6 mx-auto text-brand-primary mb-2 md:mb-3" />
+                                                        <p className="text-xs md:text-base font-semibold">{artist}</p>
+                                                    </div>
+                                                ))}
                                             </div>
-                                        </Animated>
-                                    ))}
-                                </div>
+                                        ));
+                                    })()}
+                                </HorizontalScroll>
                             </div>
                         </div>
                     </Animated>
@@ -517,35 +515,28 @@ const App: React.FC = () => {
                     <Animated delay={400}>
                         <div className="mb-12">
                             <h3 className="text-heading font-semibold font-serif text-brand-text mb-8 text-center px-4">{content.agradecimento.teamTitle}</h3>
-                            {/* Mobile: Horizontal Scroll */}
-                            <div className="md:hidden">
-                                <HorizontalScroll itemWidth="280px" gap="1rem">
-                                    {content.agradecimento.team.map((member: any, index: number) => (
-                                        <div key={index} className="bg-brand-surface/80 backdrop-blur-lg border border-brand-secondary/20 p-5 rounded-lg flex items-center gap-4 transition-all duration-300 hover:shadow-glow-primary hover:-translate-y-1 transform hover:border-brand-primary/50 h-full">
-                                            <IconUser className="w-10 h-10 text-brand-primary flex-shrink-0" />
-                                            <div className="text-left min-w-0">
-                                                <p className="font-semibold text-base truncate">{member.name}</p>
-                                                <p className="text-sm text-brand-text-secondary">{member.role}</p>
+                            {/* Mobile & Desktop: Horizontal Scroll with Grid Layout (2 rows x 2 cols) */}
+                            <div className="w-full">
+                                <HorizontalScroll itemWidth="85vw" gap="1.5rem" showIndicators={true}>
+                                    {(() => {
+                                        const itemsPerPage = 4; // 2 rows x 2 cols
+                                        const pages = [];
+                                        for (let i = 0; i < content.agradecimento.team.length; i += itemsPerPage) {
+                                            pages.push(content.agradecimento.team.slice(i, i + itemsPerPage));
+                                        }
+                                        return pages.map((pageMembers, pageIndex) => (
+                                            <div key={pageIndex} className="grid grid-cols-2 grid-rows-2 gap-3 md:gap-4 h-full">
+                                                {pageMembers.map((member: any, index: number) => (
+                                                    <div key={index} className="bg-brand-surface/80 backdrop-blur-lg border border-brand-secondary/20 p-4 md:p-6 rounded-lg flex flex-col items-center justify-center text-center transition-all duration-300 hover:shadow-glow-primary hover:-translate-y-1 transform hover:border-brand-primary/50">
+                                                        <IconUser className="w-8 h-8 md:w-10 md:h-10 text-brand-primary mb-2 md:mb-3" />
+                                                        <p className="font-semibold text-xs md:text-base truncate w-full px-1">{member.name}</p>
+                                                        <p className="text-xs md:text-sm text-brand-text-secondary mt-1">{member.role}</p>
+                                                    </div>
+                                                ))}
                                             </div>
-                                        </div>
-                                    ))}
+                                        ));
+                                    })()}
                                 </HorizontalScroll>
-                            </div>
-                            {/* Desktop: Grid */}
-                            <div className="hidden md:block golden-container">
-                                <div className="grid grid-cols-2 gap-4 lg:gap-6">
-                                    {content.agradecimento.team.map((member: any, index: number) => (
-                                        <Animated key={index} delay={index * 50}>
-                                            <div className="bg-brand-surface/80 backdrop-blur-lg border border-brand-secondary/20 p-6 rounded-lg flex items-center gap-4 transition-all duration-300 hover:shadow-glow-primary hover:-translate-y-1 transform hover:border-brand-primary/50">
-                                                <IconUser className="w-10 h-10 text-brand-primary flex-shrink-0" />
-                                                <div className="text-left min-w-0">
-                                                    <p className="font-semibold text-lg truncate">{member.name}</p>
-                                                    <p className="text-sm text-brand-text-secondary">{member.role}</p>
-                                                </div>
-                                            </div>
-                                        </Animated>
-                                    ))}
-                                </div>
                             </div>
                         </div>
                     </Animated>
