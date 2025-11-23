@@ -25,11 +25,11 @@ export const Hero: React.FC = () => {
     },
     {
             text: "Um Marco Histórico",
-            className: "text-2xl sm:text-4xl md:text-5xl font-semibold mb-4 font-serif text-brand-primary",
+            className: "text-2xl sm:text-4xl md:text-5xl font-semibold mb-6 font-serif text-brand-primary",
         },
         {
             text: "29 de Setembro de 2024",
-            className: "text-xl sm:text-2xl md:text-3xl font-light mb-2 italic text-brand-secondary",
+            className: "text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-2 font-serif text-brand-primary drop-shadow-2xl tracking-wide",
         },
     ];
 

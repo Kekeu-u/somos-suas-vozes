@@ -6,6 +6,7 @@ import { Timeline } from './components/Timeline';
 import { Footer } from './components/Footer';
 import { Animated, Counter, AnimatedTypewriter } from './components/Animated';
 import { InstagramEmbed } from './components/InstagramEmbed';
+import { HorizontalScroll } from './components/HorizontalScroll';
 import { content } from './constants';
 import { StorylineIndicator } from './components/StorylineIndicator';
 import {
@@ -71,7 +72,7 @@ const App: React.FC = () => {
                     bgImageUrl="https://images.unsplash.com/photo-1511379938547-c1f69419868d?q=80&w=1920&auto=format&fit=crop"
                 >
                     <Animated>
-                        <p className="text-2xl sm:text-3xl md:text-4xl font-semibold text-center mb-4 text-brand-secondary font-serif">
+                        <p className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-center mb-4 text-brand-primary font-serif drop-shadow-2xl tracking-wide">
                             {content.marcoHistorico.subtitle}
                         </p>
                     </Animated>
@@ -82,7 +83,30 @@ const App: React.FC = () => {
                     </Animated>
 
                     {/* Trophy Highlights */}
-                    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto mb-12">
+                    {/* Mobile: Horizontal Scroll */}
+                    <div className="md:hidden mb-12">
+                        <HorizontalScroll itemWidth="260px" gap="1rem">
+                            {content.marcoHistorico.highlights.map((highlight, index) => {
+                                const HighlightIcon = iconMap[highlight.icon];
+                                return (
+                                    <div key={index} className="bg-brand-surface/80 backdrop-blur-lg border border-brand-secondary/20 p-6 rounded-xl shadow-lg text-center h-full transition-all duration-500 hover:shadow-glow-primary hover:-translate-y-2 transform hover:border-brand-primary/50">
+                                        <HighlightIcon className="w-14 h-14 mx-auto text-brand-primary mb-4" />
+                                        <div className="text-4xl font-bold text-brand-primary mb-2 font-serif">
+                                            {highlight.number}
+                                        </div>
+                                        <h4 className="text-lg font-semibold text-brand-text mb-2">
+                                            {highlight.label}
+                                        </h4>
+                                        <p className="text-sm text-brand-text-secondary">
+                                            {highlight.description}
+                                        </p>
+                                    </div>
+                                );
+                            })}
+                        </HorizontalScroll>
+                    </div>
+                    {/* Desktop: Grid */}
+                    <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto mb-12">
                         {content.marcoHistorico.highlights.map((highlight, index) => {
                             const HighlightIcon = iconMap[highlight.icon];
                             return (
@@ -157,7 +181,7 @@ const App: React.FC = () => {
                     <div className="text-center max-w-4xl mx-auto mt-16">
                         <AnimatedTypewriter
                             lines={[
-                                { text: "29 de setembro de 2024", className: "text-2xl sm:text-3xl md:text-4xl font-bold text-brand-primary font-serif mb-3" },
+                                { text: "29 de setembro de 2024", className: "text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-brand-primary font-serif mb-4 drop-shadow-2xl tracking-wide" },
                                 { text: "O dia em que artistas brasileiros deram voz aos animais.", className: "text-base sm:text-lg md:text-2xl text-brand-text mb-6" },
                                 { text: 'Porque "onde existe vida, existe amor."', className: "italic text-brand-text-secondary text-base md:text-lg mb-6" },
                                 { text: "Essa gravação histórica celebrou o Dia Mundial dos Animais.", className: "text-base md:text-xl font-semibold" }
@@ -261,13 +285,13 @@ const App: React.FC = () => {
                     </Animated>
 
                     <Animated delay={200}>
-                        <div className="max-w-5xl mx-auto mb-12 relative px-6 md:px-12 py-10 md:py-12">
-                            <div className="bg-gradient-to-br from-brand-primary/10 to-brand-secondary/10 backdrop-blur-lg border-2 border-brand-primary/30 rounded-2xl p-8 md:p-12 shadow-2xl shadow-brand-primary/20 hover:shadow-glow-primary transition-all duration-500 hover:-translate-y-1 transform">
-                                <IconQuoteOpen className="w-12 h-12 md:w-16 md:h-16 text-brand-primary/40 absolute top-4 left-4 md:top-6 md:left-6" />
-                                <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-center text-balance leading-relaxed text-brand-primary font-serif relative z-10">
+                        <div className="max-w-5xl mx-auto mb-12 relative px-6 md:px-12 py-8 md:py-10">
+                            <div className="bg-brand-surface/30 backdrop-blur-sm border border-brand-text/5 rounded-lg p-6 md:p-10 shadow-sm transition-all duration-300">
+                                <IconQuoteOpen className="w-8 h-8 md:w-10 md:h-10 text-brand-text/15 absolute top-3 left-3 md:top-4 md:left-4" />
+                                <p className="text-lg sm:text-xl md:text-2xl font-normal text-center text-balance leading-relaxed text-brand-text/80 italic relative z-10">
                                     {content.motivacao.connection}
                                 </p>
-                                <IconQuoteClose className="w-12 h-12 md:w-16 md:h-16 text-brand-primary/40 absolute bottom-4 right-4 md:bottom-6 md:right-6" />
+                                <IconQuoteClose className="w-8 h-8 md:w-10 md:h-10 text-brand-text/15 absolute bottom-3 right-3 md:bottom-4 md:right-4" />
                             </div>
                         </div>
                     </Animated>
@@ -353,7 +377,31 @@ const App: React.FC = () => {
                     </Animated>
 
                     {/* Timeline */}
-                    <div className="max-w-4xl mx-auto">
+                    {/* Mobile: Horizontal Scroll */}
+                    <div className="md:hidden">
+                        <HorizontalScroll itemWidth="300px" gap="1.5rem">
+                            {content.comoAconteceu.timeline.map((item, index) => {
+                                const PhaseIcon = iconMap[item.icon];
+                                return (
+                                    <div key={index} className="bg-brand-surface/80 backdrop-blur-lg border border-brand-secondary/20 p-6 rounded-xl shadow-lg h-full transition-all duration-300 hover:shadow-glow-primary hover:border-brand-primary/50">
+                                        <div className="flex flex-col items-center text-center">
+                                            <div className="w-16 h-16 bg-brand-primary rounded-full flex items-center justify-center text-brand-background font-bold mb-4 shadow-lg">
+                                                <PhaseIcon className="w-8 h-8" />
+                                            </div>
+                                            <h4 className="text-xl font-serif font-bold text-brand-primary mb-3">
+                                                {item.phase}
+                                            </h4>
+                                            <p className="text-sm text-brand-text-secondary leading-relaxed">
+                                                {item.description}
+                                            </p>
+                                        </div>
+                                    </div>
+                                );
+                            })}
+                        </HorizontalScroll>
+                    </div>
+                    {/* Desktop: Vertical Timeline */}
+                    <div className="hidden md:block max-w-4xl mx-auto">
                         {content.comoAconteceu.timeline.map((item, index) => {
                             const PhaseIcon = iconMap[item.icon];
                             const isLast = index === content.comoAconteceu.timeline.length - 1;
@@ -436,37 +484,68 @@ const App: React.FC = () => {
 
                     {/* Artistas */}
                     <Animated delay={200}>
-                        <div className="golden-container mb-12">
-                            <h3 className="text-heading font-semibold font-serif text-brand-text mb-8 text-center">{content.agradecimento.subtitle}</h3>
-                            <div className="card-grid mobile-card-stagger">
-                                {content.agradecimento.artists.map((artist: string, index: number) => (
-                                    <Animated key={index} delay={index * 50}>
-                                        <div className="bg-brand-surface/80 backdrop-blur-lg border border-brand-secondary/20 p-6 rounded-lg text-center transition-all duration-300 hover:shadow-glow-primary hover:-translate-y-1 transform hover:border-brand-primary/50">
+                        <div className="mb-12">
+                            <h3 className="text-heading font-semibold font-serif text-brand-text mb-8 text-center px-4">{content.agradecimento.subtitle}</h3>
+                            {/* Mobile: Horizontal Scroll */}
+                            <div className="md:hidden">
+                                <HorizontalScroll itemWidth="200px" gap="1rem">
+                                    {content.agradecimento.artists.map((artist: string, index: number) => (
+                                        <div key={index} className="bg-brand-surface/80 backdrop-blur-lg border border-brand-secondary/20 p-6 rounded-lg text-center transition-all duration-300 hover:shadow-glow-primary hover:-translate-y-1 transform hover:border-brand-primary/50 h-full">
                                             <IconMusic className="w-6 h-6 mx-auto text-brand-primary mb-3" />
-                                            <p className="text-sm md:text-base font-semibold">{artist}</p>
+                                            <p className="text-sm font-semibold">{artist}</p>
                                         </div>
-                                    </Animated>
-                                ))}
+                                    ))}
+                                </HorizontalScroll>
+                            </div>
+                            {/* Desktop: Grid */}
+                            <div className="hidden md:block golden-container">
+                                <div className="card-grid">
+                                    {content.agradecimento.artists.map((artist: string, index: number) => (
+                                        <Animated key={index} delay={index * 50}>
+                                            <div className="bg-brand-surface/80 backdrop-blur-lg border border-brand-secondary/20 p-6 rounded-lg text-center transition-all duration-300 hover:shadow-glow-primary hover:-translate-y-1 transform hover:border-brand-primary/50">
+                                                <IconMusic className="w-6 h-6 mx-auto text-brand-primary mb-3" />
+                                                <p className="text-base font-semibold">{artist}</p>
+                                            </div>
+                                        </Animated>
+                                    ))}
+                                </div>
                             </div>
                         </div>
                     </Animated>
 
                     {/* Equipe Técnica */}
                     <Animated delay={400}>
-                        <div className="golden-container mb-12">
-                            <h3 className="text-heading font-semibold font-serif text-brand-text mb-8 text-center">{content.agradecimento.teamTitle}</h3>
-                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
-                                {content.agradecimento.team.map((member: any, index: number) => (
-                                    <Animated key={index} delay={index * 50}>
-                                        <div className="bg-brand-surface/80 backdrop-blur-lg border border-brand-secondary/20 p-5 md:p-6 rounded-lg flex items-center gap-4 transition-all duration-300 hover:shadow-glow-primary hover:-translate-y-1 transform hover:border-brand-primary/50">
+                        <div className="mb-12">
+                            <h3 className="text-heading font-semibold font-serif text-brand-text mb-8 text-center px-4">{content.agradecimento.teamTitle}</h3>
+                            {/* Mobile: Horizontal Scroll */}
+                            <div className="md:hidden">
+                                <HorizontalScroll itemWidth="280px" gap="1rem">
+                                    {content.agradecimento.team.map((member: any, index: number) => (
+                                        <div key={index} className="bg-brand-surface/80 backdrop-blur-lg border border-brand-secondary/20 p-5 rounded-lg flex items-center gap-4 transition-all duration-300 hover:shadow-glow-primary hover:-translate-y-1 transform hover:border-brand-primary/50 h-full">
                                             <IconUser className="w-10 h-10 text-brand-primary flex-shrink-0" />
                                             <div className="text-left min-w-0">
-                                                <p className="font-semibold text-base md:text-lg truncate">{member.name}</p>
+                                                <p className="font-semibold text-base truncate">{member.name}</p>
                                                 <p className="text-sm text-brand-text-secondary">{member.role}</p>
                                             </div>
                                         </div>
-                                    </Animated>
-                                ))}
+                                    ))}
+                                </HorizontalScroll>
+                            </div>
+                            {/* Desktop: Grid */}
+                            <div className="hidden md:block golden-container">
+                                <div className="grid grid-cols-2 gap-4 lg:gap-6">
+                                    {content.agradecimento.team.map((member: any, index: number) => (
+                                        <Animated key={index} delay={index * 50}>
+                                            <div className="bg-brand-surface/80 backdrop-blur-lg border border-brand-secondary/20 p-6 rounded-lg flex items-center gap-4 transition-all duration-300 hover:shadow-glow-primary hover:-translate-y-1 transform hover:border-brand-primary/50">
+                                                <IconUser className="w-10 h-10 text-brand-primary flex-shrink-0" />
+                                                <div className="text-left min-w-0">
+                                                    <p className="font-semibold text-lg truncate">{member.name}</p>
+                                                    <p className="text-sm text-brand-text-secondary">{member.role}</p>
+                                                </div>
+                                            </div>
+                                        </Animated>
+                                    ))}
+                                </div>
                             </div>
                         </div>
                     </Animated>
