@@ -194,8 +194,8 @@ export const content = {
     // Seção Quem Somos
     quemSomos: {
         title: "Quem Somos",
-        paragraph1: "Somos Suas Vozes é um movimento artístico pela proteção animal, idealizado por André Amorim e inspirado pelo legado de grandes canções que mudaram o mundo, como 'We Are The World'. Nosso objetivo é usar o poder transformador da música para amplificar a voz dos animais que não podem se defender.",
-        paragraph2: "Em uma conexão surpreendente descoberta durante a pesquisa do projeto, Rachel Jones, filha do lendário produtor Quincy Jones (produtor de 'We Are The World'), compartilha o mesmo nome de Raquel Amorim - irmã de André e inspiração para este projeto - e também é veterinária.",
+        paragraph1: "Somos Suas Vozes é um movimento artístico pela proteção animal, inspirado pelo legado de grandes canções que mudaram o mundo, como 'We Are The World'. Nosso objetivo é usar o poder transformador da música para amplificar a voz dos animais que não podem se defender.",
+        paragraph2: "Em uma conexão surpreendente descoberta durante a pesquisa do projeto, Rachel Jones, filha do lendário produtor Quincy Jones (produtor de 'We Are The World'), compartilha o mesmo nome de Raquel Brincker - veterinária que inspirou este projeto - e também é veterinária.",
         mission: {
             title: "Nossa Missão",
             items: [
