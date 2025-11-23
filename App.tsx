@@ -319,15 +319,9 @@ const App: React.FC = () => {
                             <IconQuoteOpen className="w-16 h-16 text-brand-secondary/20 absolute top-0 left-0 -translate-y-2 opacity-70" />
                             <AnimatedTypewriter
                                 lines={[
-                                    { text: content.slide6.quote.original, className: "text-base md:text-xl leading-relaxed text-brand-text-secondary mb-4" },
+                                    { text: content.slide6.quote.original, className: "text-lg sm:text-xl md:text-2xl leading-relaxed text-brand-text-secondary" },
                                 ]}
                                 staggerMs={20}
-                            />
-                            <AnimatedTypewriter
-                                 lines={[
-                                    { text: content.slide6.quote.adaptation, className: "text-lg sm:text-2xl md:text-3xl font-semibold font-serif text-brand-primary" },
-                                ]}
-                                staggerMs={30}
                             />
                             <IconQuoteClose className="w-16 h-16 text-brand-secondary/20 absolute bottom-0 right-0 translate-y-2 opacity-70" />
                         </div>
