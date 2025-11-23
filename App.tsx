@@ -181,9 +181,9 @@ const App: React.FC = () => {
                     <div className="text-center max-w-4xl mx-auto mt-16">
                         <AnimatedTypewriter
                             lines={[
-                                { text: "29 de setembro de 2024", className: "text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-brand-primary font-serif mb-4 drop-shadow-2xl tracking-wide" },
-                                { text: "O dia em que artistas brasileiros deram voz aos animais.", className: "text-base sm:text-lg md:text-2xl text-brand-text mb-6" },
-                                { text: 'Porque "onde existe vida, existe amor."', className: "italic text-brand-text-secondary text-base md:text-lg mb-6" },
+                                { text: "29 de setembro de 2024", className: "text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-brand-primary font-serif mb-10 drop-shadow-2xl tracking-wide" },
+                                { text: "O dia em que artistas brasileiros deram voz aos animais.", className: "text-base sm:text-lg md:text-2xl text-brand-text mb-8" },
+                                { text: '"Onde existe vida, existe amor"', className: "italic text-brand-primary text-lg md:text-2xl mb-8 font-serif" },
                                 { text: "Essa gravação histórica celebrou o Dia Mundial dos Animais.", className: "text-base md:text-xl font-semibold" }
                             ]}
                             staggerMs={15}
