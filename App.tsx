@@ -6,6 +6,7 @@ import { Timeline } from './components/Timeline';
 import { Footer } from './components/Footer';
 import { Animated, Counter, AnimatedTypewriter } from './components/Animated';
 import { InstagramEmbed } from './components/InstagramEmbed';
+import { HorizontalScroll } from './components/HorizontalScroll';
 import { content } from './constants';
 import { StorylineIndicator } from './components/StorylineIndicator';
 import {
@@ -82,7 +83,30 @@ const App: React.FC = () => {
                     </Animated>
 
                     {/* Trophy Highlights */}
-                    <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto mb-12">
+                    {/* Mobile: Horizontal Scroll */}
+                    <div className="md:hidden mb-12">
+                        <HorizontalScroll itemWidth="260px" gap="1rem">
+                            {content.marcoHistorico.highlights.map((highlight, index) => {
+                                const HighlightIcon = iconMap[highlight.icon];
+                                return (
+                                    <div key={index} className="bg-brand-surface/80 backdrop-blur-lg border border-brand-secondary/20 p-6 rounded-xl shadow-lg text-center h-full transition-all duration-500 hover:shadow-glow-primary hover:-translate-y-2 transform hover:border-brand-primary/50">
+                                        <HighlightIcon className="w-14 h-14 mx-auto text-brand-primary mb-4" />
+                                        <div className="text-4xl font-bold text-brand-primary mb-2 font-serif">
+                                            {highlight.number}
+                                        </div>
+                                        <h4 className="text-lg font-semibold text-brand-text mb-2">
+                                            {highlight.label}
+                                        </h4>
+                                        <p className="text-sm text-brand-text-secondary">
+                                            {highlight.description}
+                                        </p>
+                                    </div>
+                                );
+                            })}
+                        </HorizontalScroll>
+                    </div>
+                    {/* Desktop: Grid */}
+                    <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto mb-12">
                         {content.marcoHistorico.highlights.map((highlight, index) => {
                             const HighlightIcon = iconMap[highlight.icon];
                             return (
@@ -353,7 +377,31 @@ const App: React.FC = () => {
                     </Animated>
 
                     {/* Timeline */}
-                    <div className="max-w-4xl mx-auto">
+                    {/* Mobile: Horizontal Scroll */}
+                    <div className="md:hidden">
+                        <HorizontalScroll itemWidth="300px" gap="1.5rem">
+                            {content.comoAconteceu.timeline.map((item, index) => {
+                                const PhaseIcon = iconMap[item.icon];
+                                return (
+                                    <div key={index} className="bg-brand-surface/80 backdrop-blur-lg border border-brand-secondary/20 p-6 rounded-xl shadow-lg h-full transition-all duration-300 hover:shadow-glow-primary hover:border-brand-primary/50">
+                                        <div className="flex flex-col items-center text-center">
+                                            <div className="w-16 h-16 bg-brand-primary rounded-full flex items-center justify-center text-brand-background font-bold mb-4 shadow-lg">
+                                                <PhaseIcon className="w-8 h-8" />
+                                            </div>
+                                            <h4 className="text-xl font-serif font-bold text-brand-primary mb-3">
+                                                {item.phase}
+                                            </h4>
+                                            <p className="text-sm text-brand-text-secondary leading-relaxed">
+                                                {item.description}
+                                            </p>
+                                        </div>
+                                    </div>
+                                );
+                            })}
+                        </HorizontalScroll>
+                    </div>
+                    {/* Desktop: Vertical Timeline */}
+                    <div className="hidden md:block max-w-4xl mx-auto">
                         {content.comoAconteceu.timeline.map((item, index) => {
                             const PhaseIcon = iconMap[item.icon];
                             const isLast = index === content.comoAconteceu.timeline.length - 1;
@@ -436,37 +484,68 @@ const App: React.FC = () => {
 
                     {/* Artistas */}
                     <Animated delay={200}>
-                        <div className="golden-container mb-12">
-                            <h3 className="text-heading font-semibold font-serif text-brand-text mb-8 text-center">{content.agradecimento.subtitle}</h3>
-                            <div className="card-grid mobile-card-stagger">
-                                {content.agradecimento.artists.map((artist: string, index: number) => (
-                                    <Animated key={index} delay={index * 50}>
-                                        <div className="bg-brand-surface/80 backdrop-blur-lg border border-brand-secondary/20 p-6 rounded-lg text-center transition-all duration-300 hover:shadow-glow-primary hover:-translate-y-1 transform hover:border-brand-primary/50">
+                        <div className="mb-12">
+                            <h3 className="text-heading font-semibold font-serif text-brand-text mb-8 text-center px-4">{content.agradecimento.subtitle}</h3>
+                            {/* Mobile: Horizontal Scroll */}
+                            <div className="md:hidden">
+                                <HorizontalScroll itemWidth="200px" gap="1rem">
+                                    {content.agradecimento.artists.map((artist: string, index: number) => (
+                                        <div key={index} className="bg-brand-surface/80 backdrop-blur-lg border border-brand-secondary/20 p-6 rounded-lg text-center transition-all duration-300 hover:shadow-glow-primary hover:-translate-y-1 transform hover:border-brand-primary/50 h-full">
                                             <IconMusic className="w-6 h-6 mx-auto text-brand-primary mb-3" />
-                                            <p className="text-sm md:text-base font-semibold">{artist}</p>
+                                            <p className="text-sm font-semibold">{artist}</p>
                                         </div>
-                                    </Animated>
-                                ))}
+                                    ))}
+                                </HorizontalScroll>
+                            </div>
+                            {/* Desktop: Grid */}
+                            <div className="hidden md:block golden-container">
+                                <div className="card-grid">
+                                    {content.agradecimento.artists.map((artist: string, index: number) => (
+                                        <Animated key={index} delay={index * 50}>
+                                            <div className="bg-brand-surface/80 backdrop-blur-lg border border-brand-secondary/20 p-6 rounded-lg text-center transition-all duration-300 hover:shadow-glow-primary hover:-translate-y-1 transform hover:border-brand-primary/50">
+                                                <IconMusic className="w-6 h-6 mx-auto text-brand-primary mb-3" />
+                                                <p className="text-base font-semibold">{artist}</p>
+                                            </div>
+                                        </Animated>
+                                    ))}
+                                </div>
                             </div>
                         </div>
                     </Animated>
 
                     {/* Equipe Técnica */}
                     <Animated delay={400}>
-                        <div className="golden-container mb-12">
-                            <h3 className="text-heading font-semibold font-serif text-brand-text mb-8 text-center">{content.agradecimento.teamTitle}</h3>
-                            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 md:gap-6">
-                                {content.agradecimento.team.map((member: any, index: number) => (
-                                    <Animated key={index} delay={index * 50}>
-                                        <div className="bg-brand-surface/80 backdrop-blur-lg border border-brand-secondary/20 p-5 md:p-6 rounded-lg flex items-center gap-4 transition-all duration-300 hover:shadow-glow-primary hover:-translate-y-1 transform hover:border-brand-primary/50">
+                        <div className="mb-12">
+                            <h3 className="text-heading font-semibold font-serif text-brand-text mb-8 text-center px-4">{content.agradecimento.teamTitle}</h3>
+                            {/* Mobile: Horizontal Scroll */}
+                            <div className="md:hidden">
+                                <HorizontalScroll itemWidth="280px" gap="1rem">
+                                    {content.agradecimento.team.map((member: any, index: number) => (
+                                        <div key={index} className="bg-brand-surface/80 backdrop-blur-lg border border-brand-secondary/20 p-5 rounded-lg flex items-center gap-4 transition-all duration-300 hover:shadow-glow-primary hover:-translate-y-1 transform hover:border-brand-primary/50 h-full">
                                             <IconUser className="w-10 h-10 text-brand-primary flex-shrink-0" />
                                             <div className="text-left min-w-0">
-                                                <p className="font-semibold text-base md:text-lg truncate">{member.name}</p>
+                                                <p className="font-semibold text-base truncate">{member.name}</p>
                                                 <p className="text-sm text-brand-text-secondary">{member.role}</p>
                                             </div>
                                         </div>
-                                    </Animated>
-                                ))}
+                                    ))}
+                                </HorizontalScroll>
+                            </div>
+                            {/* Desktop: Grid */}
+                            <div className="hidden md:block golden-container">
+                                <div className="grid grid-cols-2 gap-4 lg:gap-6">
+                                    {content.agradecimento.team.map((member: any, index: number) => (
+                                        <Animated key={index} delay={index * 50}>
+                                            <div className="bg-brand-surface/80 backdrop-blur-lg border border-brand-secondary/20 p-6 rounded-lg flex items-center gap-4 transition-all duration-300 hover:shadow-glow-primary hover:-translate-y-1 transform hover:border-brand-primary/50">
+                                                <IconUser className="w-10 h-10 text-brand-primary flex-shrink-0" />
+                                                <div className="text-left min-w-0">
+                                                    <p className="font-semibold text-lg truncate">{member.name}</p>
+                                                    <p className="text-sm text-brand-text-secondary">{member.role}</p>
+                                                </div>
+                                            </div>
+                                        </Animated>
+                                    ))}
+                                </div>
                             </div>
                         </div>
                     </Animated>
