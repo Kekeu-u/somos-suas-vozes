@@ -285,13 +285,13 @@ const App: React.FC = () => {
                     </Animated>
 
                     <Animated delay={200}>
-                        <div className="max-w-5xl mx-auto mb-12 relative px-6 md:px-12 py-10 md:py-12">
-                            <div className="bg-gradient-to-br from-brand-primary/10 to-brand-secondary/10 backdrop-blur-lg border-2 border-brand-primary/30 rounded-2xl p-8 md:p-12 shadow-2xl shadow-brand-primary/20 hover:shadow-glow-primary transition-all duration-500 hover:-translate-y-1 transform">
-                                <IconQuoteOpen className="w-12 h-12 md:w-16 md:h-16 text-brand-primary/40 absolute top-4 left-4 md:top-6 md:left-6" />
-                                <p className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-center text-balance leading-relaxed text-brand-primary font-serif relative z-10">
+                        <div className="max-w-5xl mx-auto mb-12 relative px-6 md:px-12 py-8 md:py-10">
+                            <div className="bg-brand-surface/30 backdrop-blur-sm border border-brand-text/5 rounded-lg p-6 md:p-10 shadow-sm transition-all duration-300">
+                                <IconQuoteOpen className="w-8 h-8 md:w-10 md:h-10 text-brand-text/15 absolute top-3 left-3 md:top-4 md:left-4" />
+                                <p className="text-lg sm:text-xl md:text-2xl font-normal text-center text-balance leading-relaxed text-brand-text/80 italic relative z-10">
                                     {content.motivacao.connection}
                                 </p>
-                                <IconQuoteClose className="w-12 h-12 md:w-16 md:h-16 text-brand-primary/40 absolute bottom-4 right-4 md:bottom-6 md:right-6" />
+                                <IconQuoteClose className="w-8 h-8 md:w-10 md:h-10 text-brand-text/15 absolute bottom-3 right-3 md:bottom-4 md:right-4" />
                             </div>
                         </div>
                     </Animated>
