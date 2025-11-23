@@ -56,15 +56,6 @@ export const Timeline: React.FC = () => {
                         </Animated>
                     ))}
                 </div>
-                 <Animated delay={timelineEvents.length * 200}>
-                    <div className="mt-16 max-w-4xl mx-auto rounded-2xl p-0.5 bg-gradient-to-br from-brand-primary to-brand-secondary transition-all duration-500 hover:shadow-glow-primary hover:-translate-y-2 transform">
-                        <div className="bg-brand-background rounded-[14px] p-10 text-center h-full w-full">
-                            <h3 className="text-2xl md:text-3xl font-serif text-brand-text mb-2">Giovanni di Pietro di Bernardone</h3>
-                            <p className="text-base md:text-lg text-brand-text-secondary mb-6 italic">(S. Francisco de Assis – O Padroeiro)</p>
-                            <p className="text-base md:text-lg leading-relaxed text-justify">A escolha de 4 de outubro conecta nosso projeto a uma tradição de proteção animal que se aproxima de um marco histórico. Em 4 de outubro de 2025, nos unimos para honrar a mensagem de Giovanni di Pietro di Bernardone (S. Francisco de Assis), "Todas as criaturas são nossos irmãos e irmãs", iniciando a jornada para a celebração de 800 anos de sua tradição em 2026.</p>
-                        </div>
-                    </div>
-                 </Animated>
             </div>
         </section>
     );

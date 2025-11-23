@@ -1,7 +1,80 @@
 export const content = {
+    // Seção: O Marco Histórico
+    marcoHistorico: {
+        title: "Um Marco Histórico",
+        subtitle: "29 de Setembro de 2024",
+        description: "Nesta data especial, celebramos o Dia Mundial dos Animais de uma forma inédita: reunimos artistas, músicos e produtores do sul do Brasil em uma gravação histórica que transformou compaixão em melodia.",
+        highlights: [
+            { icon: 'IconTrophy', number: '17', label: 'Artistas Unidos', description: 'Vozes que se somaram por uma causa' },
+            { icon: 'IconMicrophone', number: '1', label: 'Canção Histórica', description: 'Primeiro hino pela causa animal no Brasil' },
+            { icon: 'IconCalendar', number: '100', label: 'Anos de História', description: 'Celebrando o centenário do movimento' },
+            { icon: 'IconHeart', number: '∞', label: 'Vidas Tocadas', description: 'Um legado para as próximas gerações' }
+        ],
+        quote: "Onde existe vida, existe amor. Este foi o dia em que transformamos esse amor em música."
+    },
+
+    // Seção: A Motivação
+    motivacao: {
+        title: "O Que Nos Motivou",
+        icon: 'IconLightbulb',
+        story: "A ideia nasceu do coração de André Amorim, inspirado por sua irmã Raquel - uma veterinária que dedica sua vida ao cuidado dos animais. Ao pesquisar sobre o histórico de 'We Are The World', André descobriu uma conexão surpreendente: Rachel Jones, filha do produtor Quincy Jones, também é veterinária e compartilha o mesmo nome de sua irmã.",
+        connection: "Esta coincidência não foi apenas um sinal, mas uma confirmação de que grandes movimentos artísticos podem sim fazer a diferença na proteção animal.",
+        cards: [
+            {
+                icon: 'IconHeart',
+                title: 'Compaixão em Ação',
+                text: '30 milhões de cães e gatos abandonados no Brasil segundo a OMS. Cada número representa uma vida que precisa de voz.'
+            },
+            {
+                icon: 'IconHistory',
+                title: 'Honrando a História',
+                text: '2024 marca 100 anos desde o primeiro evento mundial pelos direitos dos animais, organizado por Heinrich Zimmermann em 1925.'
+            },
+            {
+                icon: 'IconStar',
+                title: 'Legado Musical',
+                text: 'Inspirados por "We Are The World", provamos que a música brasileira também pode ser instrumento de transformação social.'
+            }
+        ]
+    },
+
+    // Seção: Como Aconteceu
+    comoAconteceu: {
+        title: "Como Aconteceu",
+        subtitle: "Os Bastidores de um Sonho Realizado",
+        description: "Do conceito à realização, cada etapa foi cuidadosamente planejada para honrar a causa animal com excelência artística e técnica.",
+        timeline: [
+            {
+                icon: 'IconLightbulb',
+                phase: 'Idealização',
+                description: 'André Amorim concebe o projeto inspirado em sua irmã Raquel e na tradição de "We Are The World"'
+            },
+            {
+                icon: 'IconUsers',
+                phase: 'Mobilização',
+                description: '17 artistas do sul do Brasil aceitam o convite para emprestar suas vozes à causa animal'
+            },
+            {
+                icon: 'IconMicrophone',
+                phase: 'Gravação',
+                description: '29 de setembro de 2024: dia histórico de gravação no Soma Music Hub'
+            },
+            {
+                icon: 'IconCamera',
+                phase: 'Registro',
+                description: 'Asaph Uri captura os momentos emocionantes da gravação para a posteridade'
+            },
+            {
+                icon: 'IconMedal',
+                phase: 'Lançamento',
+                description: 'A música é lançada como símbolo de um movimento que continuará crescendo'
+            }
+        ]
+    },
+
     slide1: {
-        title: "Um Momento Histórico Realizado",
-        paragraph1: "No dia 29 de setembro de 2024, vivemos um momento único na história da proteção animal. Cem anos após o primeiro movimento mundial organizado pela causa, transformamos uma mensagem histórica de compaixão em uma melodia que ecoará pela eternidade.",
+        title: "A Realidade Que Nos Move",
+        paragraph1: "Nossa missão vai além da música. Cada nota, cada verso, cada voz representa milhões de vidas que dependem da nossa compaixão e ação.",
         subheading: "A Realidade Brasileira em Números",
         stats: [
             {
@@ -15,7 +88,7 @@ export const content = {
                 description: 'animais resgatados por ONGs e protetores.'
             }
         ],
-        conclusion: "A música sempre foi uma ferramenta poderosa de transformação social. E nós usamos essa força em favor de quem não tem voz.",
+        conclusion: "A música é nossa ferramenta de transformação. E nós a usamos em favor de quem não tem voz.",
     },
     slide2: {
         title: "A Força Comprovada da Música",
