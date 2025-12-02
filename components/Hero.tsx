@@ -8,27 +8,27 @@ export const Hero: React.FC = () => {
         // Delay the animation to start after the typewriter effect has had time to complete
         const timer = setTimeout(() => {
             setIsLoaded(true);
-        }, 1000); 
+        }, 1000);
         return () => clearTimeout(timer);
     }, []);
-    
+
     const mainTitleLines = [
-       {
-        // Título principal - primeira linha
-        text: "Somos Suas",
-        className: "text-5xl sm:text-7xl md:text-8xl font-bold font-serif leading-tight drop-shadow-lg",
-    },
-    {
+        {
+            // Título principal - primeira linha
+            text: "Somos Suas",
+            className: "text-5xl sm:text-7xl md:text-8xl font-bold font-serif leading-tight drop-shadow-lg",
+        },
+        {
             // Título principal - segunda linha
-        text: "Vozes",
-        className: "text-5xl sm:text-7xl md:text-8xl font-bold font-serif leading-tight mb-4 drop-shadow-lg",
-    },
-    {
+            text: "Vozes",
+            className: "text-5xl sm:text-7xl md:text-8xl font-bold font-serif leading-tight mb-4 drop-shadow-lg",
+        },
+        {
             text: "Um Marco Histórico",
             className: "text-2xl sm:text-4xl md:text-5xl font-semibold mb-6 font-serif text-brand-primary",
         },
         {
-            text: "29 de Setembro de 2024",
+            text: "29 de Setembro de 2025",
             className: "text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black mb-12 sm:mb-14 md:mb-2 font-serif text-brand-primary drop-shadow-2xl tracking-wide md:tracking-wider lg:tracking-widest",
         },
     ];
@@ -37,8 +37,8 @@ export const Hero: React.FC = () => {
         <section id="home" className="h-screen flex items-center justify-center relative text-center text-white overflow-hidden">
             {/* Backgrounds */}
             <div className="absolute inset-0 bg-cover bg-center kenburns-bg" style={{ backgroundImage: "url('https://images.unsplash.com/photo-1574870111867-c85f5e451368?q=80&w=1920&auto-format&fit=crop')" }}></div>
-            <div className="absolute inset-0" style={{backgroundImage: "radial-gradient(circle, rgba(7,9,13,0.3) 0%, rgba(7,9,13,0.9) 90%)"}}></div>
-            
+            <div className="absolute inset-0" style={{ backgroundImage: "radial-gradient(circle, rgba(7,9,13,0.3) 0%, rgba(7,9,13,0.9) 90%)" }}></div>
+
             {/* Main Title Content */}
             <div className="relative z-10 p-6 max-w-4xl mx-auto">
                 <AnimatedTypewriter

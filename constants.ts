@@ -2,7 +2,7 @@ export const content = {
     // Seção: O Marco Histórico
     marcoHistorico: {
         title: "Um Marco Histórico",
-        subtitle: "29 de Setembro de 2024",
+        subtitle: "29 de Setembro de 2025",
         description: "Nesta data especial, celebramos o Dia Mundial dos Animais de uma forma inédita: reunimos artistas, músicos e produtores do sul do Brasil em uma gravação histórica que transformou compaixão em melodia.",
         highlights: [
             { icon: 'IconTrophy', number: '17', label: 'Artistas Unidos', description: 'Vozes que se somaram por uma causa' },
@@ -28,7 +28,7 @@ export const content = {
             {
                 icon: 'IconHistory',
                 title: 'Honrando a História',
-                text: '2024 marca 100 anos desde o primeiro evento mundial pelos direitos dos animais, organizado por Heinrich Zimmermann em 1925.'
+                text: '2025 marca 100 anos desde o primeiro evento mundial pelos direitos dos animais, organizado por Heinrich Zimmermann em 1925.'
             },
             {
                 icon: 'IconStar',
@@ -57,7 +57,7 @@ export const content = {
             {
                 icon: 'IconMicrophone',
                 phase: 'Gravação',
-                description: '29 de setembro de 2024: dia histórico de gravação no Soma Music Hub'
+                description: '29 de setembro de 2025: dia histórico de gravação no Soma Music Hub'
             },
             {
                 icon: 'IconCamera',
@@ -99,7 +99,7 @@ export const content = {
             { icon: 'IconChildren', title: '"Heal The World" (1991)', description: "Inspirou programas de proteção infantil" },
             {
                 icon: 'IconPaw',
-                title: '"Somos Suas Vozes" (2024)',
+                title: '"Somos Suas Vozes" (2025)',
                 description: "O primeiro hino pela causa animal do Brasil.",
                 isFeatured: true
             },
@@ -125,7 +125,7 @@ export const content = {
     },
     slide14: {
         title: "O Movimento Continua",
-        paragraph1: "A gravação histórica de 29 de setembro de 2024 foi apenas o começo. Este movimento pela proteção animal continua crescendo e alcançando mais pessoas.",
+        paragraph1: "A gravação histórica de 29 de setembro de 2025 foi apenas o começo. Este movimento pela proteção animal continua crescendo e alcançando mais pessoas.",
         expectTitle: "Como Você Pode Participar:",
         expectation: [
             { icon: 'IconMegaphone', text: "Compartilhe nossa música e mensagem nas redes sociais." },
@@ -149,7 +149,7 @@ export const content = {
     // Seção de agradecimento com o link do Instagram
     agradecimento: {
         title: "Agradecimento Especial",
-        paragraph1: "No dia 29 de setembro de 2024, celebramos o Dia Mundial dos Animais com uma gravação histórica. Artistas talentosos da região sul do Brasil se reuniram em estúdio para emprestar suas vozes a quem não pode falar por si mesmo. Esta foi uma homenagem especial aos 100 anos do primeiro evento em defesa dos animais.",
+        paragraph1: "No dia 29 de setembro de 2025, celebramos o Dia Mundial dos Animais com uma gravação histórica. Artistas talentosos da região sul do Brasil se reuniram em estúdio para emprestar suas vozes a quem não pode falar por si mesmo. Esta foi uma homenagem especial aos 100 anos do primeiro evento em defesa dos animais.",
         subtitle: "Nossos Artistas",
         artists: [
             "Lorenzo Ferreira",
